@@ -88,38 +88,69 @@ nav button {
     position: relative;
     z-index: 20;
 }
-
+/* Base Button */
 .btn {
-    padding: 3px 8px;
-    font-weight: 400;
-    color: white;
-    background-color: rgba(248, 243, 243, 0.021);
-    border-radius: 4px;
-    border: 1px solid white;
-    cursor: pointer;
-
+  padding: 10px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgb(215, 193, 193);
+  transform: scale(1.04);
+}
+
+/* Red Action Button (Primary) */
 .btn-red {
-    background-color: red;
-    color: white;
-    padding: 3px 24px;
-    font-size: 20px;
-    border-radius: 4px;
-    font-weight: 400;
+  background-color: #e50914;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(229, 9, 20, 0.4);
 }
 
+.btn-red:hover {
+  background-color: #f40612;
+  transform: scale(1.04);
+  box-shadow: 0 6px 16px rgba(229, 9, 20, 0.4);
+}
+
+/* Small Red Button */
 .btn-red-sm {
-    background-color: red;
-    color: white;
+  background-color: #e50914;
+  color: white;
+  padding: 8px 18px;
+  margin-left: 10px;
+  font-size: 14px;
+  border-radius: 18px;
+  font-weight: 500;
+  transition: all 0.25s ease;
 }
 
-.hero-buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
+.btn-red-sm:hover {
+  background-color: #f40612;
+  transform: scale(1.04);
 }
+
+/* Button Group */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 20px;
+}
+
 
 .main input {
     padding: 7px 101px 8px 14px;
@@ -329,6 +360,6 @@ footer .questions {
 }
 
 .footer a:hover {
-  color: white;
-  text-decoration: underline;
+  color: rgb(209, 209, 209);
+  text-decoration: underline wavy #c1111aca;
 }
