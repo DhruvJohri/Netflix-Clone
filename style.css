@@ -306,29 +306,3 @@ footer .questions {
     flex-direction: column;
     gap: 23px;
 }
-
-/* Smooth hover effects for buttons */
-.btn,
-.btn-red,
-.btn-red-sm {
-  transition: all 0.3s ease-in-out;
-}
-
-.btn:hover,
-.btn-red:hover,
-.btn-red-sm:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
-  background-color: #c11119;
-}
-
-.footer a {
-  transition: all 0.3s ease;
-  color: #999;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  color: white;
-  text-decoration: underline;
-}
