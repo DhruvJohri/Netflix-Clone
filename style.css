@@ -17,9 +17,10 @@ body {
     background-repeat: no-repeat;
     height: 644px;
     position: relative;
+    min-height: 100vh;
 }
 
-.main .box {
+/*.main .box {
     height: 644px;
     width: 100%;
     opacity: 0.6;
@@ -27,7 +28,20 @@ body {
     top: 0;
     background-color: black;
 }
-
+*/
+.hero {
+    font-family: 'Martel Sans', sans-serif;
+    height: calc(100% - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    position: relative;
+    gap: 23px;
+    padding: 0 30px;
+    z-index: 2;
+}
 
 /*nav {
     max-width: 60vw;
@@ -59,6 +73,7 @@ nav button {
   position: sticky;
   top: 0;
   z-index: 10;
+  backdrop-filter: blur(10px);
 }
 
 .navbar .logo img {
