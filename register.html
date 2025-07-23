@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Register</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url("https://media.istockphoto.com/id/1303344250/photo/television-streaming-multimedia-wall-concept.webp?a=1&b=1&s=612x612&w=0&k=20&c=jVigzpY2A6g5sfUbwQzF8rSzX2WQtyCSAE25O3teyAs=")
+          no-repeat center center fixed;
+        background-size: cover;
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+      }
+
+      html::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 0;
+      }
+
+      .container {
+        position: relative;
+        z-index: 2;
+        max-width: 420px;
+        width: 100%;
+        background-color: rgba(20, 20, 20, 0.95);
+        padding: 40px 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 30px 8px rgba(229, 9, 20, 0.6);
+        color: white;
+      }
+
+      .container h2 {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 30px;
+        font-size: 26px;
+        letter-spacing: 1px;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      input {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        font-size: 15px;
+        background-color: #222;
+        color: white;
+        transition: 0.3s;
+        outline: none;
+      }
+
+      input:focus {
+        box-shadow: 0 0 8px 2px #e50914;
+        background-color: #2c2c2c;
+      }
+
+      .toggle-password {
+        position: absolute;
+        right: 20px;
+        margin-top: -36px;
+        font-size: 18px;
+        color: #ccc;
+        cursor: pointer;
+      }
+
+      #strengthBar {
+        margin-top: 8px;
+        height: 6px;
+        background: #444;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      #pwStrength {
+        height: 100%;
+        width: 0%;
+        background: limegreen;
+        transition: 0.4s ease;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+        background-color: #e50914;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        background-color: #f6121d;
+      }
+
+      .bottom-text {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+      }
+
+      .bottom-text a {
+        color: #e50914;
+        text-decoration: none;
+      }
+
+      .help-text {
+        color: #ff4c4c;
+        font-size: 13px;
+        margin-top: 4px;
+      }
+      @media (max-width: 480px) {
+        .container {
+          padding: 30px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Create Your Account</h2>
+      <form id="registerForm">
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required />
+          <div class="help-text" id="usernameHelp"></div>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" required />
+          <div class="help-text" id="emailHelp"></div>
+        </div>
+
+        <div class="input-group" style="position: relative">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+          <span class="toggle-password" id="pwToggle">👁️</span>
+          <div id="strengthBar"><div id="pwStrength"></div></div>
+          <div class="help-text" id="passwordHelp"></div>
+        </div>
+
+        <div class="input-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            required
+          />
+          <div class="help-text" id="confirmHelp"></div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          Register
+        </button>
+      </form>
+
+      <div class="bottom-text">
+        Already have an account? <a href="#">Sign In</a>
+      </div>
+    </div>
+
+    <script src="register.js"></script>
+  </body>
+</html>
