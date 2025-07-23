@@ -396,3 +396,44 @@ footer .questions {
   color: white;
   text-decoration: underline;
 }
+/* ---------------------------------------------
+   🔘 Button Hover Effects - Polished Version
+---------------------------------------------- */
+button,
+.btn {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #e50914; /* Netflix red */
+  transform: scale(1.04);
+  box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
+  color: #fff;
+}
+
+/* ---------------------------------------------
+   🔗 Footer Link Hover Effects - Polished
+---------------------------------------------- */
+footer a {
+  color: #aaa;
+  transition: color 0.25s ease-in-out, text-decoration 0.25s ease-in-out;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------
+   ♿ Accessibility Consideration
+---------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  button,
+  .btn,
+  footer a {
+    transition: none !important;
+  }
+}
