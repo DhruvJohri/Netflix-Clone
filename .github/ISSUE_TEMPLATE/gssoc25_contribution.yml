@@ -1,0 +1,79 @@
+name: 💡 GSSoC '25 Contribution
+description: Submit your issue, feature request, or proposal as part of GSSoC '25
+title: "[GSSoC25] <title>"
+labels: ["gssoc", "good first issue"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        👋 **Hello, and welcome GSSoC '25 Contributor!**
+
+        We're excited to have you contributing to this project as part of GSSoC 2025.  
+        Please take a moment to fill out this form properly so we can review your contribution efficiently.
+
+  - type: input
+    id: github-username
+    attributes:
+      label: GitHub Username
+      description: Please enter your GitHub handle (e.g., @yourusername)
+      placeholder: "@yourusername"
+    validations:
+      required: true
+
+  - type: input
+    id: summary
+    attributes:
+      label: 📌 Issue Title / Suggestion Summary
+      description: A short, descriptive title of your issue or idea
+      placeholder: Add MIT License file to the repository
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 Detailed Description
+      description: Describe the issue, bug, or feature you are proposing to work on.
+      placeholder: |
+        - What is the current behavior?
+        - What change are you proposing?
+        - Why is this needed?
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: 🛠️ Proposed Solution / Steps to Reproduce
+      description: How do you plan to solve the issue or implement the idea?
+      placeholder: |
+        1. Fork the repo
+        2. Create LICENSE file using MIT License
+        3. Push changes and create PR
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Contributor Checklist
+      options:
+        - label: I have searched and confirmed this issue has not been reported already.
+          required: true
+        - label: I am a registered participant of GSSoC 2025.
+          required: true
+        - label: I have starred the repository to support the project.
+          required: false
+        - label: I agree to follow the project's [Code of Conduct](../CODE_OF_CONDUCT.md).
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        📚 **Next Steps**:
+        - Wait for a maintainer to assign the issue to you.
+        - Once assigned, start working and submit a Pull Request.
+        - Stay active and feel free to ask questions!
+
+        ⭐ _Thank you for contributing! Let's build something amazing together._
