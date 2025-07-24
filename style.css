@@ -136,6 +136,19 @@ nav button {
     cursor: pointer;
 
 }
+.btn{
+     
+padding: 8px 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #333;
+  appearance: none;
+  cursor: pointer;
+
+
+}
 
 .btn-red {
     background-color: red;
