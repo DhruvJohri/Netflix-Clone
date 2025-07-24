@@ -125,6 +125,14 @@ nav button {
     position: relative;
     z-index: 20;
 }
+.container{
+      height: 1100px;
+    background-image: url("assets/bg.jpg");
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
 
 .btn {
     padding: 3px 8px;
@@ -136,7 +144,7 @@ nav button {
     cursor: pointer;
 
 }
-.btn{
+.lang{
      
 padding: 8px 12px;
   border: 1px solid #ccc;
