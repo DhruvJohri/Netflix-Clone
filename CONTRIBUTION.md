@@ -90,20 +90,6 @@ Include:
 
 ---
 
-## 👤 Contributors
-
-Thanks to these amazing contributors ✨:
-
-| Name              | GitHub Profile                                       | Role / Contributions                                      |
-|-------------------|------------------------------------------------------|-----------------------------------------------------------|
-| Dhruv Johri       | [@dhruvjohri](https://github.com/dhruvjohri)         | 💡 Original Creator                                        |
-| Ardhaya Johari    | [@Ardhaya-Johari](https://github.com/Ardhaya-Johari) | ✨ README Revamp, Footer Improvements, UI Enhancements     |
-| Your Name Here    | [@YourGitHub](https://github.com/YourGitHub)         | 🌱 _Contribute and get listed here!_                       |
-
-> Want to see your name here? Contribute and we’ll add you!
-
----
-
 
 ## 🔒 Code of Conduct
 
