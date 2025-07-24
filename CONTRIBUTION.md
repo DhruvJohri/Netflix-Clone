@@ -14,6 +14,13 @@ Originally created by [Dhruv Johri](https://github.com/dhruvjohri) and now enhan
 This project is a beginner-friendly frontend challenge focused on layout, responsiveness, and styling — mimicking real-world platforms.
 
 ---
+- ⭐️ **Star this repository** to show your support!
+- 🐦 **Follow me on [Twitter](https://x.com/DhruvJohri_)** for conversations, help, or doubts.
+- 💬 Join our [GitHub Discussions](https://github.com/DhruvJohri/Netflix-Clone/discussions) for help, collaboration, and project ideas.
+
+Let's build and learn together! 🚀
+
+---
 
 ## 🚀 Getting Started
 
