@@ -34,15 +34,15 @@ Before starting, make sure you have knowledge of the following:
 ### 🗂️ Project Structure
 
 Here's a quick overview of the directory and file structure of this project:
-├── assets/ # Images, logos, and other media files
-├── css/
-│ └── style.css # Main stylesheet for the project
-├── js/ # JavaScript files (if JS is used or added later)
-├── index.html # Main HTML file (Netflix landing page clone)
-├── README.md # Project overview and setup instructions
-├── CONTRIBUTION.md # Contribution guidelines (you're here!)
-├── CODE_OF_CONDUCT.md # Code of conduct for contributors
-└── .gitignore # Files/folders ignored by Git
+- ├── assets/ # Images, logos, and other media files
+- ├── css/
+- │ └── style.css # Main stylesheet for the project
+- ├── js/ # JavaScript files (if JS is used or added later)
+- ├── index.html # Main HTML file (Netflix landing page clone)
+- ├── README.md # Project overview and setup instructions
+- ├── CONTRIBUTION.md # Contribution guidelines (you're here!)
+- ├── CODE_OF_CONDUCT.md # Code of conduct for contributors
+- └── .gitignore # Files/folders ignored by Git
 
 ---
 
