@@ -7,6 +7,7 @@
 }
 
 body {
+    padding-top: 80px;
     background-color: black;
 }
 
@@ -36,7 +37,6 @@ body {
     display: flex;
     align-items: center;
     height: 100px;
-}
 
 nav img {
     color: red;
@@ -51,14 +51,17 @@ nav button {
 }
 */ 
 .navbar {
+  position: fixed;
+  top:0;
+  width:100%;
+  z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 60px;
   background-color: rgba(0, 0, 0, 0.8);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  transition: background-colour 0.5s ease;
+  backdrop-filter: blur(10px);
 }
 
 .navbar .logo img {
@@ -76,6 +79,7 @@ nav button {
   color: white;
   font-weight: 500;
   transition: color 0.3s;
+  text-shadow: 0.3s;
 }
 
 .nav-links li a:hover {
@@ -88,6 +92,7 @@ nav button {
   gap: 10px;
 }
 .hero {
+    margin-top: 80px;
     font-family: 'Martel Sans', sans-serif;
     height: calc(100% - 100px);
     display: flex;
