@@ -84,6 +84,19 @@
             padding: 60px 0;
             background-color: #000;
         }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -231,8 +244,53 @@
 
         function renderMovies(movies) {
             const container = document.getElementById('movies-content');
-            const topRatedContent = new TopRatedContent();
-            topRatedContent.renderContent(movies, 'movies-content');
+            
+            if (!movies || movies.length === 0) {
+                container.innerHTML = '<div class="loading">No movies available</div>';
+                return;
+            }
+
+            const moviesHTML = movies.map(movie => createMovieCard(movie)).join('');
+            container.innerHTML = moviesHTML;
+
+            // Add click event listeners to cards
+            container.querySelectorAll('.content-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const title = card.querySelector('.card-title').textContent;
+                    const rating = card.querySelector('.rating-value').textContent;
+                    alert(`${title}\nRating: ${rating}/10\n\nClick OK to continue browsing!`);
+                });
+            });
+        }
+
+        function createMovieCard(movie) {
+            const title = movie.title;
+            const releaseDate = movie.release_date;
+            const year = releaseDate ? new Date(releaseDate).getFullYear() : 'N/A';
+            const rating = movie.vote_average ? movie.vote_average.toFixed(1) : 'N/A';
+            const overview = movie.overview || 'No description available.';
+            const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
+            const posterPath = movie.poster_path 
+                ? `${imageBaseURL}${movie.poster_path}` 
+                : 'https://via.placeholder.com/500x750/333/fff?text=No+Image';
+
+            return `
+                <div class="content-card">
+                    <img src="${posterPath}" alt="${title}" loading="lazy">
+                    <div class="play-overlay">▶</div>
+                    <div class="card-info">
+                        <h3 class="card-title">${title}</h3>
+                        <div class="card-meta">
+                            <span class="card-year">${year}</span>
+                            <div class="card-rating">
+                                <span class="rating-star">★</span>
+                                <span class="rating-value">${rating}</span>
+                            </div>
+                        </div>
+                        <p class="card-overview">${overview}</p>
+                    </div>
+                </div>
+            `;
         }
 
         function setupFilters() {
