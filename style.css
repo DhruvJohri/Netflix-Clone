@@ -8,20 +8,20 @@
 
 body {
     background-color: black;
-} 
+}
 
 .main {
     background-image: url("assets/hero-image.jpg");
     background-position: center center;
-    background-size: max(1200px,100vw);
+    background-size: max(1200px, 100vw);
     background-repeat: no-repeat;
     height: 90vh;
-    width:100%;
+    width: 100%;
     position: relative;
 }
 
 .main .box {
-    height:100vh;
+    height: 100vh;
     width: 100%;
     opacity: 0.65;
     position: absolute;
@@ -29,69 +29,54 @@ body {
     background-color: black;
 }
 
-/*  
- nav { 
-    max-width: 60vw;
-    justify-content: space-between;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    height: 100px;}
-
-nav img {
-    color: red;
-    width: 130px;
-    position: relative;
-    z-index: 10;
-}
-
-nav button {
-    position: relative;
-    z-index: 10;
-}
-    */
-
 .navbar {
-  position: fixed;
-  top:0;
-  width:100%;
-  z-index: 999;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 20px 60px;
-  background-color: rgba(0, 0, 0, 0.8);
-  transition: background-colour 0.5s ease;
-  backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between; /* Changed to space-between for hamburger positioning */
+    align-items: center;
+    padding: 20px 60px;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: background-colour 0.5s ease;
+    backdrop-filter: blur(10px);
 }
 
 .navbar .logo img {
-  width: 130px;
+    width: 130px;
+}
+
+.nav-menu {
+    display: flex; /* Flex container for nav-links and nav-buttons */
+    align-items: center;
+    gap: 30px;
 }
 
 .nav-links {
-  display: flex;
-  gap: 30px;
-  list-style: none;
+    display: flex;
+    gap: 30px;
+    list-style: none;
 }
 
 .nav-links li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: color 0.3s;
-  text-shadow: 0.3s;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+    text-shadow: 0.3s;
 }
 
 .nav-links li a:hover {
-  color: #e50914;
-  text-shadow: 0 0 10px red;
+    color: #e50914;
+    text-shadow: 0 0 10px red;
 }
 
 .nav-buttons {
-  display: flex;
-  gap: 10px;
+    display: flex;
+    gap: 10px;
 }
+
 .hero {
     margin-top: 80px;
     font-family: 'Martel Sans', sans-serif;
@@ -106,22 +91,22 @@ nav button {
     padding: 0 30px;
 }
 
-.hero > :nth-child(1),
-.hero > :nth-child(2)  {
-    margin-top:95px;
+.hero>:nth-child(1),
+.hero>:nth-child(2) {
+    margin-top: 95px;
     font-size: 60px;
     font-weight: 1000;
     text-align: center;
-} 
+}
 
-.hero > :nth-child(3) {
-    margin-top:-20px;
+.hero>:nth-child(3) {
+    margin-top: -20px;
     font-size: 20px;
     font-weight: 400;
     text-align: center;
 }
 
-.hero > :nth-child(4) {
+.hero>:nth-child(4) {
     font-size: 16px;
     font-weight: 300;
     text-align: center;
@@ -246,8 +231,6 @@ section.first>div :nth-child(2) {
 .faqbox {
     transition: all 1s ease-out;
     font-size: 24px;
-    /* display: flex; */
-    /* justify-content: space-between; */
     background-color: #2d2d2d;
     padding: 24px;
     max-width: 60vw;
@@ -255,30 +238,31 @@ section.first>div :nth-child(2) {
     cursor: pointer;
 }
 
-.faq-header{
+.faq-header {
     display: flex;
     justify-content: space-between;
 }
 
 .answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-top: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 10px;
 }
 
 .faqbox.open .answer {
-  max-height: 500px; /* Enough to show full answer */
+    max-height: 500px;
+    /* Enough to show full answer */
 }
 
 .faqbox .icon {
-  transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .faqbox.open .icon {
-  transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 
@@ -304,7 +288,7 @@ footer .questions {
 
 @media screen and (max-width: 1300px) {
 
-    nav{
+    nav {
         max-width: 90vw;
     }
 
@@ -320,15 +304,15 @@ footer .questions {
         width: 305px;
     }
 
-    .hero> :nth-child(1) {
+    .hero>:nth-child(1) {
         font-size: 32px;
     }
 
-    .hero> :nth-child(2) {
+    .hero>:nth-child(2) {
         font-size: 29px;
     }
 
-    .hero> :nth-child(3) {
+    .hero>:nth-child(3) {
         font-size: 18px;
     }
 
@@ -350,14 +334,12 @@ footer .questions {
         padding: 75px 0;
     }
 
-    .footer-item{
+    .footer-item {
         align-items: center;
     }
- 
+
 
 }
-
-
 
 @media screen and (max-width: 1300px) {
 
@@ -384,45 +366,144 @@ footer .questions {
 .btn,
 .btn-red,
 .btn-red-sm {
-  transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .btn:hover,
 .btn-red:hover,
 .btn-red-sm:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
-  background-color: #c11119;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    background-color: #c11119;
 }
 
 .footer a {
-  transition: all 0.3s ease;
-  color: #999;
-  text-decoration: none;
+    transition: all 0.3s ease;
+    color: #999;
+    text-decoration: none;
 }
 
 .footer a:hover {
-  color: white;
-  text-decoration: underline;
+    color: white;
+    text-decoration: underline;
 }
 
 #backToTopBtn {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  z-index: 99;
-  cursor: pointer;
-  display: none;
-  transition: transform 0.3s ease;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 99;
+    cursor: pointer;
+    display: none;
+    transition: transform 0.3s ease;
 }
 
 #backToTopBtn:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .up-arrow-icon {
-  width: 60px;
-  height: 60px;
+    width: 60px;
+    height: 60px;
 }
 
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    display: none; /* Hidden by default for larger screens */
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
 
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Responsive adjustments for navbar */
+@media (max-width: 858px) {
+    .navbar {
+        padding: 20px 60px; /* Adjust padding for smaller screens */
+        justify-content: space-between;
+    }
+
+    .nav-menu {
+        display: none; /* Hide nav menu by default */
+        flex-direction: column;
+        position: absolute;
+        top: 80px; /* Position below the navbar */
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-100%); /* Start off-screen */
+    }
+
+    .nav-menu.active {
+        display: flex;
+        transform: translateY(0); /* Slide in */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px; /* Space between links and buttons */
+    }
+
+    .nav-links li {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        width: 80%;
+        gap: 15px;
+    }
+
+    .nav-buttons .btn,
+    .nav-buttons .btn-red-sm {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 16px;
+        
+    }
+    .nav-buttons .btn-red-sm{
+        display: block;
+        text-align: center;
+    }
+    .hamburger-menu {
+        display: flex; /* Show hamburger on smaller screens */
+    }
+
+    /* Hamburger animation to 'X' */
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 500px) {
+    .navbar {
+        padding: 20px 40px;
+    }
+
+    .navbar .logo img {
+        width: 100px;
+    }
+}
