@@ -51,7 +51,7 @@
 
 <body>
 
- <div class="main">
+ <div class="main" id="home">
         <!-- <nav>
             <span><img width="130" src="assets\logo.svg" alt="Netflix Logo"></span>
             <div>
@@ -66,11 +66,11 @@
         <img width="130" src="assets/logo.svg" alt="Netflix Logo">
       </div>
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">TV Shows</a></li>
-        <li><a href="#">Movies</a></li>
-        <li><a href="#">New & Popular</a></li>
-        <li><a href="#">My List</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shows.html">TV Shows</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="new-popular.html">New & Popular</a></li>
+        <li><a href="my-list.html">My List</a></li>
       </ul>
       <!-- Navigation Buttons -->
       <div class="nav-buttons">
@@ -158,6 +158,46 @@
 
     <div class="separation"></div>
 
+    <!-- Top Rated Content Section -->
+    <section class="top-rated-section" id="top-rated">
+        <div class="container">
+            <h2>Top Rated Movies & Shows</h2>
+            
+            <!-- Tab Navigation -->
+            <div class="content-tabs">
+                <button class="tab-btn active" data-tab="movies">Top Movies</button>
+                <button class="tab-btn" data-tab="shows">Top TV Shows</button>
+            </div>
+            
+            <!-- Movies Content -->
+            <div id="movies-content" class="content-grid active">
+                <div class="loading">Loading top-rated movies...</div>
+            </div>
+            
+            <!-- TV Shows Content -->
+            <div id="shows-content" class="content-grid">
+                <div class="loading">Loading top-rated TV shows...</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="separation"></div>
+
+    <!-- My List Section (Placeholder) -->
+    <section class="my-list-section" id="my-list">
+        <div class="container">
+            <h2>My List</h2>
+            <p style="text-align: center; color: #ccc; padding: 40px 0;">
+                Sign in to create your personal list of movies and shows to watch later.
+            </p>
+            <div style="text-align: center;">
+                <a href="signin.html" class="btn btn-red">Sign In to Continue</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="separation"></div>
+
     <section class="faq">
         <h2>Frequently Asked Questions</h2>
         <div class="faqbox">
@@ -219,30 +259,30 @@
         </div>
         <div class="footer">
             <div class="footer-item"> 
-                <a href="faq">Investor Relations</a>
-                <a href="faq">Jobs</a>
-                <a href="faq">Ways to Watch</a>
-                <a href="faq">Terms of Use</a>
+                <a href="about.html">Investor Relations</a>
+                <a href="about.html">Jobs</a>
+                <a href="about.html">Ways to Watch</a>
+                <a href="about.html">Terms of Use</a>
             </div>
 
             <div class="footer-item"> 
-                <a href="faq">Help Centre</a>
-                <a href="faq">Account</a>
-                <a href="faq">Speed Test</a>
-                <a href="faq">Legal Notices</a>
+                <a href="about.html">Help Centre</a>
+                <a href="my-list.html">Account</a>
+                <a href="about.html">Speed Test</a>
+                <a href="about.html">Legal Notices</a>
             </div>
             <div class="footer-item">
-                <a href="faq">Media Centre</a>
-                <a href="faq">Privacy</a>
-                <a href="faq">Cookie Preferences</a> 
-                <a href="faq">Corporate</a>
+                <a href="about.html">Media Centre</a>
+                <a href="about.html">Privacy</a>
+                <a href="about.html">Cookie Preferences</a> 
+                <a href="about.html">Corporate</a>
             </div>
 
             <div class="footer-item">
-                <a href="faq">Contact Us</a>
-                <a href="faq">Speed Test</a> 
-                <a href="faq">Legal Notices</a> 
-                <a href="faq">Only on Netflix</a>
+                <a href="about.html">Contact Us</a>
+                <a href="about.html">Speed Test</a> 
+                <a href="about.html">Legal Notices</a> 
+                <a href="new-popular.html">Only on Netflix</a>
             </div>
         </div>
     </footer>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Netflix Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1489599458529-cf5b6c1de8e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            padding: 100px 0;
+            background-color: #000;
+            color: white;
+        }
+        
+        .content-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            margin-bottom: 80px;
+        }
+        
+        .content-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #e50914;
+            text-align: center;
+        }
+        
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ccc;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #111;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            color: #e50914;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .team-section {
+            background-color: #111;
+            padding: 80px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .team-member {
+            text-align: center;
+            background-color: #222;
+            padding: 30px 20px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .member-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: #e50914;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .member-name {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .member-role {
+            color: #e50914;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .member-bio {
+            color: #ccc;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img width="130" src="assets/logo.svg" alt="Netflix Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shows.html">TV Shows</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="new-popular.html">New & Popular</a></li>
+            <li><a href="my-list.html">My List</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <button class="btn">English</button>
+            <a href="signin.html" class="btn btn-red-sm">Sign In</a>
+        </div>
+    </nav>
+
+    <section class="about-hero">
+        <div class="hero-content">
+            <h1>About Netflix Clone</h1>
+            <p>A modern streaming platform recreation showcasing the latest web technologies and user experience design.</p>
+        </div>
+    </section>
+
+    <section class="about-content">
+        <div class="content-section">
+            <h2>Our Mission</h2>
+            <p>
+                This Netflix Clone project demonstrates the power of modern web development by recreating 
+                the user experience of one of the world's most popular streaming platforms. Built with 
+                cutting-edge technologies, it showcases responsive design, interactive features, and 
+                seamless user navigation.
+            </p>
+        </div>
+
+        <div class="stats-grid container">
+            <div class="stat-item">
+                <span class="stat-number">1000+</span>
+                <span class="stat-label">Movies & Shows</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Genres</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">4K</span>
+                <span class="stat-label">Ultra HD Quality</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Streaming</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Technology Stack</h2>
+            <p>
+                Built using modern web technologies including HTML5, CSS3, and JavaScript ES6+. 
+                The project integrates with The Movie Database (TMDB) API to provide real-time 
+                content data, ensuring an authentic streaming experience with actual movie and 
+                TV show information.
+            </p>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; color: white; font-size: 2.5rem; margin-bottom: 50px;">Development Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">RH</div>
+                    <div class="member-name">Rangika Herath</div>
+                    <div class="member-role">Lead Developer</div>
+                    <div class="member-bio">Full-stack developer passionate about creating immersive user experiences and modern web applications.</div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">UI</div>
+                    <div class="member-name">UI/UX Team</div>
+                    <div class="member-role">Design Specialists</div>
+                    <div class="member-bio">Focused on creating intuitive interfaces that mirror the original Netflix experience while adding unique touches.</div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">API</div>
+                    <div class="member-name">Backend Team</div>
+                    <div class="member-role">API Integration</div>
+                    <div class="member-bio">Responsible for seamless integration with external APIs and ensuring optimal performance and data flow.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <div id="backToTopBtn" onclick="scrollToTop()" title="Back to top" aria-label="Back to top">
+        <svg class="up-arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="11" stroke="#111" stroke-width="2" fill="white"/>
+            <path d="M8 14l4-4 4 4" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+
+    <footer>
+        <div class="questions">
+            Questions? Call 000-800-919-1694
+        </div>
+        <div class="footer">
+            <div class="footer-item"> 
+                <a href="#faq">Investor Relations</a>
+                <a href="#faq">Jobs</a>
+                <a href="#faq">Ways to Watch</a>
+                <a href="#faq">Terms of Use</a>
+            </div>
+            <div class="footer-item"> 
+                <a href="#faq">Help Centre</a>
+                <a href="#faq">Account</a>
+                <a href="#faq">Speed Test</a>
+                <a href="#faq">Legal Notices</a>
+            </div>
+            <div class="footer-item">
+                <a href="#faq">Media Centre</a>
+                <a href="#faq">Privacy</a>
+                <a href="#faq">Cookie Preferences</a> 
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer-item">
+                <a href="#faq">Contact Us</a>
+                <a href="#faq">Speed Test</a> 
+                <a href="#faq">Legal Notices</a> 
+                <a href="#faq">Only on Netflix</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

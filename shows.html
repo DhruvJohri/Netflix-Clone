@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Shows - Netflix Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .shows-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .shows-categories {
+            padding: 60px 0;
+            background-color: #111;
+        }
+        
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .category-tab {
+            padding: 12px 24px;
+            background-color: transparent;
+            border: 2px solid #333;
+            color: #ccc;
+            cursor: pointer;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .category-tab.active,
+        .category-tab:hover {
+            background-color: #e50914;
+            border-color: #e50914;
+            color: white;
+        }
+        
+        .shows-grid {
+            padding: 60px 0;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img width="130" src="assets/logo.svg" alt="Netflix Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shows.html" class="active">TV Shows</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="new-popular.html">New & Popular</a></li>
+            <li><a href="my-list.html">My List</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <button class="btn">English</button>
+            <a href="signin.html" class="btn btn-red-sm">Sign In</a>
+        </div>
+    </nav>
+
+    <section class="shows-hero">
+        <div class="hero-content">
+            <h1>TV Shows</h1>
+            <p>Binge-watch the best TV series from around the world. From gripping dramas to hilarious comedies, discover your next obsession.</p>
+        </div>
+    </section>
+
+    <section class="shows-categories">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="top-rated">Top Rated</button>
+                <button class="category-tab" data-category="trending">Trending Now</button>
+                <button class="category-tab" data-category="popular">Popular</button>
+                <button class="category-tab" data-category="new">New Releases</button>
+                <button class="category-tab" data-category="comedy">Comedy</button>
+                <button class="category-tab" data-category="drama">Drama</button>
+                <button class="category-tab" data-category="action">Action & Adventure</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="shows-grid">
+        <div class="container">
+            <div id="shows-content" class="content-grid active">
+                <div class="loading">Loading TV shows...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <div id="backToTopBtn" onclick="scrollToTop()" title="Back to top" aria-label="Back to top">
+        <svg class="up-arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="11" stroke="#111" stroke-width="2" fill="white"/>
+            <path d="M8 14l4-4 4 4" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+
+    <footer>
+        <div class="questions">
+            Questions? Call 000-800-919-1694
+        </div>
+        <div class="footer">
+            <div class="footer-item"> 
+                <a href="#faq">Investor Relations</a>
+                <a href="#faq">Jobs</a>
+                <a href="#faq">Ways to Watch</a>
+                <a href="#faq">Terms of Use</a>
+            </div>
+            <div class="footer-item"> 
+                <a href="#faq">Help Centre</a>
+                <a href="#faq">Account</a>
+                <a href="#faq">Speed Test</a>
+                <a href="#faq">Legal Notices</a>
+            </div>
+            <div class="footer-item">
+                <a href="#faq">Media Centre</a>
+                <a href="#faq">Privacy</a>
+                <a href="#faq">Cookie Preferences</a> 
+                <a href="#faq">Corporate</a>
+            </div>
+            <div class="footer-item">
+                <a href="#faq">Contact Us</a>
+                <a href="#faq">Speed Test</a> 
+                <a href="#faq">Legal Notices</a> 
+                <a href="#faq">Only on Netflix</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // TV Shows page specific functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            loadTVShows('top-rated');
+            setupCategoryTabs();
+        });
+
+        function setupCategoryTabs() {
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+                    
+                    // Load content for selected category
+                    const category = tab.getAttribute('data-category');
+                    loadTVShows(category);
+                });
+            });
+        }
+
+        async function loadTVShows(category) {
+            const apiKey = '8265bd1679663a7ea12ac168da84d2e8';
+            const baseURL = 'https://api.themoviedb.org/3';
+            
+            // Show loading
+            document.getElementById('shows-content').innerHTML = '<div class="loading">Loading TV shows...</div>';
+            
+            let endpoint;
+            switch(category) {
+                case 'top-rated':
+                    endpoint = `${baseURL}/tv/top_rated?api_key=${apiKey}`;
+                    break;
+                case 'trending':
+                    endpoint = `${baseURL}/trending/tv/week?api_key=${apiKey}`;
+                    break;
+                case 'popular':
+                    endpoint = `${baseURL}/tv/popular?api_key=${apiKey}`;
+                    break;
+                case 'new':
+                    endpoint = `${baseURL}/tv/on_the_air?api_key=${apiKey}`;
+                    break;
+                default:
+                    endpoint = `${baseURL}/discover/tv?api_key=${apiKey}&with_genres=${getGenreId(category)}`;
+            }
+            
+            try {
+                const response = await fetch(endpoint);
+                const data = await response.json();
+                
+                if (data.results) {
+                    renderTVShows(data.results);
+                }
+            } catch (error) {
+                console.error('Error loading TV shows:', error);
+                document.getElementById('shows-content').innerHTML = 
+                    '<div class="loading">Unable to load TV shows. Please try again later.</div>';
+            }
+        }
+
+        function renderTVShows(shows) {
+            const container = document.getElementById('shows-content');
+            const topRatedContent = new TopRatedContent();
+            topRatedContent.renderContent(shows, 'shows-content');
+        }
+
+        function getGenreId(category) {
+            const genreMap = {
+                'comedy': '35',
+                'drama': '18',
+                'action': '10759'
+            };
+            return genreMap[category] || '';
+        }
+    </script>
+</body>
+</html>

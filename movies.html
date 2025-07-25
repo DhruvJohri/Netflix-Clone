@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies - Netflix Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .movies-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .filter-section {
+            padding: 40px 0;
+            background-color: #111;
+        }
+        
+        .filter-controls {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .filter-group label {
+            color: white;
+            font-weight: 500;
+        }
+        
+        .filter-group select {
+            padding: 8px 12px;
+            border: 1px solid #333;
+            background-color: #222;
+            color: white;
+            border-radius: 4px;
+        }
+        
+        .search-box {
+            flex: 1;
+            max-width: 300px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #333;
+            background-color: #222;
+            color: white;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .movies-grid {
+            padding: 60px 0;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img width="130" src="assets/logo.svg" alt="Netflix Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shows.html">TV Shows</a></li>
+            <li><a href="movies.html" class="active">Movies</a></li>
+            <li><a href="new-popular.html">New & Popular</a></li>
+            <li><a href="my-list.html">My List</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <button class="btn">English</button>
+            <a href="signin.html" class="btn btn-red-sm">Sign In</a>
+        </div>
+    </nav>
+
+    <section class="movies-hero">
+        <div class="hero-content">
+            <h1>Movies</h1>
+            <p>Discover thousands of movies from every genre. From action-packed blockbusters to heartfelt dramas, find your next favorite film.</p>
+        </div>
+    </section>
+
+    <section class="filter-section">
+        <div class="filter-controls">
+            <div class="filter-group">
+                <label for="genre">Genre:</label>
+                <select id="genre">
+                    <option value="all">All Genres</option>
+                    <option value="action">Action</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="drama">Drama</option>
+                    <option value="horror">Horror</option>
+                    <option value="romance">Romance</option>
+                    <option value="thriller">Thriller</option>
+                    <option value="sci-fi">Sci-Fi</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="year">Year:</label>
+                <select id="year">
+                    <option value="all">All Years</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="rating">Rating:</label>
+                <select id="rating">
+                    <option value="all">All Ratings</option>
+                    <option value="9+">9.0+ Stars</option>
+                    <option value="8+">8.0+ Stars</option>
+                    <option value="7+">7.0+ Stars</option>
+                    <option value="6+">6.0+ Stars</option>
+                </select>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search movies...">
+            </div>
+        </div>
+    </section>
+
+    <section class="movies-grid">
+        <div class="container">
+            <div id="movies-content" class="content-grid active">
+                <div class="loading">Loading movies...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <div id="backToTopBtn" onclick="scrollToTop()" title="Back to top" aria-label="Back to top">
+        <svg class="up-arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="11" stroke="#111" stroke-width="2" fill="white"/>
+            <path d="M8 14l4-4 4 4" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+
+    <footer>
+        <div class="questions">
+            Questions? Call 000-800-919-1694
+        </div>
+        <div class="footer">
+            <div class="footer-item"> 
+                <a href="#faq">Investor Relations</a>
+                <a href="#faq">Jobs</a>
+                <a href="#faq">Ways to Watch</a>
+                <a href="#faq">Terms of Use</a>
+            </div>
+            <div class="footer-item"> 
+                <a href="#faq">Help Centre</a>
+                <a href="#faq">Account</a>
+                <a href="#faq">Speed Test</a>
+                <a href="#faq">Legal Notices</a>
+            </div>
+            <div class="footer-item">
+                <a href="#faq">Media Centre</a>
+                <a href="#faq">Privacy</a>
+                <a href="#faq">Cookie Preferences</a> 
+                <a href="#faq">Corporate</a>
+            </div>
+            <div class="footer-item">
+                <a href="#faq">Contact Us</a>
+                <a href="#faq">Speed Test</a> 
+                <a href="#faq">Legal Notices</a> 
+                <a href="#faq">Only on Netflix</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Movies page specific functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            loadMoviesPage();
+            setupFilters();
+        });
+
+        async function loadMoviesPage() {
+            const apiKey = '8265bd1679663a7ea12ac168da84d2e8';
+            const baseURL = 'https://api.themoviedb.org/3';
+            
+            try {
+                const response = await fetch(`${baseURL}/discover/movie?api_key=${apiKey}&sort_by=popularity.desc&page=1`);
+                const data = await response.json();
+                
+                if (data.results) {
+                    renderMovies(data.results);
+                }
+            } catch (error) {
+                console.error('Error loading movies:', error);
+                document.getElementById('movies-content').innerHTML = 
+                    '<div class="loading">Unable to load movies. Please try again later.</div>';
+            }
+        }
+
+        function renderMovies(movies) {
+            const container = document.getElementById('movies-content');
+            const topRatedContent = new TopRatedContent();
+            topRatedContent.renderContent(movies, 'movies-content');
+        }
+
+        function setupFilters() {
+            const genreFilter = document.getElementById('genre');
+            const yearFilter = document.getElementById('year');
+            const ratingFilter = document.getElementById('rating');
+            const searchInput = document.getElementById('searchInput');
+
+            [genreFilter, yearFilter, ratingFilter].forEach(filter => {
+                filter.addEventListener('change', applyFilters);
+            });
+
+            searchInput.addEventListener('input', debounce(applyFilters, 300));
+        }
+
+        function applyFilters() {
+            // Filter functionality would be implemented here
+            console.log('Applying filters...');
+        }
+
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+    </script>
+</body>
+</html>

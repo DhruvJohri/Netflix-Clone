@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New & Popular - Netflix Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .new-popular-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1489599458529-cf5b6c1de8e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .trending-section {
+            padding: 80px 0;
+            background-color: #000;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .trending-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .trending-tab {
+            padding: 12px 30px;
+            background-color: transparent;
+            border: 2px solid #333;
+            color: #ccc;
+            cursor: pointer;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .trending-tab.active,
+        .trending-tab:hover {
+            background-color: #e50914;
+            border-color: #e50914;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .coming-soon-section {
+            padding: 80px 0;
+            background-color: #111;
+        }
+        
+        .coming-soon-item {
+            background-color: #222;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .coming-soon-item:hover {
+            background-color: #333;
+            transform: translateX(10px);
+        }
+        
+        .coming-soon-date {
+            font-size: 1.5rem;
+            color: #e50914;
+            font-weight: 700;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .coming-soon-info h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        
+        .coming-soon-info p {
+            color: #ccc;
+            line-height: 1.5;
+        }
+        
+        .coming-soon-type {
+            background-color: #e50914;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img width="130" src="assets/logo.svg" alt="Netflix Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shows.html">TV Shows</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="new-popular.html" class="active">New & Popular</a></li>
+            <li><a href="my-list.html">My List</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <button class="btn">English</button>
+            <a href="signin.html" class="btn btn-red-sm">Sign In</a>
+        </div>
+    </nav>
+
+    <section class="new-popular-hero">
+        <div class="hero-content">
+            <h1>New & Popular</h1>
+            <p>Stay up to date with the latest releases and trending content. Discover what everyone's watching right now.</p>
+        </div>
+    </section>
+
+    <section class="trending-section">
+        <div class="container">
+            <h2 class="section-title">Trending Now</h2>
+            <div class="trending-tabs">
+                <button class="trending-tab active" data-period="day">Today</button>
+                <button class="trending-tab" data-period="week">This Week</button>
+                <button class="trending-tab" data-period="all">All Time</button>
+            </div>
+            
+            <div id="trending-content" class="content-grid active">
+                <div class="loading">Loading trending content...</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="coming-soon-section">
+        <div class="container">
+            <h2 class="section-title">Coming Soon</h2>
+            <div id="coming-soon-content">
+                <div class="coming-soon-item">
+                    <div class="coming-soon-date">DEC<br>15</div>
+                    <div class="coming-soon-info">
+                        <span class="coming-soon-type">MOVIE</span>
+                        <h3>Upcoming Blockbuster</h3>
+                        <p>An epic adventure that will redefine cinema. Get ready for the most anticipated movie of the year with stunning visuals and an incredible storyline.</p>
+                    </div>
+                </div>
+                
+                <div class="coming-soon-item">
+                    <div class="coming-soon-date">JAN<br>08</div>
+                    <div class="coming-soon-info">
+                        <span class="coming-soon-type">SERIES</span>
+                        <h3>New Drama Series</h3>
+                        <p>A gripping drama series that follows the lives of interconnected characters in a bustling metropolis. Don't miss the premiere of this critically acclaimed show.</p>
+                    </div>
+                </div>
+                
+                <div class="coming-soon-item">
+                    <div class="coming-soon-date">JAN<br>22</div>
+                    <div class="coming-soon-info">
+                        <span class="coming-soon-type">MOVIE</span>
+                        <h3>Comedy Sensation</h3>
+                        <p>Laugh until your sides hurt with this hilarious comedy featuring an all-star cast. The perfect movie for a fun night in with friends and family.</p>
+                    </div>
+                </div>
+                
+                <div class="coming-soon-item">
+                    <div class="coming-soon-date">FEB<br>05</div>
+                    <div class="coming-soon-info">
+                        <span class="coming-soon-type">SERIES</span>
+                        <h3>Sci-Fi Thriller</h3>
+                        <p>Enter a world where technology meets humanity in this mind-bending sci-fi thriller. Prepare for a journey that will challenge everything you think you know.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <div id="backToTopBtn" onclick="scrollToTop()" title="Back to top" aria-label="Back to top">
+        <svg class="up-arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="11" stroke="#111" stroke-width="2" fill="white"/>
+            <path d="M8 14l4-4 4 4" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+
+    <footer>
+        <div class="questions">
+            Questions? Call 000-800-919-1694
+        </div>
+        <div class="footer">
+            <div class="footer-item"> 
+                <a href="#faq">Investor Relations</a>
+                <a href="#faq">Jobs</a>
+                <a href="#faq">Ways to Watch</a>
+                <a href="#faq">Terms of Use</a>
+            </div>
+            <div class="footer-item"> 
+                <a href="#faq">Help Centre</a>
+                <a href="#faq">Account</a>
+                <a href="#faq">Speed Test</a>
+                <a href="#faq">Legal Notices</a>
+            </div>
+            <div class="footer-item">
+                <a href="#faq">Media Centre</a>
+                <a href="#faq">Privacy</a>
+                <a href="#faq">Cookie Preferences</a> 
+                <a href="#faq">Corporate</a>
+            </div>
+            <div class="footer-item">
+                <a href="#faq">Contact Us</a>
+                <a href="#faq">Speed Test</a> 
+                <a href="#faq">Legal Notices</a> 
+                <a href="#faq">Only on Netflix</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // New & Popular page specific functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            loadTrendingContent('day');
+            setupTrendingTabs();
+        });
+
+        function setupTrendingTabs() {
+            const trendingTabs = document.querySelectorAll('.trending-tab');
+            
+            trendingTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    trendingTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+                    
+                    // Load content for selected period
+                    const period = tab.getAttribute('data-period');
+                    loadTrendingContent(period);
+                });
+            });
+        }
+
+        async function loadTrendingContent(period) {
+            const apiKey = '8265bd1679663a7ea12ac168da84d2e8';
+            const baseURL = 'https://api.themoviedb.org/3';
+            
+            // Show loading
+            document.getElementById('trending-content').innerHTML = '<div class="loading">Loading trending content...</div>';
+            
+            let endpoint;
+            switch(period) {
+                case 'day':
+                    endpoint = `${baseURL}/trending/all/day?api_key=${apiKey}`;
+                    break;
+                case 'week':
+                    endpoint = `${baseURL}/trending/all/week?api_key=${apiKey}`;
+                    break;
+                case 'all':
+                    endpoint = `${baseURL}/movie/popular?api_key=${apiKey}`;
+                    break;
+                default:
+                    endpoint = `${baseURL}/trending/all/day?api_key=${apiKey}`;
+            }
+            
+            try {
+                const response = await fetch(endpoint);
+                const data = await response.json();
+                
+                if (data.results) {
+                    renderTrendingContent(data.results);
+                }
+            } catch (error) {
+                console.error('Error loading trending content:', error);
+                document.getElementById('trending-content').innerHTML = 
+                    '<div class="loading">Unable to load trending content. Please try again later.</div>';
+            }
+        }
+
+        function renderTrendingContent(content) {
+            const container = document.getElementById('trending-content');
+            const topRatedContent = new TopRatedContent();
+            topRatedContent.renderContent(content, 'trending-content');
+        }
+    </script>
+</body>
+</html>
