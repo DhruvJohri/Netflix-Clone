@@ -111,6 +111,33 @@ document.addEventListener("DOMContentLoaded", function() {
       valid = false;
     }
 
+    //No uppercase character
+    if(!/[A-Z]/.test(pwInput.value)) {
+      showError("passwordHelp", "Password must contain an uppercase letter.");
+      valid = false;
+    }
+
+    // no number in the password
+    if(!/[0-9]/.test(pwInput.value)) {
+      showError("passwordHelp", "Password must contain a number.");
+      valid = false;
+    }
+
+    if(!/[^A-Za-z0-9]/.test(pwInput.value)) {
+      showError("passwordHelp", "Password must contain a special character.");
+      valid = false;
+    }
+
+    // // --- NEW: Password Complexity Validation ---
+    // const hasUppercase = /[A-Z]/.test(pwInput.value);
+    // const hasNumber = /[0-9]/.test(pwInput.value);
+    // const hasSpecialChar = /[^A-Za-z0-9]/.test(pwInput.value);
+
+    // if (!hasUppercase || !hasNumber || !hasSpecialChar) {
+    //   showError("passwordHelp", "Password needs an uppercase, a number, and a special character.");
+    //   valid = false;
+    // }
+
     // Password match validation
     if(pwInput.value !== confirmPassword.value) {
       showError("confirmHelp", "Passwords do not match.");
