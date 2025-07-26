@@ -26,8 +26,8 @@
               <li style="--i: 5"><a href="#">My List</a></li>
           </ul>
           <div class="nav-buttons">
-              <button class="btn">🌐 English</button>
-              <a href="signin.html" class="btn btn-red-sm">Sign In</a>
+              <button class="btn" aria-label="language change">🌐 English</button>
+              <a href="signin.html" class="btn btn-red-sm" aria-label="Sign In">Sign In</a>
           </div>
       </nav>
 
@@ -38,8 +38,8 @@
           <span>Starts at ₹149. Cancel at any time.</span>
           <span>Ready to watch? Enter your email to create or restart your membership.</span>
           <div class="hero-buttons">
-              <input type="email" name="email" id="heroEmail" placeholder="Email address" required>
-              <button type="button" class="btn btn-red" onclick="handleFormSubmit()">Get Started &gt;</button>
+              <input type="email" name="email" aria-label="Enter Email" id="heroEmail" placeholder="Email address" required>
+              <button type="button" aria-label="Submit email" class="btn btn-red" onclick="handleFormSubmit()">Get Started &gt;</button>
           </div>
       </div>
 
@@ -145,8 +145,8 @@
       <div class="faq-cta">
           <p>Ready to watch? Enter your email to create or restart your membership.</p>
           <div class="hero-buttons">
-              <input type="email" placeholder="Email address" required>
-              <button type="button" class="btn btn-red" onclick="handleFormSubmit()">Get Started &gt;</button>
+              <input type="email" aria-label="Enter Email" placeholder="Email address" required>
+              <button type="button" aria-label="Submit email" class="btn btn-red" onclick="handleFormSubmit()">Get Started &gt;</button>
           </div>
       </div>
   </section>
