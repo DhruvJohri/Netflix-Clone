@@ -159,22 +159,22 @@
   <body>
     <div class="container">
       <h2>Create Your Account</h2>
-      <form id="registerForm">
+      <form id="registerForm" aria-label="Sign-up form">
         <div class="input-group">
           <label for="username">Username</label>
-          <input type="text" id="username" name="username" required />
+          <input type="text" aria-label="Username" id="username" name="username" required />
           <div class="help-text" id="usernameHelp"></div>
         </div>
 
         <div class="input-group">
           <label for="email">Email address</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" aria-label="Email address" id="email" name="email" required />
           <div class="help-text" id="emailHelp"></div>
         </div>
 
         <div class="input-group" style="position: relative">
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" required />
+          <input type="password" aria-label="Password" id="password" name="password" required />
           <span class="toggle-password" id="pwToggle">👁️</span>
           <div id="strengthBar"><div id="pwStrength"></div></div>
           <div class="help-text" id="passwordHelp"></div>
@@ -182,7 +182,7 @@
 
         <div class="input-group">
           <label for="confirmPassword">Confirm Password</label>
-          <input
+          <input aria-label="Confirm password"
             type="password"
             id="confirmPassword"
             name="confirmPassword"
@@ -191,12 +191,12 @@
           <div class="help-text" id="confirmHelp"></div>
         </div>
 
-        <button type="submit" class="submit-btn" id="submitBtn">
+        <button type="submit" aria-label="submit button" class="submit-btn" id="submitBtn">
           Register
         </button>
       </form>
 
-      <div class="bottom-text">
+      <div class="bottom-text" aria-label="Sign-in">
           Already have an account? <a href="signin.html">Sign In</a>
       </div>
 
@@ -205,3 +205,4 @@
     <script src="register.js"></script>
   </body>
 </html>
+
