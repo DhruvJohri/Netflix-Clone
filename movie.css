@@ -1,0 +1,150 @@
+/* movie.css */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #111;
+}
+
+.navbar .logo h1 {
+  color: #e50914;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #e50914;
+}
+
+.nav-buttons .btn {
+  background-color: #e50914;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.movie-banner {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+}
+
+.movie-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+.banner-content {
+  position: absolute;
+  bottom: 3rem;
+  left: 4rem;
+}
+
+.banner-content h2 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.banner-buttons .btn {
+  margin-right: 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid white;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.movie-details {
+  padding: 2rem 4rem;
+}
+
+.movie-details .meta {
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.movie-details .description {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.trailer {
+  padding: 2rem 4rem;
+}
+
+.trailer-video iframe {
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  border-radius: 10px;
+}
+
+.screenshots {
+  padding: 2rem 4rem;
+}
+
+.screenshot-grid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.screenshot-grid img {
+  width: 300px;
+  border-radius: 4px;
+}
+
+.similar {
+  padding: 2rem 4rem;
+}
+
+.movie-slider {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.movie-card img {
+  width: 200px;
+  border-radius: 4px;
+}
+
+footer {
+  background-color: #111;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  border-top: 1px solid #333;
+}
