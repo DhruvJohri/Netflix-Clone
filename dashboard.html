@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix Dashboard</title>
+    <title>StreamFlix Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,10 +13,10 @@
 <body>
     <!-- Side Navigation - Expandable on hover -->
     <nav class="side-nav">
-        <!-- Netflix Logo -->
-        <div class="netflix-logo-container">
-            <div class="netflix-logo-icon">N</div>
-            <div class="netflix-logo-text">NETFLIX</div>
+        <!-- StreamFlix Logo -->
+        <div class="StreamFlix-logo-container">
+            <div class="StreamFlix-logo-icon">N</div>
+            <div class="StreamFlix-logo-text">StreamFlix</div>
         </div>
         
         <!-- Navigation Menu -->
@@ -64,7 +64,7 @@
             <div class="hero-content" id="hero-content">
                 <div class="hero-badge" id="hero-badge">
                     <i class="fas fa-crown"></i>
-                    <span id="content-type">Netflix Original</span>
+                    <span id="content-type">StreamFlix Original</span>
                 </div>
                 <h1 class="hero-title" id="hero-title">Stranger Things</h1>
                 <div class="hero-meta" id="hero-meta">
@@ -256,52 +256,52 @@
                 </div>
             </div>
 
-            <!-- Netflix Originals Section -->
+            <!-- StreamFlix Originals Section -->
             <div class="content-row">
                 <h2 class="section-title">
                     <i class="fas fa-crown section-icon"></i>
-                    Netflix Originals
+                    StreamFlix Originals
                 </h2>
                 <div class="content-carousel">
                     <div class="content-item" data-content-id="19" data-content-type="tv">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 1" class="content-poster">
+                        <img src="/placeholder.svg?height=240&width=160" alt="StreamFlix Original 1" class="content-poster">
                         <div class="content-overlay">
-                            <h3>Netflix Original 1</h3>
+                            <h3>StreamFlix Original 1</h3>
                             <div class="content-rating">★ 9.1</div>
                         </div>
                     </div>
                     <div class="content-item" data-content-id="20" data-content-type="movie">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 2" class="content-poster">
+                        <img src="/placeholder.svg?height=240&width=160" alt="StreamFlix Original 2" class="content-poster">
                         <div class="content-overlay">
-                            <h3>Netflix Original 2</h3>
+                            <h3>StreamFlix Original 2</h3>
                             <div class="content-rating">★ 8.8</div>
                         </div>
                     </div>
                     <div class="content-item" data-content-id="21" data-content-type="tv">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 3" class="content-poster">
+                        <img src="/placeholder.svg?height=240&width=160" alt="StreamFlix Original 3" class="content-poster">
                         <div class="content-overlay">
-                            <h3>Netflix Original 3</h3>
+                            <h3>StreamFlix Original 3</h3>
                             <div class="content-rating">★ 8.4</div>
                         </div>
                     </div>
                     <div class="content-item" data-content-id="22" data-content-type="movie">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 4" class="content-poster">
+                        <img src="/placeholder.svg?height=240&width=160" alt="StreamFlix Original 4" class="content-poster">
                         <div class="content-overlay">
-                            <h3>Netflix Original 4</h3>
+                            <h3>StreamFlix Original 4</h3>
                             <div class="content-rating">★ 9.0</div>
                         </div>
                     </div>
                     <div class="content-item" data-content-id="23" data-content-type="tv">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 5" class="content-poster">
+                        <img src="/placeholder.svg?height=240&width=160" alt="StreamFlix Original 5" class="content-poster">
                         <div class="content-overlay">
-                            <h3>Netflix Original 5</h3>
+                            <h3>StreamFlix Original 5</h3>
                             <div class="content-rating">★ 8.9</div>
                         </div>
                     </div>
                     <div class="content-item" data-content-id="24" data-content-type="movie">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 6" class="content-poster">
+                        <img src="/placeholder.svg?height=240&width=160" alt="StreamFlix Original 6" class="content-poster">
                         <div class="content-overlay">
-                            <h3>Netflix Original 6</h3>
+                            <h3>StreamFlix Original 6</h3>
                             <div class="content-rating">★ 8.6</div>
                         </div>
                     </div>
@@ -315,7 +315,7 @@
         <div class="search-container" style="padding: 40px 0;">
             <div class="search-input-container" style="display: flex; gap: 12px; margin-bottom: 40px; max-width: 600px;">
                 <input type="text" id="search-input" placeholder="Search for movies, TV shows..." 
-                       style="flex: 1; padding: 12px 16px; border: 1px solid var(--netflix-medium-gray); border-radius: var(--border-radius); background: var(--netflix-dark-gray); color: var(--netflix-white); font-family: 'Poppins', sans-serif;">
+                       style="flex: 1; padding: 12px 16px; border: 1px solid var(--StreamFlix-medium-gray); border-radius: var(--border-radius); background: var(--StreamFlix-dark-gray); color: var(--StreamFlix-white); font-family: 'Poppins', sans-serif;">
                 <button id="search-btn" class="btn btn-info" style="min-width: auto; padding: 12px 20px;">
                     <i class="fas fa-search"></i>
                 </button>
@@ -328,17 +328,17 @@
 
     <!-- Loading State Template (Hidden by default) -->
     <div class="loading-template" style="display: none;">
-        <div class="loading-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px; gap: 16px; color: var(--netflix-light-gray);">
-            <div class="loading-spinner" style="width: 40px; height: 40px; border: 3px solid rgba(229, 9, 20, 0.3); border-top: 3px solid var(--netflix-red); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+        <div class="loading-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px; gap: 16px; color: var(--StreamFlix-light-gray);">
+            <div class="loading-spinner" style="width: 40px; height: 40px; border: 3px solid rgba(229, 9, 20, 0.3); border-top: 3px solid var(--StreamFlix-red); border-radius: 50%; animation: spin 1s linear infinite;"></div>
             <p>Loading content...</p>
         </div>
     </div>
 
     <!-- Error State Template (Hidden by default) -->
     <div class="error-template" style="display: none;">
-        <div class="error-container" style="text-align: center; padding: 60px 20px; color: var(--netflix-light-gray);">
-            <i class="fas fa-exclamation-triangle" style="font-size: 48px; color: var(--netflix-red); margin-bottom: 20px;"></i>
-            <h2 style="margin-bottom: 16px; color: var(--netflix-white);">Error Loading Content</h2>
+        <div class="error-container" style="text-align: center; padding: 60px 20px; color: var(--StreamFlix-light-gray);">
+            <i class="fas fa-exclamation-triangle" style="font-size: 48px; color: var(--StreamFlix-red); margin-bottom: 20px;"></i>
+            <h2 style="margin-bottom: 16px; color: var(--StreamFlix-white);">Error Loading Content</h2>
             <p style="margin-bottom: 20px;">There was an error loading content. Please try again.</p>
             <button class="btn btn-info" style="margin-top: 16px;">
                 Retry
@@ -348,9 +348,9 @@
 
     <!-- Empty My List Template (Hidden by default) -->
     <div class="empty-list-template" style="display: none;">
-        <div class="empty-state" style="text-align: center; padding: 60px 20px; color: var(--netflix-light-gray);">
-            <i class="fas fa-bookmark" style="font-size: 48px; color: var(--netflix-red); margin-bottom: 20px;"></i>
-            <h2 style="margin-bottom: 16px; color: var(--netflix-white);">Your List is Empty</h2>
+        <div class="empty-state" style="text-align: center; padding: 60px 20px; color: var(--StreamFlix-light-gray);">
+            <i class="fas fa-bookmark" style="font-size: 48px; color: var(--StreamFlix-red); margin-bottom: 20px;"></i>
+            <h2 style="margin-bottom: 16px; color: var(--StreamFlix-white);">Your List is Empty</h2>
             <p>Add movies and TV shows to your list to watch them later.</p>
         </div>
     </div>

@@ -126,18 +126,18 @@ class ProfileSelection {
 
     const modalContent = modal.querySelector(".modal-content")
     modalContent.style.cssText = `
-            background: var(--netflix-dark-gray);
+            background: var(--StreamFlix-dark-gray);
             padding: 40px;
             border-radius: var(--border-radius);
             text-align: center;
-            color: var(--netflix-white);
+            color: var(--StreamFlix-white);
             font-family: "Poppins", sans-serif;
         `
 
     const closeBtn = modal.querySelector(".close-modal-btn")
     closeBtn.style.cssText = `
-            background: var(--netflix-red);
-            color: var(--netflix-white);
+            background: var(--StreamFlix-red);
+            color: var(--StreamFlix-white);
             border: none;
             padding: 10px 20px;
             border-radius: var(--border-radius);

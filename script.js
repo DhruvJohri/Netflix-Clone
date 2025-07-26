@@ -107,4 +107,4 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
-console.log("🍿 Welcome to Netflix Clone! Made with ❤️ ")
+console.log("🍿 Welcome to StreamFlix Clone! Made with ❤️ ")

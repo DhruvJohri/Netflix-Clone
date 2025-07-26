@@ -1,12 +1,12 @@
 /* Profile Selection Page - Professional Styles */
 :root {
-  --netflix-red: #e50914;
-  --netflix-dark-red: #b20710;
-  --netflix-black: #000000;
-  --netflix-dark-gray: #141414;
-  --netflix-medium-gray: #2f2f2f;
-  --netflix-light-gray: #b3b3b3;
-  --netflix-white: #ffffff;
+  --StreamFlix-red: #e50914;
+  --StreamFlix-dark-red: #b20710;
+  --StreamFlix-black: #000000;
+  --StreamFlix-dark-gray: #141414;
+  --StreamFlix-medium-gray: #2f2f2f;
+  --StreamFlix-light-gray: #b3b3b3;
+  --StreamFlix-white: #ffffff;
   --transition-speed: 0.3s;
   --border-radius: 8px;
 }
@@ -18,8 +18,8 @@
 }
 
 body {
-  background-color: var(--netflix-dark-gray);
-  color: var(--netflix-white);
+  background-color: var(--StreamFlix-dark-gray);
+  color: var(--StreamFlix-white);
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   line-height: 1.6;
@@ -39,7 +39,7 @@ body {
   position: relative;
 }
 
-/* Netflix Logo */
+/* StreamFlix Logo */
 .profile-logo {
   position: absolute;
   top: 30px;
@@ -47,7 +47,7 @@ body {
   z-index: 10;
 }
 
-.netflix-logo {
+.StreamFlix-logo {
   height: 40px;
   width: auto;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
@@ -75,7 +75,7 @@ body {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 400;
   margin-bottom: 60px;
-  color: var(--netflix-white);
+  color: var(--StreamFlix-white);
   font-family: "Poppins", sans-serif;
   letter-spacing: -1px;
 }
@@ -108,7 +108,7 @@ body {
 }
 
 .profile-card:hover:not(.selecting) .profile-name {
-  color: var(--netflix-white);
+  color: var(--StreamFlix-white);
 }
 
 /* Profile Avatar */
@@ -127,7 +127,7 @@ body {
 }
 
 .profile-card:hover:not(.selecting) .profile-avatar {
-  border-color: var(--netflix-white);
+  border-color: var(--StreamFlix-white);
   box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
 }
 
@@ -152,7 +152,7 @@ body {
 .eye {
   width: 8px;
   height: 8px;
-  background-color: var(--netflix-white);
+  background-color: var(--StreamFlix-white);
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
@@ -160,7 +160,7 @@ body {
 .smile {
   width: 30px;
   height: 15px;
-  border: 3px solid var(--netflix-white);
+  border: 3px solid var(--StreamFlix-white);
   border-top: none;
   border-radius: 0 0 30px 30px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
@@ -205,7 +205,7 @@ body {
 /* Profile Name */
 .profile-name {
   font-size: 1.3rem;
-  color: var(--netflix-light-gray);
+  color: var(--StreamFlix-light-gray);
   font-weight: 400;
   transition: all var(--transition-speed) ease;
   font-family: "Poppins", sans-serif;
@@ -224,7 +224,7 @@ body {
   width: 40px;
   height: 40px;
   border: 3px solid rgba(255, 255, 255, 0.3);
-  border-top: 3px solid var(--netflix-white);
+  border-top: 3px solid var(--StreamFlix-white);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -241,7 +241,7 @@ body {
 .loading-text {
   display: none;
   font-family: "Poppins", sans-serif;
-  color: var(--netflix-white);
+  color: var(--StreamFlix-white);
   font-size: 1.1rem;
   font-weight: 500;
   position: absolute;
@@ -269,7 +269,7 @@ body {
 }
 
 .profile-card.selecting .profile-avatar {
-  border-color: var(--netflix-red);
+  border-color: var(--StreamFlix-red);
   box-shadow: 0 0 30px rgba(229, 9, 20, 0.6);
   transform: scale(1.05);
 }
@@ -281,8 +281,8 @@ body {
 /* Manage Profiles Button */
 .manage-profiles-btn {
   background: transparent;
-  border: 1px solid var(--netflix-light-gray);
-  color: var(--netflix-light-gray);
+  border: 1px solid var(--StreamFlix-light-gray);
+  color: var(--StreamFlix-light-gray);
   padding: 12px 30px;
   font-size: 1.1rem;
   cursor: pointer;
@@ -299,8 +299,8 @@ body {
 }
 
 .manage-profiles-btn:hover {
-  color: var(--netflix-white);
-  border-color: var(--netflix-white);
+  color: var(--StreamFlix-white);
+  border-color: var(--StreamFlix-white);
   background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
@@ -333,7 +333,7 @@ body {
     top: 20px;
   }
 
-  .netflix-logo {
+  .StreamFlix-logo {
     height: 32px;
   }
 

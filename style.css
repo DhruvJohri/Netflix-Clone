@@ -84,11 +84,11 @@ html {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.netflix-logo {
+.StreamFlix-logo {
   height: 28px;
   animation: slideDown 0.8s ease;
 }
-.netflix-logo:hover {
+.StreamFlix-logo:hover {
   transform: scale(1.1) rotate(1deg);
   filter: brightness(1.2);
 }
@@ -677,7 +677,7 @@ footer::before {
     padding: 10px 20px;
     height: 60px;
   }
-  .netflix-logo {
+  .StreamFlix-logo {
     height: 24px;
   }
   .nav-links {

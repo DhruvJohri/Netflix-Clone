@@ -1,12 +1,12 @@
-/* Netflix Dashboard - Frontend Only CSS */
+/* StreamFlix Dashboard - Frontend Only CSS */
 :root {
-    --netflix-red: #e50914;
-    --netflix-dark-red: #b20710;
-    --netflix-black: #000000;
-    --netflix-dark-gray: #141414;
-    --netflix-medium-gray: #2f2f2f;
-    --netflix-light-gray: #b3b3b3;
-    --netflix-white: #ffffff;
+    --StreamFlix-red: #e50914;
+    --StreamFlix-dark-red: #b20710;
+    --StreamFlix-black: #000000;
+    --StreamFlix-dark-gray: #141414;
+    --StreamFlix-medium-gray: #2f2f2f;
+    --StreamFlix-light-gray: #b3b3b3;
+    --StreamFlix-white: #ffffff;
     --sidebar-width: 60px;
     --sidebar-expanded-width: 240px;
     --transition-speed: 0.3s;
@@ -21,8 +21,8 @@
 }
 
 body {
-    background-color: var(--netflix-black);
-    color: var(--netflix-white);
+    background-color: var(--StreamFlix-black);
+    color: var(--StreamFlix-white);
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     line-height: 1.6;
@@ -52,8 +52,8 @@ body {
     width: var(--sidebar-expanded-width);
 }
 
-/* Netflix Logo - Original N with expandable text */
-.netflix-logo-container {
+/* StreamFlix Logo - Original N with expandable text */
+.StreamFlix-logo-container {
     margin-bottom: 40px;
     padding: 0 20px;
     width: 100%;
@@ -64,8 +64,8 @@ body {
     position: relative;
 }
 
-.netflix-logo-icon {
-    color: var(--netflix-red);
+.StreamFlix-logo-icon {
+    color: var(--StreamFlix-red);
     font-size: 28px;
     font-weight: 900;
     font-family: "Poppins", sans-serif;
@@ -74,8 +74,8 @@ body {
     transition: all var(--transition-speed) ease;
 }
 
-.netflix-logo-text {
-    color: var(--netflix-red);
+.StreamFlix-logo-text {
+    color: var(--StreamFlix-red);
     font-size: 24px;
     font-weight: 900;
     font-family: "Poppins", sans-serif;
@@ -88,7 +88,7 @@ body {
     white-space: nowrap;
 }
 
-.side-nav:hover .netflix-logo-text {
+.side-nav:hover .StreamFlix-logo-text {
     opacity: 1;
     transform: translateX(0);
 }
@@ -109,7 +109,7 @@ body {
 }
 
 .nav-item {
-    color: var(--netflix-light-gray);
+    color: var(--StreamFlix-light-gray);
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -128,7 +128,7 @@ body {
     font-size: 18px;
     min-width: 18px;
     text-align: center;
-    color: var(--netflix-light-gray);
+    color: var(--StreamFlix-light-gray);
     transition: all var(--transition-speed) ease;
 }
 
@@ -149,12 +149,12 @@ body {
 .nav-item:hover,
 .nav-item.active {
     background: rgba(255, 255, 255, 0.1);
-    color: var(--netflix-white);
+    color: var(--StreamFlix-white);
 }
 
 /* Always red icon for active, but no red on hover */
 .nav-item .nav-icon {
-    color: var(--netflix-light-gray);
+    color: var(--StreamFlix-light-gray);
     font-size: 18px;
     min-width: 18px;
     text-align: center;
@@ -166,13 +166,13 @@ body {
 
 /* Icon is red ONLY for active */
 .nav-item.active .nav-icon {
-    color: var(--netflix-red);
+    color: var(--StreamFlix-red);
     transform: scale(1.15);
 }
 
 /* On hover, icon stays its normal color (no red) */
 .nav-item:hover .nav-icon {
-    color: var(--netflix-light-gray);
+    color: var(--StreamFlix-light-gray);
     transform: scale(1.15);
 }
 
@@ -188,7 +188,7 @@ body {
     transform: translateY(-50%);
     width: 4px;
     height: 60%;
-    background: var(--netflix-red);
+    background: var(--StreamFlix-red);
     border-radius: 0 2px 2px 0;
     z-index:1;
 }
@@ -217,7 +217,7 @@ body {
 
 .add-icon {
     font-size: 18px;
-    color: var(--netflix-light-gray);
+    color: var(--StreamFlix-light-gray);
     transition: all var(--transition-speed) ease;
     min-width: 18px;
 }
@@ -230,7 +230,7 @@ body {
     font-weight: 500;
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    color: var(--netflix-light-gray);
+    color: var(--StreamFlix-light-gray);
 }
 
 .side-nav:hover .add-label {
@@ -240,14 +240,14 @@ body {
 
 .add-container:hover .add-icon,
 .add-container:hover .add-label {
-    color: var(--netflix-white);
+    color: var(--StreamFlix-white);
 }
 
 /* Main Content */
 .main-content {
     margin-left: var(--sidebar-width);
     min-height: 100vh;
-    background: var(--netflix-black);
+    background: var(--StreamFlix-black);
     transition: margin-left var(--transition-speed) ease;
 }
 
@@ -286,12 +286,12 @@ body {
     bottom: 0;
     background: linear-gradient(
         90deg,
-        var(--netflix-black) 0%,
+        var(--StreamFlix-black) 0%,
         rgba(0, 0, 0, 0.8) 30%,
         rgba(0, 0, 0, 0.4) 60%,
         transparent 100%
     ),
-    linear-gradient(0deg, var(--netflix-black) 0%, transparent 50%);
+    linear-gradient(0deg, var(--StreamFlix-black) 0%, transparent 50%);
     z-index: 2;
 }
 
@@ -318,8 +318,8 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: var(--netflix-red);
-    color: var(--netflix-white);
+    background: var(--StreamFlix-red);
+    color: var(--StreamFlix-white);
     padding: 6px 12px;
     border-radius: 16px;
     font-size: 11px;
@@ -339,7 +339,7 @@ body {
     margin-bottom: 12px;
     line-height: 1.1;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-    color: var(--netflix-white);
+    color: var(--StreamFlix-white);
     letter-spacing: -1px;
 }
 
@@ -354,7 +354,7 @@ body {
 .hero-year,
 .hero-rating,
 .hero-seasons {
-    color: var(--netflix-light-gray);
+    color: var(--StreamFlix-light-gray);
     font-size: 13px;
     font-weight: 500;
     font-family: "Poppins", sans-serif;
@@ -376,7 +376,7 @@ body {
 
 .genre-tag {
     background: rgba(255, 255, 255, 0.1);
-    color: var(--netflix-white);
+    color: var(--StreamFlix-white);
     padding: 3px 8px;
     border-radius: 10px;
     font-size: 11px;
@@ -421,8 +421,8 @@ body {
 }
 
 .btn-play {
-    background: var(--netflix-white);
-    color: var(--netflix-black);
+    background: var(--StreamFlix-white);
+    color: var(--StreamFlix-black);
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
@@ -434,7 +434,7 @@ body {
 
 .btn-info {
     background: rgba(109, 109, 110, 0.7);
-    color: var(--netflix-white);
+    color: var(--StreamFlix-white);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -446,13 +446,13 @@ body {
 
 .btn-add {
     background: transparent;
-    color: var(--netflix-white);
+    color: var(--StreamFlix-white);
     border: 2px solid rgba(255, 255, 255, 0.7);
 }
 
 .btn-add:hover {
-    background: var(--netflix-white);
-    color: var(--netflix-black);
+    background: var(--StreamFlix-white);
+    color: var(--StreamFlix-black);
     transform: translateY(-2px);
 }
 
@@ -461,7 +461,7 @@ body {
     padding: 40px 60px 60px;
     position: relative;
     z-index: 10;
-    background: var(--netflix-black);
+    background: var(--StreamFlix-black);
 }
 
 .content-row {
@@ -473,14 +473,14 @@ body {
     font-weight: 700;
     font-family: "Poppins", sans-serif;
     margin-bottom: 16px;
-    color: var(--netflix-white);
+    color: var(--StreamFlix-white);
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 .section-icon {
-    color: var(--netflix-red);
+    color: var(--StreamFlix-red);
     font-size: 1.1rem;
 }
 
@@ -490,7 +490,7 @@ body {
     gap: 12px;
     padding-bottom: 12px;
     scrollbar-width: thin;
-    scrollbar-color: var(--netflix-red) transparent;
+    scrollbar-color: var(--StreamFlix-red) transparent;
 }
 
 .content-carousel::-webkit-scrollbar {
@@ -503,12 +503,12 @@ body {
 }
 
 .content-carousel::-webkit-scrollbar-thumb {
-    background: var(--netflix-red);
+    background: var(--StreamFlix-red);
     border-radius: 2px;
 }
 
 .content-carousel::-webkit-scrollbar-thumb:hover {
-    background: var(--netflix-dark-red);
+    background: var(--StreamFlix-dark-red);
 }
 
 /* Content Item */
@@ -520,7 +520,7 @@ body {
     cursor: pointer;
     transition: all var(--transition-speed) ease;
     position: relative;
-    background: var(--netflix-dark-gray);
+    background: var(--StreamFlix-dark-gray);
 }
 
 .content-item:hover {
@@ -554,14 +554,14 @@ body {
     font-size: 12px;
     font-weight: 600;
     font-family: "Poppins", sans-serif;
-    color: var(--netflix-white);
+    color: var(--StreamFlix-white);
     text-align: center;
     margin-bottom: 4px;
 }
 
 .content-rating {
     font-size: 10px;
-    color: var(--netflix-light-gray);
+    color: var(--StreamFlix-light-gray);
     text-align: center;
 }
 
@@ -578,11 +578,11 @@ body {
         --sidebar-expanded-width: 200px;
     }
 
-    .netflix-logo-icon {
+    .StreamFlix-logo-icon {
         font-size: 24px;
     }
 
-    .netflix-logo-text {
+    .StreamFlix-logo-text {
         font-size: 20px;
     }
 

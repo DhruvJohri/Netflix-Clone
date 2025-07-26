@@ -1,13 +1,13 @@
-# 🎬 Netflix Clone
+# 🎬 StreamFlix Clone
 
 <div align="center">
 
-![Netflix Clone Banner](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=35&pause=1000&color=E50914&center=true&vCenter=true&width=1000&lines=Welcome+to+Netflix+Clone!;Built+with+HTML5+%26+CSS3;Open+Source+%7C+GSSoC+2025)
+![StreamFlix Clone Banner](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=35&pause=1000&color=E50914&center=true&vCenter=true&width=1000&lines=Welcome+to+StreamFlix+Clone!;Built+with+HTML5+%26+CSS3;Open+Source+%7C+GSSoC+2025)
 
-[![GitHub Stars](https://img.shields.io/github/stars/dhruvjohri/netflix-clone?style=for-the-badge&logo=github&color=yellow)](https://github.com/dhruvjohri/netflix-clone/stargazers)
-[![GitHub Issues](https://img.shields.io/github/issues/dhruvjohri/netflix-clone?style=for-the-badge&logo=github&color=red)](https://github.com/dhruvjohri/netflix-clone/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/dhruvjohri/netflix-clone?style=for-the-badge&logo=github&color=blue)](https://github.com/dhruvjohri/netflix-clone/pulls)
-[![GitHub Forks](https://img.shields.io/github/forks/dhruvjohri/netflix-clone?style=for-the-badge&logo=github&color=green)](https://github.com/dhruvjohri/netflix-clone/network)
+[![GitHub Stars](https://img.shields.io/github/stars/dhruvjohri/StreamFlix-clone?style=for-the-badge&logo=github&color=yellow)](https://github.com/dhruvjohri/StreamFlix-clone/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/dhruvjohri/StreamFlix-clone?style=for-the-badge&logo=github&color=red)](https://github.com/dhruvjohri/StreamFlix-clone/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/dhruvjohri/StreamFlix-clone?style=for-the-badge&logo=github&color=blue)](https://github.com/dhruvjohri/StreamFlix-clone/pulls)
+[![GitHub Forks](https://img.shields.io/github/forks/dhruvjohri/StreamFlix-clone?style=for-the-badge&logo=github&color=green)](https://github.com/dhruvjohri/StreamFlix-clone/network)
 
 </div>
 
@@ -23,7 +23,7 @@
 ### ⭐ **Star this Repository** ⭐
 *Help us reach more developers by starring this repo!*
 
-[![Star Repository](https://img.shields.io/badge/⭐_Star_this_repo-black?style=for-the-badge&logo=github)](https://github.com/dhruvjohri/netflix-clone)
+[![Star Repository](https://img.shields.io/badge/⭐_Star_this_repo-black?style=for-the-badge&logo=github)](https://github.com/dhruvjohri/StreamFlix-clone)
 
 ### 📣 **Connect with Me**
 
@@ -57,12 +57,12 @@
 
 <div align="center">
 
-🎯 **A pixel-perfect, responsive clone of Netflix India's homepage**
+🎯 **A pixel-perfect, responsive clone of StreamFlix India's homepage**
 
 </div>
 
 This project is a **beginner-friendly frontend challenge** that focuses on:
-- 🎨 **Clean UI/UX Design** - Mimicking Netflix's modern interface
+- 🎨 **Clean UI/UX Design** - Mimicking StreamFlix's modern interface
 - 📱 **Responsive Layout** - Works seamlessly across all devices
 - 🚀 **Performance Optimized** - Fast loading and smooth interactions
 - 🔧 **Educational Purpose** - Perfect for learning HTML5 & CSS3
@@ -77,7 +77,7 @@ Originally created by **[Dhruv Johri](https://github.com/dhruvjohri)** and now e
 
 | Feature | Description | Status |
 |---------|-------------|--------|
-| 🎬 **Hero Section** | Eye-catching banner with Netflix branding | ✅ Complete |
+| 🎬 **Hero Section** | Eye-catching banner with StreamFlix branding | ✅ Complete |
 | 📱 **Responsive Design** | Mobile-first approach with breakpoints | ✅ Complete |
 | 🎭 **Movie Carousel** | Interactive movie/show browsing | 🚧 In Progress |
 | 🔍 **Search Functionality** | Search movies and shows | 📋 Planned |
@@ -93,9 +93,9 @@ Originally created by **[Dhruv Johri](https://github.com/dhruvjohri)** and now e
 <div align="center">
 
 ### 🖥️ **Desktop View**
-<!-- ![Netflix Clone Desktop](https://drive.google.com/file/d/13mgoQ7yz5Ssv09mntvTAOXogKn81K0Cx/view?usp=drive_link) -->
+<!-- ![StreamFlix Clone Desktop](https://drive.google.com/file/d/13mgoQ7yz5Ssv09mntvTAOXogKn81K0Cx/view?usp=drive_link) -->
 
-![Preview](./assets/images/netflix-preview.png)
+![Preview](./assets/images/StreamFlix-preview.png)
 
 ### 📱 **Mobile Responsive** (Coming Soon)
 *Screenshots will be added as mobile responsiveness is enhanced*
@@ -137,10 +137,10 @@ Before you begin, ensure you have:
 
 ```bash
 # 1️⃣ Clone the repository
-git clone https://github.com/dhruvjohri/netflix-clone.git
+git clone https://github.com/dhruvjohri/StreamFlix-clone.git
 
 # 2️⃣ Navigate to project directory
-cd netflix-clone
+cd StreamFlix-clone
 
 # 3️⃣ Open in your preferred code editor
 code .  # For VS Code users
@@ -158,7 +158,7 @@ code .  # For VS Code users
 ## 📁 **Project Structure**
 
 ```
-netflix-clone/
+StreamFlix-clone/
 ├── 📄 index.html              # Main HTML file
 ├── 📁 css/
 │   ├── 🎨 style.css           # Main stylesheet
@@ -207,8 +207,8 @@ netflix-clone/
 
 2. **📥 Clone Your Fork**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/netflix-clone.git
-   cd netflix-clone
+   git clone https://github.com/YOUR_USERNAME/StreamFlix-clone.git
+   cd StreamFlix-clone
    ```
 
 3. **🌿 Create a New Branch**
@@ -273,7 +273,7 @@ netflix-clone/
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=dhruvjohri&repo=netflix-clone&show_icons=true&theme=dark&hide_border=true)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=dhruvjohri&repo=StreamFlix-clone&show_icons=true&theme=dark&hide_border=true)
 
 </div>
 
@@ -297,7 +297,7 @@ We're grateful to all our amazing contributors who have helped make this project
 
 <div align="center">
 
-[![Contributors](https://contrib.rocks/image?repo=dhruvjohri/netflix-clone)](https://github.com/dhruvjohri/netflix-clone/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=dhruvjohri/StreamFlix-clone)](https://github.com/dhruvjohri/StreamFlix-clone/graphs/contributors)
 
 **💡 Want to see your avatar here? [Contribute now!](#-how-to-contribute)**
 
@@ -339,9 +339,9 @@ We're grateful to all our amazing contributors who have helped make this project
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ### ⚖️ **Important Notice**
-- **Netflix®** branding, logos, and visuals are owned by **Netflix, Inc.**
+- **StreamFlix®** branding, logos, and visuals are owned by **StreamFlix, Inc.**
 - This project is for **educational purposes only**
-- Not affiliated with or endorsed by Netflix, Inc.
+- Not affiliated with or endorsed by StreamFlix, Inc.
 - All trademarks belong to their respective owners
 
 ---
@@ -356,7 +356,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 - 🎓 **[GirlScript Summer of Code 2025](https://gssoc.girlscript.tech/)** - For supporting open source
 - 🚀 **[GitHub](https://github.com)** - For hosting our code
-- 🎨 **[Netflix](https://netflix.com)** - For the design inspiration
+- 🎨 **[StreamFlix](https://StreamFlix.com)** - For the design inspiration
 - 👥 **Open Source Community** - For continuous support and contributions
 - 💡 **All Contributors** - For making this project awesome
 
@@ -373,7 +373,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ### 🎉 **Ready to Contribute?**
 
-[![Start Contributing](https://img.shields.io/badge/🚀_Start_Contributing-E50914?style=for-the-badge&logo=github&logoColor=white)](https://github.com/dhruvjohri/netflix-clone/issues)
+[![Start Contributing](https://img.shields.io/badge/🚀_Start_Contributing-E50914?style=for-the-badge&logo=github&logoColor=white)](https://github.com/dhruvjohri/StreamFlix-clone/issues)
 
 ### 💬 **Join Our Community**
 
