@@ -190,7 +190,7 @@ body {
     height: 60%;
     background: var(--netflix-red);
     border-radius: 0 2px 2px 0;
-    z-index:1;
+    z-index: 1;
 }
 
 /* Bottom Navigation */
@@ -243,12 +243,150 @@ body {
     color: var(--netflix-white);
 }
 
+/* Header Section Styles */
+.header-section {
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-width);
+    right: 0;
+    z-index: 1000;
+    background: var(--netflix-black);
+    padding: 20px;
+    transition: left var(--transition-speed) ease;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-section .search-container {
+    max-width: 400px;
+    width: 100%;
+}
+
+.header-section .search-input-container {
+    display: flex;
+    align-items: center;
+    background: var(--netflix-dark-gray);
+    border: 1px solid var(--netflix-medium-gray);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-speed) ease;
+}
+
+.header-section .search-input-container:hover,
+.header-section .search-input-container:focus-within {
+    border-color: var(--netflix-red);
+    box-shadow: 0 0 8px rgba(229, 9, 20, 0.5);
+}
+
+.header-section #search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--netflix-white);
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    padding: 12px 16px;
+    width: 100%;
+}
+
+.header-section #search-input::placeholder {
+    color: var(--netflix-light-gray);
+    opacity: 0.7;
+}
+
+.header-section #search-btn {
+    background: var(--netflix-red);
+    border: none;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background var(--transition-speed) ease;
+}
+
+.header-section #search-btn:hover {
+    background: var(--netflix-dark-red);
+}
+
+.header-section #search-btn i {
+    color: var(--netflix-white);
+    font-size: 16px;
+}
+
+.search-results {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: 20px;
+    max-width: 1200px;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+}
+
+.search-results .no-results {
+    color: var(--netflix-light-gray);
+    font-size: 1rem;
+    text-align: left;
+    width: 100%;
+}
+
+/* Adjust header position when side-nav is expanded */
+.side-nav:hover ~ .main-content .header-section {
+    left: var(--sidebar-expanded-width);
+}
+
+/* Loading Overlay */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: var(--netflix-light-gray);
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(229, 9, 20, 0.3);
+    border-top: 4px solid var(--netflix-red);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+}
+
+.loading-container p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    color: var(--netflix-white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
 /* Main Content */
 .main-content {
     margin-left: var(--sidebar-width);
     min-height: 100vh;
     background: var(--netflix-black);
     transition: margin-left var(--transition-speed) ease;
+    padding-top: 80px; /* Account for fixed header height */
 }
 
 /* Hero Section */
@@ -456,6 +594,32 @@ body {
     transform: translateY(-2px);
 }
 
+/* Error State */
+.error-container {
+    text-align: center;
+    padding: 20px;
+    color: var(--netflix-light-gray);
+    width: 100%;
+}
+
+.error-container i {
+    font-size: 48px;
+    color: var(--netflix-red);
+    margin-bottom: 20px;
+}
+
+.error-container h2 {
+    margin-bottom: 16px;
+    color: var(--netflix-white);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.error-container p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
 /* Content Sections */
 .content-sections {
     padding: 40px 60px 60px;
@@ -565,10 +729,16 @@ body {
     text-align: center;
 }
 
-/* Loading Animation */
+/* Animations */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
 }
 
 /* Responsive Design */
@@ -590,6 +760,32 @@ body {
         font-size: 16px;
     }
 
+    .header-section {
+        left: var(--sidebar-width);
+        padding: 10px;
+    }
+
+    .header-section .search-container {
+        max-width: 100%;
+    }
+
+    .header-section #search-input {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .header-section #search-btn {
+        padding: 10px 12px;
+    }
+
+    .side-nav:hover ~ .main-content .header-section {
+        left: var(--sidebar-expanded-width);
+    }
+
+    .main-content {
+        padding-top: 60px;
+    }
+
     .hero-content {
         padding: 0 30px;
     }
@@ -608,9 +804,50 @@ body {
         min-width: 140px;
         height: 210px;
     }
+
+    .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(229, 9, 20, 0.3);
+        border-top: 3px solid var(--netflix-red);
+    }
+
+    .loading-container p {
+        font-size: 1rem;
+    }
+
+    .error-container i {
+        font-size: 36px;
+    }
+
+    .error-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .error-container p {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
+    .header-section {
+        left: 0;
+        padding: 10px;
+        justify-content: center; /* Center on very small screens */
+    }
+
+    .header-section .search-container {
+        max-width: 100%;
+    }
+
+    .side-nav:hover ~ .main-content .header-section {
+        left: 0;
+    }
+
+    .main-content {
+        padding-top: 50px;
+    }
+
     .hero-content {
         padding: 0 20px;
     }
@@ -622,5 +859,28 @@ body {
     .content-item {
         min-width: 120px;
         height: 180px;
+    }
+
+    .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 2px solid rgba(229, 9, 20, 0.3);
+        border-top: 2px solid var(--netflix-red);
+    }
+
+    .loading-container p {
+        font-size: 0.9rem;
+    }
+
+    .error-container i {
+        font-size: 32px;
+    }
+
+    .error-container h2 {
+        font-size: 1rem;
+    }
+
+    .error-container p {
+        font-size: 0.8rem;
     }
 }
