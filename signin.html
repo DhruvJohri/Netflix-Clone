@@ -54,7 +54,14 @@
         border-radius: 10px;
         box-shadow: 0 0 30px 8px rgba(229, 9, 20, 0.6);
         color: white;
+
+        /* ✅ Flexbox improvements */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
       }
+
 
       .logo {
         text-align: center;
@@ -119,7 +126,15 @@
         border-radius: 5px;
         font-weight: bold;
         cursor: pointer;
-        transition: background 0.3s ease;
+        letter-spacing: 1px;
+        transition: background 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 0 12px rgba(229, 9, 20, 0.3);
+      }
+
+      .submit-btn:hover {
+        background-color: #f6121d;
+        transform: scale(1.02);
+        box-shadow: 0 0 20px rgba(229, 9, 20, 0.6);
       }
 
       .submit-btn:hover {
@@ -145,9 +160,40 @@
 
       @media (max-width: 480px) {
         .container {
-          padding: 30px 20px;
+          padding: 25px 18px;
+          border-radius: 8px;
+          box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
+        }
+
+        .container h2 {
+          font-size: 22px;
+          margin-bottom: 20px;
+        }
+
+        input {
+          padding: 10px;
+          font-size: 14px;
+        }
+
+        .submit-btn {
+          padding: 12px;
+          font-size: 15px;
+        }
+
+        .logo img {
+          width: 130px;
+        }
+
+        label {
+          font-size: 13px;
+        }
+
+        .bottom-text {
+          font-size: 13px;
+          margin-top: 16px;
         }
       }
+
     </style>
   </head>
   <body>
