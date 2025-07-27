@@ -16,7 +16,8 @@
         font-family: "Roboto", sans-serif;
       }
 
-      html, body {
+      html,
+      body {
         height: 100%;
         width: 100%;
       }
@@ -29,11 +30,10 @@
           no-repeat center center fixed;
         background-size: cover;
         position: relative;
-        z-index: 1;
         padding: 20px;
       }
 
-      html::before {
+      body::before {
         content: "";
         position: fixed;
         top: 0;
@@ -46,7 +46,7 @@
 
       .container {
         position: relative;
-        z-index: 2;
+        z-index: 1;
         max-width: 420px;
         width: 100%;
         background-color: rgba(20, 20, 20, 0.95);
@@ -56,7 +56,16 @@
         color: white;
       }
 
-      .container h2 {
+      .logo {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .logo img {
+        width: 160px;
+      }
+
+      h2 {
         text-align: center;
         margin-bottom: 30px;
         font-size: 26px;
@@ -143,8 +152,15 @@
   </head>
   <body>
     <div class="container">
+      <div class="logo">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+          alt="Netflix Logo"
+        />
+      </div>
       <h2>Sign In</h2>
-      <form id="signinForm">
+
+      <form id="signinForm" action="profile-selection.html">
         <div class="input-group">
           <label for="email">Email address</label>
           <input type="email" id="email" name="email" required />
@@ -158,9 +174,7 @@
           <div class="help-text" id="passwordHelp"></div>
         </div>
 
-        <button type="submit" class="submit-btn" id="submitBtn" ahref="profile-selection.html">
-          Sign In
-        </button>
+        <button type="submit" class="submit-btn">Sign In</button>
       </form>
 
       <div class="bottom-text">
