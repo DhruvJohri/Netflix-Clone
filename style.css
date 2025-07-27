@@ -727,3 +727,19 @@ footer::before {
   opacity: 1;
   transform: translateY(0);
 }
+
+#searchBar {
+  width: 300px;
+  padding: 8px 12px;
+  margin: 15px auto;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.search-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
