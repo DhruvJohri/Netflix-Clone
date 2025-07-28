@@ -116,6 +116,46 @@ document.addEventListener("DOMContentLoaded", function() {
       showError("confirmHelp", "Passwords do not match.");
       valid = false;
     }
+     // Must contain a lowercase letter
+    if (!/[a-z]/.test(pwInput.value)) {
+      showError("passwordHelp", "Password must contain a lowercase letter.");
+      valid = false;
+    }
+
+    // Must not be same as username
+    if (pwInput.value.toLowerCase() === username.value.trim().toLowerCase()) {
+      showError("passwordHelp", "Password must not be same as username.");
+      valid = false;
+    }
+
+    // Must not be same as email
+    if (pwInput.value.toLowerCase() === email.value.trim().toLowerCase()) {
+      showError("passwordHelp", "Password must not be same as email.");
+      valid = false;
+    }
+
+    // Must not be only whitespace or repeated characters
+    if (/^(.)\1*$/.test(pwInput.value) || /^\s+$/.test(pwInput.value)) {
+      showError(
+        "passwordHelp",
+        "Password cannot be repeated or whitespace only."
+      );
+      valid = false;
+    }
+    if (!/[A-Z]/.test(pwInput.value)) {
+       showError("passwordHelp", "Password must contain an uppercase letter.");
+        valid = false;
+    }
+    if (!/[0-9]/.test(pwInput.value)) {
+      showError("passwordHelp", "Password must contain a number.");
+      valid = false;
+    }
+     if (!/[^A-Za-z0-9]/.test(pwInput.value)) {
+      showError("passwordHelp", "Password must contain a special character.");
+      valid = false;
+    }
+
+
 
     // If all validations pass
     if(valid) {
