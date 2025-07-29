@@ -1,128 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix - Who's watching?</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="profile-selection.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Netflix - Who's watching?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <style>
+    /* Base styling */
+    html,
+    body {
+      margin: 0; padding: 0;
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background-color: #141414;
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      user-select: none;
+    }
+    .container {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 40px 20px 80px;
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    /* Netflix logo */
+    .logo {
+      margin-bottom: 32px;
+    }
+    .logo svg {
+      width: 140px;
+      height: auto;
+      filter: drop-shadow(0 0 8px rgba(229,9,20,0.7));
+    }
+    h1 {
+      font-weight: 900;
+      font-size: 2.4rem;
+      margin-bottom: 36px;
+      letter-spacing: -1px;
+    }
+    /* Profiles grid */
+    .profiles-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+    /* Profile Card */
+    .profile-card {
+      background: #222222;
+      border-radius: 14px;
+      width: 92px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      outline-offset: 2px;
+    }
+    .profile-card:focus-visible {
+      outline: 3px solid #e50914;
+      outline-offset: 3px;
+    }
+    .profile-card:hover {
+      transform: scale(1.08);
+      box-shadow: 0 5px 20px rgba(229,9,20,0.5);
+      z-index: 2;
+    }
+    .profile-card.selected {
+      box-shadow: 0 0 10px 3px rgba(229,9,20,0.8);
+      transform: scale(1.1);
+      cursor: default;
+    }
+
+    /* Avatar */
+    .avatar {
+      width: 92px;
+      height: 92px;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 8px;
+      background-color: #333;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* Delete button */
+    .delete-btn {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: #e50914;
+      color: #fff;
+      border-radius: 50%;
+      border: none;
+      width: 24px;
+      height: 24px;
+      font-size: 14px;
+      line-height: 1;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+    .profile-card:hover .delete-btn {
+      opacity: 1;
+    }
+    .delete-btn:focus {
+      outline: 2px solid #fff;
+      opacity: 1 !important;
+    }
+    /* Name label */
+    .profile-name {
+      font-weight: 500;
+      font-size: 0.88rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    /* Add New Profile card */
+    .add-profile-card {
+      background: rgba(255,255,255,0.08);
+      color: #bbb;
+      font-size: 4rem;
+      font-weight: 300;
+      border: 2px dashed #555;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .add-profile-card:hover, .add-profile-card:focus {
+      background: #e50914;
+      color: #fff;
+      outline: none;
+    }
+    /* Add label */
+    .add-label {
+      position: absolute;
+      bottom: -22px;
+      font-size: 0.8rem;
+      width: 100%;
+      color: #bbb;
+    }
+    /* Add form */
+    .add-form {
+      width: 100%;
+      padding: 15px 0 0 0;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .add-form input {
+      width: 95%;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      outline: none;
+      background: #333;
+      color: #fff;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    .add-form button {
+      padding: 8px 24px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      background: #e50914;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      margin-left: 6px;
+      transition: background-color 0.3s ease;
+    }
+    .add-form button:hover {
+      background: #b20710;
+    }
+    .add-form .cancel-btn {
+      background: #555;
+    }
+    .add-form .cancel-btn:hover {
+      background: #444;
+    }
+    /* Responsive */
+    @media (max-width: 420px) {
+      .profile-card {
+        width: 70px;
+      }
+      .avatar {
+        width: 70px;
+        height: 70px;
+      }
+      .profile-name {
+        font-size: 0.75rem;
+      }
+      .add-label {
+        font-size: 0.7rem;
+        bottom: -18px;
+      }
+      .add-form input {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="profile-selection-container">
-        <!-- Netflix Logo -->
-        <div class="profile-logo">
-            <svg class="netflix-logo" viewBox="0 0 111 30" xmlns="http://www.w3.org/2000/svg">
-                <path d="M105.06233,14.2806261 L110.999156,30 C109.249227,29.7497422 107.500234,29.4366857 105.718437,29.1554972 L102.374168,20.4686475 L98.9371075,28.4375293 C97.2499766,28.1563408 95.5928391,28.061674 93.9057081,27.8432843 L99.9372012,14.0931671 L94.4680851,-5.68434189e-14 L99.5313525,-5.68434189e-14 L102.593495,7.87421502 L105.874965,-5.68434189e-14 L110.999156,-5.68434189e-14 L105.06233,14.2806261 Z M90.4686475,-5.68434189e-14 L85.8749649,-5.68434189e-14 L85.8749649,27.2499766 C87.3746368,27.3437061 88.9371075,27.4055675 90.4686475,27.5930265 L90.4686475,-5.68434189e-14 Z M81.9055207,26.93692 C77.7186241,26.6557316 73.5307901,26.4064111 69.250164,26.3117443 L69.250164,-5.68434189e-14 L73.9366389,-5.68434189e-14 L73.9366389,21.8745899 C76.6248008,21.9373887 79.3120255,22.1557784 81.9055207,22.2804387 L81.9055207,26.93692 Z M64.2496954,10.6561065 L64.2496954,15.3435186 L57.8442216,15.3435186 L57.8442216,25.9996251 L53.2186709,25.9996251 L53.2186709,-5.68434189e-14 L66.3436123,-5.68434189e-14 L66.3436123,4.68741213 L57.8442216,4.68741213 L57.8442216,10.6561065 L64.2496954,10.6561065 Z M45.3435186,4.68741213 L45.3435186,26.2498828 C43.7810479,26.2498828 42.1876465,26.2498828 40.6561065,26.3117443 L40.6561065,4.68741213 L35.8121661,4.68741213 L35.8121661,-5.68434189e-14 L50.2183897,-5.68434189e-14 L50.2183897,4.68741213 L45.3435186,4.68741213 Z M30.749836,15.5928391 C28.687787,15.5928391 26.2498828,15.5928391 24.4999531,15.6875059 L24.4999531,22.6562939 C27.2499766,22.4678976 30,22.2495079 32.7809542,22.1557784 L32.7809542,26.6557316 L19.812541,27.6876933 L19.812541,-5.68434189e-14 L32.7809542,-5.68434189e-14 L32.7809542,4.68741213 L24.4999531,4.68741213 L24.4999531,10.9991564 C26.3126816,10.9991564 29.0936358,10.9054269 30.749836,10.9054269 L30.749836,15.5928391 Z M4.78114163,12.9684132 L4.78114163,29.3429562 C3.09401069,29.5313525 1.59340144,29.7497422 0,30 L0,-5.68434189e-14 L4.4690224,-5.68434189e-14 L10.562377,17.0315868 L10.562377,-5.68434189e-14 L15.2497891,-5.68434189e-14 L15.2497891,28.061674 C13.5935889,28.3437998 11.906458,28.4375293 10.1246602,28.6868498 L4.78114163,12.9684132 Z" fill="#e50914"/>
-            </svg>
-        </div>
-
-        <!-- Main Content -->
-        <div class="profile-content">
-            <h1>Who's watching?</h1>
-            
-            <div class="profile-grid">
-                <!-- Primary Profile -->
-                <div class="profile-card" data-profile="primary">
-                    <div class="profile-avatar profile-blue">
-                        <div class="avatar-face">
-                            <div class="eyes">
-                                <div class="eye"></div>
-                                <div class="eye"></div>
-                            </div>
-                            <div class="smile"></div>
-                        </div>
-                        <div class="loading-spinner">
-                            <div class="spinner"></div>
-                        </div>
-                    </div>
-                    <span class="profile-name">Primary</span>
-                    <div class="loading-text">Loading...</div>
-                </div>
-
-                <!-- Krishnadev Profile -->
-                <div class="profile-card" data-profile="krishnadev">
-                    <div class="profile-avatar profile-yellow">
-                        <div class="avatar-face">
-                            <div class="eyes">
-                                <div class="eye"></div>
-                                <div class="eye"></div>
-                            </div>
-                            <div class="smile"></div>
-                        </div>
-                        <div class="loading-spinner">
-                            <div class="spinner"></div>
-                        </div>
-                    </div>
-                    <span class="profile-name">Krishnadev</span>
-                    <div class="loading-text">Loading...</div>
-                </div>
-
-                <!-- Krishnapriya Profile -->
-                <div class="profile-card" data-profile="krishnapriya">
-                    <div class="profile-avatar profile-red">
-                        <div class="avatar-face">
-                            <div class="eyes">
-                                <div class="eye"></div>
-                                <div class="eye"></div>
-                            </div>
-                            <div class="smile"></div>
-                        </div>
-                        <div class="loading-spinner">
-                            <div class="spinner"></div>
-                        </div>
-                    </div>
-                    <span class="profile-name">Krishnapriya</span>
-                    <div class="loading-text">Loading...</div>
-                </div>
-
-                <!-- Guest Profile -->
-                <div class="profile-card" data-profile="guest">
-                    <div class="profile-avatar profile-teal">
-                        <div class="avatar-face">
-                            <div class="eyes">
-                                <div class="eye"></div>
-                                <div class="eye"></div>
-                            </div>
-                            <div class="smile"></div>
-                        </div>
-                        <div class="loading-spinner">
-                            <div class="spinner"></div>
-                        </div>
-                    </div>
-                    <span class="profile-name">Guest</span>
-                    <div class="loading-text">Loading...</div>
-                </div>
-
-                <!-- Children Profile -->
-                <div class="profile-card" data-profile="children">
-                    <div class="profile-avatar profile-children">
-                        <div class="avatar-face">
-                            <div class="eyes">
-                                <div class="eye"></div>
-                                <div class="eye"></div>
-                            </div>
-                            <div class="smile"></div>
-                        </div>
-                        <div class="children-label">KIDS</div>
-                        <div class="loading-spinner">
-                            <div class="spinner"></div>
-                        </div>
-                    </div>
-                    <span class="profile-name">Children</span>
-                    <div class="loading-text">Loading...</div>
-                </div>
-            </div>
-
-            <button class="manage-profiles-btn">
-                <i class="fas fa-pencil-alt"></i>
-                Manage Profiles
-            </button>
-        </div>
+  <div class="container" role="main" aria-label="Profile selection">
+    <div class="logo" aria-hidden="true">
+      <svg
+        viewBox="0 0 111 30"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path
+          d="M105.06233,14.2806261 L110.999156,30 C109.249227,29.7497422 107.500234,29.4366857 105.718437,29.1554972 L102.374168,20.4686475 L98.9371075,28.4375293 C97.2499766,28.1563408 95.5928391,28.061674 93.9057081,27.8432843 L99.9372012,14.0931671 L94.4680851,-5.68434189e-14 L99.5313525,-5.68434189e-14 L102.593495,7.87421502 L105.874965,-5.68434189e-14 L110.999156,-5.68434189e-14 L105.06233,14.2806261 Z M90.4686475,-5.68434189e-14 L85.8749649,-5.68434189e-14 L85.8749649,27.2499766 C87.3746368,27.3437061 88.9371075,27.4055675 90.4686475,27.5930265 L90.4686475,-5.68434189e-14 Z M81.9055207,26.93692 C77.7186241,26.6557316 73.5307901,26.4064111 69.250164,26.3117443 L69.250164,-5.68434189e-14 L73.9366389,-5.68434189e-14 L73.9366389,21.8745899 C76.6248008,21.9373887 79.3120255,22.1557784 81.9055207,22.2804387 L81.9055207,26.93692 Z M64.2496954,10.6561065 L64.2496954,15.3435186 L57.8442216,15.3435186 L57.8442216,25.9996251 L53.2186709,25.9996251 L53.2186709,-5.68434189e-14 L66.3436123,-5.68434189e-14 L66.3436123,4.68741213 L57.8442216,4.68741213 L57.8442216,10.6561065 L64.2496954,10.6561065 Z M45.3435186,4.68741213 L45.3435186,26.2498828 C43.7810479,26.2498828 42.1876465,26.2498828 40.6561065,26.3117443 L40.6561065,4.68741213 L35.8121661,4.68741213 L35.8121661,-5.68434189e-14 L50.2183897,-5.68434189e-14 L50.2183897,4.68741213 L45.3435186,4.68741213 Z M30.749836,15.5928391 C28.687787,15.5928391 26.2498828,15.5928391 24.4999531,15.6875059 L24.4999531,22.6562939 C27.2499766,22.4678976 30,22.2495079 32.7809542,22.1557784 L32.7809542,26.6557316 L19.812541,27.6876933 L19.812541,-5.68434189e-14 L32.7809542,-5.68434189e-14 L32.7809542,4.68741213 L24.4999531,4.68741213 L24.4999531,10.9991564 C26.3126816,10.9991564 29.0936358,10.9054269 30.749836,10.9054269 L30.749836,15.5928391 Z M4.78114163,12.9684132 L4.78114163,29.3429562 C3.09401069,29.5313525 1.59340144,29.7497422 0,30 L0,-5.68434189e-14 L4.4690224,-5.68434189e-14 L10.562377,17.0315868 L10.562377,-5.68434189e-14 L15.2497891,-5.68434189e-14 L15.2497891,28.061674 C13.5935889,28.3437998 11.906458,28.4375293 10.1246602,28.6868498 L4.78114163,12.9684132 Z"
+          fill="#e50914"
+        />
+      </svg>
     </div>
 
-    <script src="profile-selection.js"></script>
+    <h1>Who's watching?</h1>
+
+    <div class="profiles-grid" id="profiles-grid" role="list" aria-label="User profiles"></div>
+
+    <!-- Add profile form placeholder -->
+    <div id="add-profile-form-container"></div>
+  </div>
+
+  <script src="profile-selection.js"></script>
 </body>
 </html>
