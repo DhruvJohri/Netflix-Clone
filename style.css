@@ -280,8 +280,18 @@ html {
   transform: scale(1.02) translateY(-2px);
   box-shadow: 0 10px 30px rgba(229, 9, 20, 0.3);
 }
-.hero-buttons input[type="email"]::placeholder {
+/* Styling for Placeholder*/
+.hero-buttons label {
+  position: absolute;
+  left: 1em;
+  top: 0.80em;
   color: #999;
+}
+.hero-buttons input[type="email"]:focus + label,
+.hero-buttons input[type="email"]:not(:placeholder-shown) + label{
+  transform-origin: top left;
+  transform: translateY(-0.80em) scale(0.70);
+  color: red;
 }
 
 .separation {
