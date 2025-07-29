@@ -175,6 +175,10 @@ html {
   font-weight: 600;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Poppins', 'sans-serif';
+  margin: 0px;
 }
 .btn-red:hover {
   background: #f40612;
@@ -259,12 +263,13 @@ html {
   flex: 2;
   min-width: 200px;
   padding: 16px 20px;
-  font-size: 15px;
+  font-size: 16px;
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 6px;
   background: rgba(0, 0, 0, 0.6);
   color: white;
   backdrop-filter: blur(10px);
+  text-decoration: none;
 }
 .hero-buttons input[type="email"]:focus {
   outline: none;
