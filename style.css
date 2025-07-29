@@ -179,6 +179,8 @@ html {
   font-size: 20px;
   font-family: 'Poppins', 'sans-serif';
   margin: 0px;
+  max-width: 180px;
+  white-space: nowrap;
 }
 .btn-red:hover {
   background: #f40612;
@@ -698,10 +700,14 @@ footer::before {
   .hero-buttons {
     flex-direction: column;
   }
-  .hero-buttons input[type="email"],
-  .hero-buttons .btn-red {
+  .hero-buttons input[type="email"] {
     width: 100%;
     max-width: 350px;
+    align-self: center;
+  }
+  .hero-buttons .btn-red {
+    width: 180px;
+    align-self: center;
   }
   .first {
     grid-template-columns: 1fr;
