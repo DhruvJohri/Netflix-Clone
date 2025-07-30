@@ -8,6 +8,8 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
       * {
         margin: 0;
@@ -47,7 +49,7 @@
       .container {
         position: relative;
         z-index: 2;
-        max-width: 420px;
+        max-width: 450px;
         width: 100%;
         background-color: rgba(20, 20, 20, 0.95);
         padding: 40px 30px;
@@ -75,9 +77,16 @@
         font-size: 14px;
       }
 
+      /* Password Input Container */
+      .password-input-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
       input {
         width: 100%;
-        padding: 12px;
+        padding: 12px 45px 12px 12px; /* Added right padding for toggle button */
         border: none;
         border-radius: 5px;
         font-size: 15px;
@@ -92,13 +101,45 @@
         background-color: #2c2c2c;
       }
 
+      /* Professional Password Toggle Button */
       .toggle-password {
         position: absolute;
-        right: 20px;
-        margin-top: -36px;
-        font-size: 18px;
-        color: #ccc;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: #999;
         cursor: pointer;
+        padding: 4px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        font-size: 16px;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+      }
+
+      .toggle-password:hover {
+        color: #e50914;
+        background-color: rgba(229, 9, 20, 0.1);
+      }
+
+      .toggle-password:active {
+        transform: translateY(-50%) scale(0.95);
+      }
+
+      .toggle-password i {
+        font-size: 14px;
+        transition: all 0.3s ease;
+      }
+
+      /* Input field adjustments for non-password fields */
+      input:not([type="password"]):not(.password-field) {
+        padding: 12px;
       }
 
       #strengthBar {
@@ -107,13 +148,82 @@
         background: #444;
         border-radius: 4px;
         overflow: hidden;
+        display: none;
       }
 
       #pwStrength {
         height: 100%;
         width: 0%;
-        background: limegreen;
+        background: #ff4757;
         transition: 0.4s ease;
+      }
+
+      .strength-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 5px;
+        font-size: 12px;
+      }
+
+      #strengthLabel {
+        font-weight: 600;
+        color: #ff4757;
+      }
+
+      /* Password Requirements */
+      .password-requirements {
+        margin-top: 12px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 5px;
+        border-left: 3px solid #e50914;
+        display: none;
+      }
+
+      .requirements-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: #e50914;
+        margin-bottom: 8px;
+      }
+
+      .requirement {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        margin-bottom: 4px;
+        transition: color 0.3s ease;
+      }
+
+      .requirement.met {
+        color: #20bf6b;
+      }
+
+      .requirement.unmet {
+        color: #ff4757;
+      }
+
+      .requirement-icon {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 8px;
+        font-weight: bold;
+      }
+
+      .requirement.met .requirement-icon {
+        background: #20bf6b;
+        color: white;
+      }
+
+      .requirement.unmet .requirement-icon {
+        background: #ff4757;
+        color: white;
       }
 
       .submit-btn {
@@ -127,10 +237,33 @@
         font-weight: bold;
         cursor: pointer;
         transition: background 0.3s ease;
+        position: relative;
+        overflow: hidden;
       }
 
       .submit-btn:hover {
         background-color: #f6121d;
+      }
+
+      .submit-btn:disabled {
+        background-color: #666;
+        cursor: not-allowed;
+      }
+
+      .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(0);
+        animation: rippleEffect 0.4s linear;
+        pointer-events: none;
+      }
+
+      @keyframes rippleEffect {
+        to {
+          transform: scale(1);
+          opacity: 0;
+        }
       }
 
       .bottom-text {
@@ -148,15 +281,45 @@
         color: #ff4c4c;
         font-size: 13px;
         margin-top: 4px;
+        min-height: 18px;
       }
+
+      .netflix-logo-fixed {
+        position: fixed;
+        top: 24px;
+        left: 32px;
+        z-index: 100;
+        background: none;
+        padding: 0;
+      }
+
+      .netflix-logo-img {
+        max-width: 160px;
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
       @media (max-width: 480px) {
         .container {
           padding: 30px 20px;
+          max-width: 400px;
+        }
+        .netflix-logo-fixed {
+          top: 12px;
+          left: 12px;
+        }
+        .netflix-logo-img {
+          max-width: 100px;
         }
       }
     </style>
   </head>
   <body>
+    <!-- Netflix Logo at the top left corner -->
+    <div class="netflix-logo-fixed">
+      <img src="assets/images/netflix-logo.png" alt="Netflix Logo" class="netflix-logo-img" />
+    </div>
     <div class="container">
       <h2>Create Your Account</h2>
       <form id="registerForm">
@@ -172,22 +335,58 @@
           <div class="help-text" id="emailHelp"></div>
         </div>
 
-        <div class="input-group" style="position: relative">
+        <div class="input-group">
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" required />
-          <span class="toggle-password" id="pwToggle">👁️</span>
-          <div id="strengthBar"><div id="pwStrength"></div></div>
+          <div class="password-input-container">
+            <input type="password" id="password" name="password" class="password-field" required />
+            <button type="button" class="toggle-password" id="pwToggle" aria-label="Toggle password visibility">
+              <i class="fas fa-eye" id="toggleIcon"></i>
+            </button>
+          </div>
+          
+          <div id="strengthBar">
+            <div id="pwStrength"></div>
+          </div>
+          <div class="strength-info">
+            <span id="strengthLabel"></span>
+          </div>
+          
+          <!-- Password Requirements Display -->
+          <div class="password-requirements" id="passwordRequirements">
+            <div class="requirements-title">Password Requirements:</div>
+            <div class="requirement unmet" id="req-length">
+              <span class="requirement-icon">✗</span>
+              <span>At least 8 characters</span>
+            </div>
+            <div class="requirement unmet" id="req-lowercase">
+              <span class="requirement-icon">✗</span>
+              <span>One lowercase letter (a-z)</span>
+            </div>
+            <div class="requirement unmet" id="req-uppercase">
+              <span class="requirement-icon">✗</span>
+              <span>One uppercase letter (A-Z)</span>
+            </div>
+            <div class="requirement unmet" id="req-digit">
+              <span class="requirement-icon">✗</span>
+              <span>One number (0-9)</span>
+            </div>
+            <div class="requirement unmet" id="req-special">
+              <span class="requirement-icon">✗</span>
+              <span>One special character (@$!%*?&)</span>
+            </div>
+          </div>
+          
           <div class="help-text" id="passwordHelp"></div>
         </div>
 
         <div class="input-group">
           <label for="confirmPassword">Confirm Password</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            required
-          />
+          <div class="password-input-container">
+            <input type="password" id="confirmPassword" name="confirmPassword" class="password-field" required />
+            <button type="button" class="toggle-password" id="confirmToggle" aria-label="Toggle confirm password visibility">
+              <i class="fas fa-eye" id="confirmToggleIcon"></i>
+            </button>
+          </div>
           <div class="help-text" id="confirmHelp"></div>
         </div>
 

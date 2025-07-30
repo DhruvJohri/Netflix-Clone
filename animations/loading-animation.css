@@ -1,0 +1,182 @@
+/* Loading Screen Styles */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #000000 0%, #141414 50%, #000000 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.loading-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-container {
+    text-align: center;
+    animation: fadeInScale 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.netflix-loader {
+    margin-bottom: 40px;
+}
+
+.loading-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    animation: logoFloat 2s ease-in-out infinite;
+    filter: drop-shadow(0 10px 30px rgba(229, 9, 20, 0.5));
+}
+
+.loading-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 7.5rem;
+    font-weight: 700;
+    color: #e50914;
+    letter-spacing: 8px;
+    margin-bottom: 30px;
+    background: linear-gradient(45deg, #e50914, #ff1744, #e50914);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGlow 2s ease-in-out infinite;
+}
+
+.loading-bar {
+    width: 300px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 0 auto 30px;
+    position: relative;
+}
+
+.loading-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #e50914, #ff1744, #e50914);
+    background-size: 200% 100%;
+    border-radius: 2px;
+    animation: loadingProgress 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.loading-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.loading-dots span {
+    width: 8px;
+    height: 8px;
+    background: #e50914;
+    border-radius: 50%;
+    animation: dotPulse 1.5s ease-in-out infinite;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+@keyframes textGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+        text-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+    }
+    50% {
+        background-position: 100% 50%;
+        text-shadow: 0 0 30px rgba(229, 9, 20, 0.8);
+    }
+}
+
+@keyframes loadingProgress {
+    0% {
+        width: 0%;
+        background-position: 0% 50%;
+    }
+    50% {
+        width: 70%;
+        background-position: 100% 50%;
+    }
+    100% {
+        width: 100%;
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.7;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .loading-logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .loading-text {
+        font-size: 2rem;
+        letter-spacing: 6px;
+    }
+    
+    .loading-bar {
+        width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .loading-logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .loading-text {
+        font-size: 1.5rem;
+        letter-spacing: 4px;
+    }
+    
+    .loading-bar {
+        width: 200px;
+    }
+}

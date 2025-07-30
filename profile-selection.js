@@ -190,10 +190,49 @@ class ProfileSelection {
   static clearSelectedProfile() {
     localStorage.removeItem("selectedProfile")
   }
+
+  // Add method to handle logout
+  static logout() {
+    try {
+      // Clear user session
+      localStorage.removeItem('netflixCurrentUser');
+      localStorage.removeItem('selectedProfile');
+      
+      // Redirect to sign-in page
+      window.location.href = 'signin.html';
+    } catch (error) {
+      console.error('Error during logout:', error);
+    }
+  }
+
+  // Check if user is authenticated
+  static isAuthenticated() {
+    const currentUser = localStorage.getItem('netflixCurrentUser');
+    return !!currentUser;
+  }
+
+  // Get current user info
+  static getCurrentUser() {
+    try {
+      const currentUser = localStorage.getItem('netflixCurrentUser');
+      return currentUser ? JSON.parse(currentUser) : null;
+    } catch (error) {
+      console.error('Error getting current user:', error);
+      return null;
+    }
+  }
 }
 
 // Initialize profile selection when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
+  // Check if user is authenticated
+  if (!ProfileSelection.isAuthenticated()) {
+    // Redirect to sign-in if not authenticated
+    window.location.href = 'signin.html';
+    return;
+  }
+
+  // Initialize profile selection if authenticated
   window.profileSelection = new ProfileSelection()
 })
 

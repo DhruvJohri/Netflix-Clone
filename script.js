@@ -108,3 +108,24 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 console.log("🍿 Welcome to Netflix Clone! Made with ❤️ ")
+
+
+// Loading Animation
+document.addEventListener('DOMContentLoaded', function() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    const body = document.body;
+    
+    // Prevent scrolling during loading
+    body.style.overflow = 'hidden';
+    
+    // Simulate loading time (2.5 seconds)
+    setTimeout(() => {
+        loadingScreen.classList.add('fade-out');
+        body.style.overflow = 'auto'; // Re-enable scrolling
+        
+        // Remove loading screen from DOM after fade out
+        setTimeout(() => {
+            loadingScreen.remove();
+        }, 800);
+    }, 2000);
+});

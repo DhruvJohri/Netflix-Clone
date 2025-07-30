@@ -8,6 +8,8 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
       * {
         margin: 0;
@@ -74,6 +76,13 @@
         font-size: 14px;
       }
 
+      /* Password Input Container */
+      .password-input-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
       input {
         width: 100%;
         padding: 12px;
@@ -86,18 +95,50 @@
         outline: none;
       }
 
+      /* Password field with right padding for toggle button */
+      input.password-field {
+        padding-right: 45px;
+      }
+
       input:focus {
         box-shadow: 0 0 8px 2px #e50914;
         background-color: #2c2c2c;
       }
 
+      /* Professional Password Toggle Button */
       .toggle-password {
         position: absolute;
-        right: 20px;
-        margin-top: -36px;
-        font-size: 18px;
-        color: #ccc;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: #999;
         cursor: pointer;
+        padding: 4px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        font-size: 16px;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+      }
+
+      .toggle-password:hover {
+        color: #e50914;
+        background-color: rgba(229, 9, 20, 0.1);
+      }
+
+      .toggle-password:active {
+        transform: translateY(-50%) scale(0.95);
+      }
+
+      .toggle-password i {
+        font-size: 14px;
+        transition: all 0.3s ease;
       }
 
       .submit-btn {
@@ -111,10 +152,17 @@
         font-weight: bold;
         cursor: pointer;
         transition: background 0.3s ease;
+        position: relative;
+        overflow: hidden;
       }
 
       .submit-btn:hover {
         background-color: #f6121d;
+      }
+
+      .submit-btn:disabled {
+        background-color: #666;
+        cursor: not-allowed;
       }
 
       .bottom-text {
@@ -132,16 +180,50 @@
         color: #ff4c4c;
         font-size: 13px;
         margin-top: 4px;
+        min-height: 18px;
+      }
+
+      .help-text.success {
+        color: #20bf6b;
+      }
+
+      /* Netflix Logo */
+      .netflix-logo-fixed {
+        position: fixed;
+        top: 24px;
+        left: 32px;
+        z-index: 100;
+        background: none;
+        padding: 0;
+      }
+
+      .netflix-logo-img {
+        max-width: 160px;
+        width: 100%;
+        height: auto;
+        display: block;
       }
 
       @media (max-width: 480px) {
         .container {
           padding: 30px 20px;
         }
+        .netflix-logo-fixed {
+          top: 12px;
+          left: 12px;
+        }
+        .netflix-logo-img {
+          max-width: 100px;
+        }
       }
     </style>
   </head>
   <body>
+    <!-- Netflix Logo at the top left corner -->
+    <div class="netflix-logo-fixed">
+      <img src="assets/images/netflix-logo.png" alt="Netflix Logo" class="netflix-logo-img" />
+    </div>
+
     <div class="container">
       <h2>Sign In</h2>
       <form id="signinForm">
@@ -151,14 +233,18 @@
           <div class="help-text" id="emailHelp"></div>
         </div>
 
-        <div class="input-group" style="position: relative">
+        <div class="input-group">
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" required />
-          <span class="toggle-password" id="pwToggle">Show</span>
+          <div class="password-input-container">
+            <input type="password" id="password" name="password" class="password-field" required />
+            <button type="button" class="toggle-password" id="pwToggle" aria-label="Toggle password visibility">
+              <i class="fas fa-eye" id="toggleIcon"></i>
+            </button>
+          </div>
           <div class="help-text" id="passwordHelp"></div>
         </div>
 
-        <button type="submit" class="submit-btn" id="submitBtn" ahref="profile-selection.html">
+        <button type="submit" class="submit-btn" id="submitBtn">
           Sign In
         </button>
       </form>
