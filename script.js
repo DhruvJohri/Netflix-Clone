@@ -108,3 +108,84 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 console.log("🍿 Welcome to Netflix Clone! Made with ❤️ ")
+
+  function setLanguage(lang) {
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[lang] && translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+  }
+
+  // Optional: Set default language to English on page load
+  document.addEventListener('DOMContentLoaded', () => setLanguage('en'));
+
+  // Toggle button listener
+  document.querySelector("#lang-toggle").addEventListener("click", function () {
+    const currentLang = this.getAttribute("data-lang");
+    const newLang = currentLang === "en" ? "hi" : "en";
+    setLanguage(newLang);
+    this.setAttribute("data-lang", newLang);
+    this.innerHTML = newLang === "en" ? `<i class="fas fa-globe"></i> English` : `<i class="fas fa-globe"></i> हिन्दी`;
+  });
+
+  // Language data
+  const translations = {
+    en: {
+        "faq_heading": "Frequently Asked Questions",
+        "faq_q1": "What is Netflix?",
+        "faq_a1": "Netflix is a streaming service that offers award-winning TV shows, movies, anime, documentaries, and more.",
+        "faq_q2": "How much does Netflix cost?",
+        "faq_a2": "Netflix plans range from ₹149 to ₹649 per month. You can watch on your phone, tablet, TV, laptop, and more.",
+        "faq_q3": "What can I watch on Netflix?",
+        "faq_a3": "You can watch movies, TV shows, anime, Netflix originals, and much more on Netflix.",
+        "faq_q4": "Where can I watch?",
+        "faq_a4": "You can watch Netflix on any internet-connected device — mobile, laptop, TV, or computer.",
+       "faq_q5": "Is Netflix good for kids?",
+       "faq_a5": "The Netflix Kids experience provides parental controls while offering family-friendly content for children.",
+       "faq_cta": "Ready to watch? Enter your email to create or restart your membership."
+       },
+    hi: {
+      faq_heading: "अक्सर पूछे जाने वाले प्रश्न",
+      faq_q1: "नेटफ्लिक्स क्या है?",
+      faq_a1: "नेटफ्लिक्स एक स्ट्रीमिंग सेवा है जो पुरस्कार विजेता टीवी शो, फिल्में, एनीमे, वृत्तचित्र और बहुत कुछ प्रदान करती है।",
+      faq_heading: "अक्सर पूछे जाने वाले सवाल",
+      faq_q1: "Netflix क्या है?",
+      faq_a1: "Netflix एक स्ट्रीमिंग सेवा है जो टीवी शो, फिल्में, एनीमे, डोक्यूमेंट्री और बहुत कुछ प्रदान करती है।",
+      faq_q2: "Netflix की कीमत कितनी है?",
+      faq_a2: "Netflix की योजनाएं ₹149 से ₹649 प्रति माह तक हैं। आप अपने फ़ोन, टैबलेट, टीवी, लैपटॉप आदि पर देख सकते हैं।",
+      faq_q3: "मैं Netflix पर क्या देख सकता हूँ?",
+      faq_a3: "Netflix पर आपको फिल्में, टीवी शो, एनीमे, नेटफ्लिक्स ओरिजिनल्स और बहुत कुछ देखने को मिलेगा।",
+      faq_q4: "मैं कहां देख सकता हूँ?",
+      faq_a4: "आप किसी भी इंटरनेट से जुड़े डिवाइस पर Netflix देख सकते हैं — मोबाइल, लैपटॉप, टीवी, या कंप्यूटर पर।",
+      faq_q5: "क्या Netflix बच्चों के लिए अच्छा है?",
+      faq_a5: "Netflix Kids अनुभव माता-पिता को नियंत्रण देते हुए बच्चों को परिवार के अनुकूल सामग्री प्रदान करता है।",
+      faq_cta: "देखना शुरू करें? अपनी ईमेल दर्ज करें और सदस्यता शुरू करें।"
+    }
+  };
+
+  let currentLang = 'en';
+
+  function switchLanguage() {
+    // Toggle between 'en' and 'hi'
+    currentLang = currentLang === 'en' ? 'hi' : 'en';
+
+    // Get correct language content
+    const langData = translations[currentLang];
+
+    // Update all translatable elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (langData[key]) {
+        el.textContent = langData[key];
+      }
+    });
+
+    // Update button text
+    const btn = document.getElementById('lang-btn');
+    btn.textContent = currentLang === 'en' ? '🌐 हिंदी' : '🌐 English';
+  }
+
+
