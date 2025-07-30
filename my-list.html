@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My List | Netflix Clone</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <!-- Side Navigation -->
+  <nav class="side-nav">
+    <div class="netflix-logo-container">
+      <div class="netflix-logo-icon">N</div>
+      <div class="netflix-logo-text">NETFLIX</div>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="dashboard.html" class="nav-item" data-category="home" title="Home">
+        <i class="fas fa-home nav-icon"></i>
+        <span class="nav-label">Home</span>
+      </a></li>
+      <li><a href="tv-shows.html" class="nav-item" data-category="tv" title="TV Shows">
+        <i class="fas fa-tv nav-icon"></i>
+        <span class="nav-label">TV Shows</span>
+      </a></li>
+      <li><a href="movies.html" class="nav-item" data-category="movies" title="Movies">
+        <i class="fas fa-film nav-icon"></i>
+        <span class="nav-label">Movies</span>
+      </a></li>
+      <li><a href="my-list.html" class="nav-item active" data-category="mylist" title="My List">
+        <i class="fas fa-bookmark nav-icon"></i>
+        <span class="nav-label">My List</span>
+      </a></li>
+    </ul>
+    <div class="nav-bottom">
+      <div class="add-container">
+        <i class="fas fa-plus add-icon" title="Add"></i>
+        <span class="add-label">Add Content</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="content-sections">
+      <div class="content-row">
+        <h2 class="section-title">
+          <i class="fas fa-bookmark section-icon"></i>
+          My List
+        </h2>
+        <div class="content-carousel">
+          <div class="content-item">
+            <img src="movie1.jpg" alt="Inception" class="content-poster">
+            <div class="content-overlay">
+              <h3>Inception</h3>
+              <div class="content-rating">★ 8.8</div>
+            </div>
+          </div>
+          <div class="content-item">
+            <img src="tv2.jpg" alt="Stranger Things" class="content-poster">
+            <div class="content-overlay">
+              <h3>Stranger Things</h3>
+              <div class="content-rating">★ 8.7</div>
+            </div>
+          </div>
+          <div class="content-item">
+            <img src="movie3.jpg" alt="Extraction" class="content-poster">
+            <div class="content-overlay">
+              <h3>Extraction</h3>
+              <div class="content-rating">★ 6.8</div>
+            </div>
+          </div>
+          <div class="content-item">
+            <img src="tv4.jpg" alt="Money Heist" class="content-poster">
+            <div class="content-overlay">
+              <h3>Money Heist</h3>
+              <div class="content-rating">★ 8.2</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Uncomment below for empty state -->
+      <!--
+      <div class="empty-state" style="text-align: center; padding: 60px 20px; color: var(--netflix-light-gray);">
+        <i class="fas fa-bookmark" style="font-size: 48px; color: var(--netflix-red); margin-bottom: 20px;"></i>
+        <h2 style="margin-bottom: 16px; color: var(--netflix-white);">Your List is Empty</h2>
+        <p>Add movies and TV shows to your list to watch them later.</p>
+      </div>
+      -->
+    </div>
+  </main>
+</body>
+</html>
