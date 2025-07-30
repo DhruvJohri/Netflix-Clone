@@ -175,6 +175,12 @@ html {
   font-weight: 600;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Poppins', 'sans-serif';
+  margin: 0px;
+  max-width: 180px;
+  white-space: nowrap;
 }
 .btn-red:hover {
   background: #f40612;
@@ -259,12 +265,13 @@ html {
   flex: 2;
   min-width: 200px;
   padding: 16px 20px;
-  font-size: 15px;
+  font-size: 16px;
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 6px;
   background: rgba(0, 0, 0, 0.6);
   color: white;
   backdrop-filter: blur(10px);
+  text-decoration: none;
 }
 .hero-buttons input[type="email"]:focus {
   outline: none;
@@ -273,8 +280,18 @@ html {
   transform: scale(1.02) translateY(-2px);
   box-shadow: 0 10px 30px rgba(229, 9, 20, 0.3);
 }
-.hero-buttons input[type="email"]::placeholder {
+/* Styling for Placeholder*/
+.hero-buttons label {
+  position: absolute;
+  left: 1em;
+  top: 0.80em;
   color: #999;
+}
+.hero-buttons input[type="email"]:focus + label,
+.hero-buttons input[type="email"]:not(:placeholder-shown) + label{
+  transform-origin: top left;
+  transform: translateY(-0.80em) scale(0.70);
+  color: red;
 }
 
 .separation {
@@ -693,10 +710,14 @@ footer::before {
   .hero-buttons {
     flex-direction: column;
   }
-  .hero-buttons input[type="email"],
-  .hero-buttons .btn-red {
+  .hero-buttons input[type="email"] {
     width: 100%;
     max-width: 350px;
+    align-self: center;
+  }
+  .hero-buttons .btn-red {
+    width: 180px;
+    align-self: center;
   }
   .first {
     grid-template-columns: 1fr;
