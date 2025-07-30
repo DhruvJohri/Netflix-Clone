@@ -21,10 +21,6 @@
         
         <!-- Navigation Menu -->
         <ul class="nav-menu">
-            <li><a href="#" class="nav-item" data-category="search" title="Search">
-                <i class="fas fa-search nav-icon"></i>
-                <span class="nav-label">Search</span>
-            </a></li>
             <li><a href="#" class="nav-item active" data-category="home" title="Home">
                 <i class="fas fa-home nav-icon"></i>
                 <span class="nav-label">Home</span>
@@ -54,6 +50,19 @@
 
     <!-- Main Content -->
     <main class="main-content">
+        <!-- Header with Search -->
+        <header class="header-section">
+            <div class="search-container">
+                <div class="search-input-container">
+                    <input type="text" id="search-input" placeholder="Search for movies, TV shows...">
+                    <button id="search-btn" class="btn btn-info">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div id="search-results" class="search-results"></div>
+            </div>
+        </header>
+
         <!-- Hero Section -->
         <section class="hero-section" id="hero-section">
             <div class="hero-background">
@@ -106,7 +115,6 @@
                     Trending Now
                 </h2>
                 <div class="content-carousel">
-                    <!-- Sample content items - Backend will populate these -->
                     <div class="content-item" data-content-id="1" data-content-type="movie">
                         <img src="/placeholder.svg?height=240&width=160" alt="Movie Title" class="content-poster">
                         <div class="content-overlay">
@@ -310,49 +318,34 @@
         </div>
     </main>
 
-    <!-- Search Interface Template (Hidden by default) -->
-    <div class="search-template" style="display: none;">
-        <div class="search-container" style="padding: 40px 0;">
-            <div class="search-input-container" style="display: flex; gap: 12px; margin-bottom: 40px; max-width: 600px;">
-                <input type="text" id="search-input" placeholder="Search for movies, TV shows..." 
-                       style="flex: 1; padding: 12px 16px; border: 1px solid var(--netflix-medium-gray); border-radius: var(--border-radius); background: var(--netflix-dark-gray); color: var(--netflix-white); font-family: 'Poppins', sans-serif;">
-                <button id="search-btn" class="btn btn-info" style="min-width: auto; padding: 12px 20px;">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-            <div id="search-results">
-                <!-- Search results will be populated here by backend -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Loading State Template (Hidden by default) -->
-    <div class="loading-template" style="display: none;">
-        <div class="loading-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px; gap: 16px; color: var(--netflix-light-gray);">
-            <div class="loading-spinner" style="width: 40px; height: 40px; border: 3px solid rgba(229, 9, 20, 0.3); border-top: 3px solid var(--netflix-red); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" style="display: none;">
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
             <p>Loading content...</p>
         </div>
     </div>
 
     <!-- Error State Template (Hidden by default) -->
     <div class="error-template" style="display: none;">
-        <div class="error-container" style="text-align: center; padding: 60px 20px; color: var(--netflix-light-gray);">
-            <i class="fas fa-exclamation-triangle" style="font-size: 48px; color: var(--netflix-red); margin-bottom: 20px;"></i>
-            <h2 style="margin-bottom: 16px; color: var(--netflix-white);">Error Loading Content</h2>
-            <p style="margin-bottom: 20px;">There was an error loading content. Please try again.</p>
-            <button class="btn btn-info" style="margin-top: 16px;">
-                Retry
-            </button>
+        <div class="error-container">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h2>Error Loading Content</h2>
+            <p>There was an error loading content. Please try again.</p>
+            <button class="btn btn-info">Retry</button>
         </div>
     </div>
 
     <!-- Empty My List Template (Hidden by default) -->
     <div class="empty-list-template" style="display: none;">
-        <div class="empty-state" style="text-align: center; padding: 60px 20px; color: var(--netflix-light-gray);">
-            <i class="fas fa-bookmark" style="font-size: 48px; color: var(--netflix-red); margin-bottom: 20px;"></i>
-            <h2 style="margin-bottom: 16px; color: var(--netflix-white);">Your List is Empty</h2>
+        <div class="empty-state">
+            <i class="fas fa-bookmark"></i>
+            <h2>Your List is Empty</h2>
             <p>Add movies and TV shows to your list to watch them later.</p>
         </div>
     </div>
+
+    <script src="dashboard.js">
+    </script>
 </body>
 </html>
