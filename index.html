@@ -1,5 +1,14 @@
+<!--
+  Netflix Clone Main Page
+  Description: This is the main landing page for the Netflix clone.
+  Includes navigation, hero section, features, FAQ, footer, and back-to-top button.
+-->
 <!DOCTYPE html>
 <html lang="en">
+    <!-- Meta and external resources like fonts and stylesheets -->
+    <!-- Google Fonts for custom typography -->
+    <!-- Font Awesome for icons -->
+    <!-- External CSS stylesheet -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +19,17 @@
 </head>
 <body>
   <div class="main">
-      <!-- Navigation -->
+      <!-- ================= NAVIGATION BAR ================= -->
       <nav class="navbar" id="navbar">
           <div class="logo">
               <!-- Netflix Logo Image -->
               <img src="assets/images/netflix-logo.png" alt="Netflix Logo" class="netflix-logo-img" />
           </div>
+          <!--Navigation links-->
           <ul class="nav-links">
               <li style="--i: 1"><a href="#">Home</a></li>
               <li style="--i: 2"><a href="#">TV Shows</a></li>
-              <li style="--i: 3"><a href="#">Movies</a></li>
+              <li style="--i: 3"><a href="movie.html">Movies</a></li>
               <li style="--i: 4"><a href="#">New & Popular</a></li>
               <li style="--i: 5"><a href="#">My List</a></li>
           </ul>
@@ -30,17 +40,19 @@
       </nav>
 
       <div class="box"></div>
-
+      <!-- ================= HERO SECTION ================= -->
+      <!-- Promotional text and call-to-action for email signup -->
       <div class="hero">
           <span>Unlimited movies, TV shows and more</span>
           <span>Starts at ₹149. Cancel at any time.</span>
           <span>Ready to watch? Enter your email to create or restart your membership.</span>
           <div class="hero-buttons">
+              <!-- Email input and Get Started button -->
               <input type="email" name="email" id="heroEmail" placeholder="Email address" required>
               <button type="button" class="btn btn-red" onclick="handleFormSubmit()">Get Started &gt;</button>
           </div>
       </div>
-
+      <!-- Divider between major sections -->
       <div class="separation"></div>
   </div>
 
@@ -66,7 +78,7 @@
           <span>Save your favourites easily and always have something to watch.</span>
       </div>
   </section>
-
+  <!-- ================= FEATURE SECTION: Enjoy on your TV ================= -->
   <div class="separation"></div>
 
   <section class="first third animate-on-scroll">
@@ -93,7 +105,7 @@
   </section>
 
   <div class="separation"></div>
-
+  <!-- ================= FAQ SECTION ================= -->
   <section class="faq">
       <h2>Frequently Asked Questions</h2>
       <div class="faqbox" style="--i: 1">
@@ -160,7 +172,7 @@
       <i class="fas fa-arrow-up"></i>
   </button>
 
-  <!-- Enhanced Footer -->
+  <!-- ================= FOOTER ================= -->
   <footer>
       <div class="footer-container">
           <div class="footer-contact">
@@ -219,7 +231,7 @@
           </div>
       </div>
   </footer>
-
+  <!-- External JavaScript file -->
   <script src="script.js"></script>
 </body>
 </html>
