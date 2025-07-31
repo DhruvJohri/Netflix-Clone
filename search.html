@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Search App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #00ffe7;
+    }
+
+    #searchSection {
+      margin: 20px 0;
+    }
+
+    #searchInput {
+      padding: 10px;
+      width: 250px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #searchButton {
+      padding: 10px 20px;
+      margin-left: 10px;
+      background-color: #00ffe7;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #000;
+      font-weight: bold;
+    }
+
+    #movies {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+      gap: 20px;
+    }
+
+    .movie_item {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 200px;
+      transition: transform 0.3s;
+    }
+
+    .movie_item:hover {
+      transform: scale(1.05);
+    }
+
+    .movie_img_rounded {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .title {
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #00ffe7;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Trending Movies and Search</h1>
+
+  <div id="searchSection">
+    <input type="text" id="searchInput" placeholder="Search for a movie..." />
+    <button id="searchButton" onclick="searchMovies()">Search</button>
+  </div>
+
+  <div id="movies"></div>
+
+  <script src="search.js"></script>
+</body>
+</html>

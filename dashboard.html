@@ -311,20 +311,27 @@
     </main>
 
     <!-- Search Interface Template (Hidden by default) -->
-    <div class="search-template" style="display: none;">
-        <div class="search-container" style="padding: 40px 0;">
-            <div class="search-input-container" style="display: flex; gap: 12px; margin-bottom: 40px; max-width: 600px;">
-                <input type="text" id="search-input" placeholder="Search for movies, TV shows..." 
-                       style="flex: 1; padding: 12px 16px; border: 1px solid var(--netflix-medium-gray); border-radius: var(--border-radius); background: var(--netflix-dark-gray); color: var(--netflix-white); font-family: 'Poppins', sans-serif;">
-                <button id="search-btn" class="btn btn-info" style="min-width: auto; padding: 12px 20px;">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-            <div id="search-results">
-                <!-- Search results will be populated here by backend -->
-            </div>
-        </div>
+    <!-- Search Section (Initially Hidden) -->
+<div class="search-template" id="search-template" style="display: none;">
+  <div class="search-container" style="padding: 40px 0;">
+    <div class="search-input-container" style="display: flex; gap: 12px; margin-bottom: 40px; max-width: 600px;">
+      <input type="text" id="search-input" placeholder="Search for movies, TV shows..."
+        style="flex: 1; padding: 12px 16px; border: 1px solid #555; border-radius: 6px; background: #222; color: #fff;" />
+        <a href="#search.html" style="text-decoration: none;">
+  <div id="search-btn" style="padding: 12px 20px; background-color: #e50914; color: white; border: none; border-radius: 4px; cursor: pointer; display: inline-block;">
+    <i class="fas fa-search"></i>
+  </div>
+</a>
+
+
     </div>
+    <div id="search-results"
+      style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
+      <!-- Search results will appear here -->
+    </div>
+  </div>
+</div>
+
 
     <!-- Loading State Template (Hidden by default) -->
     <div class="loading-template" style="display: none;">
@@ -354,5 +361,6 @@
             <p>Add movies and TV shows to your list to watch them later.</p>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
