@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Netflix Help Center - Contact Us</title>
+
+  <style>
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000; /* Black background */
+      color: #fff;      /* White text */
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #000;
+      padding: 10px 300px;
+    }
+ 
+    .navbar img {
+      height: 50px;
+    }
+    .navbar .btns button {
+      margin-left: 10px;
+      padding: 8px 16px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .join-btn {
+      background: #0a0a0a;
+      color: #fff9f9;
+      border: rgb(131, 122, 122) 1px solid;
+    }
+    .join-btn:hover {
+      background: #080808;
+      border: rgb(243, 236, 236) 1px solid;
+    }
+    .signin-btn {
+      background: #e50914; /* Netflix red */
+      color: #fff;
+      border: none;
+    }
+    .signin-btn:hover {
+      background: #C11119;
+      color: #fff;
+    }
+    a {
+        text-decoration: none; 
+        color: white;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* space between logo and text */
+    }
+    .help-center {
+      color: white;
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .notice {
+      background: #141414; /* dark gray banner */
+      padding: 12px 300px;
+      font-size: 16px;
+      border-bottom: 1px solid #333;
+      text-align: left;
+      line-height: 1.5;
+      color: #e5e5e5;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      color: #fff;
+      line-height: 40px;
+      font-weight: bold;
+    }
+
+    .description {
+      font-size: 16px;
+      margin-bottom: 15px;
+      color: #b3b3b3; /* Netflix uses muted gray for descriptions */
+    }
+
+    .input-box {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #333;
+      border-radius: 3px;
+      margin-bottom: 25px;
+      background: #141414;
+      color: #fff;
+    }
+
+    /* Quick Links */
+    h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      line-height: 27px;
+      color: #fff;
+    }
+    .quick-links {
+      list-style: none;
+      padding: 0;
+      border: 0;
+    }
+    .quick-links li {
+      padding: 12px 0;
+      border-top: 1px solid #333;
+    }
+    .quick-links li a {
+      text-decoration: underline;
+      color: #fff;
+      font-weight: bold;
+    }
+    .quick-links li a:hover {
+        color: #b3b3b3;
+    }
+
+    .footer {
+      padding: 10px 0 48px;
+      background: linear-gradient(10deg, rgba(229, 9, 20, 0) 58%, rgb(229, 9, 20) 128%), #000; 
+    }
+    .container li {
+        color: #AFAFA7; 
+        text-align: left;  
+        list-style:none; 
+        padding: 10px 0;
+        font-size: 15px;
+    }
+    .footer select {
+      background: transparent;
+      color: #656565;
+      border: 1px solid #999;
+      padding: 8px 12px;
+      font-size: 14px;
+      border-radius: 3px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+<div class="body">
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo-section">
+      <img src="assets/images/netflix-logo.png" alt="Netflix Logo"> 
+      <p class="help-center">| Help Center</p>
+    </div>
+    <div class="btns">
+      <button class="join-btn"><a href="register.html">Join Netflix</a></button>
+      <button class="signin-btn"><a href="signin.html">Sign In</a></button>
+    </div>
+  </div>
+
+  <!-- Notice -->
+  <div class="notice">
+    <b><i class="fa-regular fa-bell"></i> Wait times for chat support are longer than usual right now.</b><br>
+    Check back later, or search our Help Center for answers.
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h1>Contact us</h1>
+    <p class="description">Tell us more and we'll find the best solution for you</p>
+    <input type="text" class="input-box" placeholder="Describe your issue">
+
+    <h3>Quick Links</h3>
+    <ul class="quick-links">
+      <li><a href="#">Content Grievances in India</a></li>
+      <li><a href="#">Reset password</a></li>
+      <li><a href="#">Update email</a></li>
+      <li><a href="#">Get help signing in</a></li>
+      <li><a href="#">Update payment method</a></li>
+      <li><a href="#">Request TV shows or movies</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <div class="container">
+    <select>
+      <option>English</option>
+      <option>हिन्दी</option>
+      <option>Español</option>
+      <option>Français</option>
+    </select>
+    <li>Terms of Use</li>
+    <li>Privacy</li>
+    <li>Cookie Preferences</li>
+    <li>Corporate Information</li>
+  </div>
+</div>   
+</body>
+</html>
