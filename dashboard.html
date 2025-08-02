@@ -105,50 +105,87 @@
                     <i class="fas fa-fire section-icon"></i>
                     Trending Now
                 </h2>
-                <div class="content-carousel">
-                    <!-- Sample content items - Backend will populate these -->
-                    <div class="content-item" data-content-id="1" data-content-type="movie">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Movie Title" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Movie Title</h3>
-                            <div class="content-rating">★ 8.5</div>
+                <div class="content-carousel-container">
+                    <button class="carousel-nav prev" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="content-carousel" data-scroll-speed="2">
+                        <div class="content-item" data-content-id="1" data-content-type="movie">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Movie Title" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Movie Title</h3>
+                                <div class="content-rating">★ 8.5</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="2" data-content-type="tv">
+                            <img src="/placeholder.svg?height=240&width=160" alt="TV Show Title" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>TV Show Title</h3>
+                                <div class="content-rating">★ 9.2</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="3" data-content-type="movie">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Another Movie" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Another Movie</h3>
+                                <div class="content-rating">★ 7.8</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="4" data-content-type="tv">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Comedy Series" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Comedy Series</h3>
+                                <div class="content-rating">★ 8.9</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="5" data-content-type="movie">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Sci-Fi Movie" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Sci-Fi Movie</h3>
+                                <div class="content-rating">★ 8.1</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="6" data-content-type="tv">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Mystery Series" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Mystery Series</h3>
+                                <div class="content-rating">★ 9.0</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="content-item" data-content-id="2" data-content-type="tv">
-                        <img src="/placeholder.svg?height=240&width=160" alt="TV Show Title" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>TV Show Title</h3>
-                            <div class="content-rating">★ 9.2</div>
-                        </div>
-                    </div>
-                    <div class="content-item" data-content-id="3" data-content-type="movie">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Another Movie" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Another Movie</h3>
-                            <div class="content-rating">★ 7.8</div>
-                        </div>
-                    </div>
-                    <div class="content-item" data-content-id="4" data-content-type="tv">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Comedy Series" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Comedy Series</h3>
-                            <div class="content-rating">★ 8.9</div>
-                        </div>
-                    </div>
-                    <div class="content-item" data-content-id="5" data-content-type="movie">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Sci-Fi Movie" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Sci-Fi Movie</h3>
-                            <div class="content-rating">★ 8.1</div>
-                        </div>
-                    </div>
-                    <div class="content-item" data-content-id="6" data-content-type="tv">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Mystery Series" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Mystery Series</h3>
-                            <div class="content-rating">★ 9.0</div>
-                        </div>
-                    </div>
+                    <button class="carousel-nav next" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
 
@@ -158,49 +195,87 @@
                     <i class="fas fa-film section-icon"></i>
                     Popular Movies
                 </h2>
-                <div class="content-carousel">
-                    <div class="content-item" data-content-id="7" data-content-type="movie">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 1" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Popular Movie 1</h3>
-                            <div class="content-rating">★ 8.7</div>
+                <div class="content-carousel-container">
+                    <button class="carousel-nav prev" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="content-carousel" data-scroll-speed="3">
+                        <div class="content-item" data-content-id="7" data-content-type="movie">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 1" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Popular Movie 1</h3>
+                                <div class="content-rating">★ 8.7</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="8" data-content-type="movie">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 2" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Popular Movie 2</h3>
+                                <div class="content-rating">★ 9.1</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="9" data-content-type="movie">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 3" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Popular Movie 3</h3>
+                                <div class="content-rating">★ 8.3</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="10" data-content-type="movie">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 4" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Popular Movie 4</h3>
+                                <div class="content-rating">★ 7.9</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="11" data-content-type="movie">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 5" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Popular Movie 5</h3>
+                                <div class="content-rating">★ 8.5</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="12" data-content-type="movie">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 6" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Popular Movie 6</h3>
+                                <div class="content-rating">★ 8.8</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="content-item" data-content-id="8" data-content-type="movie">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 2" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Popular Movie 2</h3>
-                            <div class="content-rating">★ 9.1</div>
-                        </div>
-                    </div>
-                    <div class="content-item" data-content-id="9" data-content-type="movie">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 3" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Popular Movie 3</h3>
-                            <div class="content-rating">★ 8.3</div>
-                        </div>
-                    </div>
-                    <div class="content-item" data-content-id="10" data-content-type="movie">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 4" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Popular Movie 4</h3>
-                            <div class="content-rating">★ 7.9</div>
-                        </div>
-                    </div>
-                    <div class="content-item" data-content-id="11" data-content-type="movie">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 5" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Popular Movie 5</h3>
-                            <div class="content-rating">★ 8.5</div>
-                        </div>
-                    </div>
-                    <div class="content-item" data-content-id="12" data-content-type="movie">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 6" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Popular Movie 6</h3>
-                            <div class="content-rating">★ 8.8</div>
-                        </div>
-                    </div>
+                    <button class="carousel-nav next" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
 
@@ -210,49 +285,87 @@
                     <i class="fas fa-tv section-icon"></i>
                     Popular TV Shows
                 </h2>
-                <div class="content-carousel">
-                    <div class="content-item" data-content-id="13" data-content-type="tv">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 1" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Popular TV Show 1</h3>
-                            <div class="content-rating">★ 9.3</div>
+                <div class="content-carousel-container">
+                    <button class="carousel-nav prev" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="content-carousel" data-scroll-speed="2.5">
+                        <div class="content-item" data-content-id="13" data-content-type="tv">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 1" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Popular TV Show 1</h3>
+                                <div class="content-rating">★ 9.3</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="14" data-content-type="tv">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 2" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Popular TV Show 2</h3>
+                                <div class="content-rating">★ 8.9</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="15" data-content-type="tv">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 3" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Popular TV Show 3</h3>
+                                <div class="content-rating">★ 8.6</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="16" data-content-type="tv">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 4" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Popular TV Show 4</h3>
+                                <div class="content-rating">★ 9.0</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="17" data-content-type="tv">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 5" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Popular TV Show 5</h3>
+                                <div class="content-rating">★ 8.7</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="18" data-content-type="tv">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 6" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Popular TV Show 6</h3>
+                                <div class="content-rating">★ 9.2</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="content-item" data-content-id="14" data-content-type="tv">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 2" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Popular TV Show 2</h3>
-                            <div class="content-rating">★ 8.9</div>
-                        </div>
-                    </div>
-                    <div class="content-item" data-content-id="15" data-content-type="tv">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 3" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Popular TV Show 3</h3>
-                            <div class="content-rating">★ 8.6</div>
-                        </div>
-                    </div>
-                    <div class="content-item" data-content-id="16" data-content-type="tv">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 4" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Popular TV Show 4</h3>
-                            <div class="content-rating">★ 9.0</div>
-                        </div>
-                    </div>
-                    <div class="content-item" data-content-id="17" data-content-type="tv">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 5" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Popular TV Show 5</h3>
-                            <div class="content-rating">★ 8.7</div>
-                        </div>
-                    </div>
-                    <div class="content-item" data-content-id="18" data-content-type="tv">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 6" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Popular TV Show 6</h3>
-                            <div class="content-rating">★ 9.2</div>
-                        </div>
-                    </div>
+                    <button class="carousel-nav next" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
 
@@ -262,49 +375,87 @@
                     <i class="fas fa-crown section-icon"></i>
                     Netflix Originals
                 </h2>
-                <div class="content-carousel">
-                    <div class="content-item" data-content-id="19" data-content-type="tv">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 1" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Netflix Original 1</h3>
-                            <div class="content-rating">★ 9.1</div>
+                <div class="content-carousel-container">
+                    <button class="carousel-nav prev" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="content-carousel" data-scroll-speed="3.5">
+                        <div class="content-item" data-content-id="19" data-content-type="tv">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 1" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Netflix Original 1</h3>
+                                <div class="content-rating">★ 9.1</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="20" data-content-type="movie">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 2" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Netflix Original 2</h3>
+                                <div class="content-rating">★ 8.8</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="21" data-content-type="tv">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 3" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Netflix Original 3</h3>
+                                <div class="content-rating">★ 8.4</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="22" data-content-type="movie">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 4" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Netflix Original 4</h3>
+                                <div class="content-rating">★ 9.0</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="23" data-content-type="tv">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 5" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Netflix Original 5</h3>
+                                <div class="content-rating">★ 8.9</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-item" data-content-id="24" data-content-type="movie">
+                            <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 6" class="content-poster">
+                            <div class="content-overlay">
+                                <h3>Netflix Original 6</h3>
+                                <div class="content-rating">★ 8.6</div>
+                                <div class="content-actions">
+                                    <button class="btn-icon" title="Play"><i class="fas fa-play"></i></button>
+                                    <button class="btn-icon" title="Add to List"><i class="fas fa-plus"></i></button>
+                                    <button class="btn-icon" title="More Info"><i class="fas fa-info-circle"></i></button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="content-item" data-content-id="20" data-content-type="movie">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 2" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Netflix Original 2</h3>
-                            <div class="content-rating">★ 8.8</div>
-                        </div>
-                    </div>
-                    <div class="content-item" data-content-id="21" data-content-type="tv">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 3" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Netflix Original 3</h3>
-                            <div class="content-rating">★ 8.4</div>
-                        </div>
-                    </div>
-                    <div class="content-item" data-content-id="22" data-content-type="movie">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 4" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Netflix Original 4</h3>
-                            <div class="content-rating">★ 9.0</div>
-                        </div>
-                    </div>
-                    <div class="content-item" data-content-id="23" data-content-type="tv">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 5" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Netflix Original 5</h3>
-                            <div class="content-rating">★ 8.9</div>
-                        </div>
-                    </div>
-                    <div class="content-item" data-content-id="24" data-content-type="movie">
-                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 6" class="content-poster">
-                        <div class="content-overlay">
-                            <h3>Netflix Original 6</h3>
-                            <div class="content-rating">★ 8.6</div>
-                        </div>
-                    </div>
+                    <button class="carousel-nav next" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -312,11 +463,10 @@
 
     <!-- Search Interface Template (Hidden by default) -->
     <div class="search-template" style="display: none;">
-        <div class="search-container" style="padding: 40px 0;">
-            <div class="search-input-container" style="display: flex; gap: 12px; margin-bottom: 40px; max-width: 600px;">
-                <input type="text" id="search-input" placeholder="Search for movies, TV shows..." 
-                       style="flex: 1; padding: 12px 16px; border: 1px solid var(--netflix-medium-gray); border-radius: var(--border-radius); background: var(--netflix-dark-gray); color: var(--netflix-white); font-family: 'Poppins', sans-serif;">
-                <button id="search-btn" class="btn btn-info" style="min-width: auto; padding: 12px 20px;">
+        <div class="search-container">
+            <div class="search-input-container">
+                <input type="text" id="search-input" placeholder="Search for movies, TV shows...">
+                <button id="search-btn" class="btn btn-info">
                     <i class="fas fa-search"></i>
                 </button>
             </div>
@@ -328,31 +478,31 @@
 
     <!-- Loading State Template (Hidden by default) -->
     <div class="loading-template" style="display: none;">
-        <div class="loading-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px; gap: 16px; color: var(--netflix-light-gray);">
-            <div class="loading-spinner" style="width: 40px; height: 40px; border: 3px solid rgba(229, 9, 20, 0.3); border-top: 3px solid var(--netflix-red); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
             <p>Loading content...</p>
         </div>
     </div>
 
     <!-- Error State Template (Hidden by default) -->
     <div class="error-template" style="display: none;">
-        <div class="error-container" style="text-align: center; padding: 60px 20px; color: var(--netflix-light-gray);">
-            <i class="fas fa-exclamation-triangle" style="font-size: 48px; color: var(--netflix-red); margin-bottom: 20px;"></i>
-            <h2 style="margin-bottom: 16px; color: var(--netflix-white);">Error Loading Content</h2>
-            <p style="margin-bottom: 20px;">There was an error loading content. Please try again.</p>
-            <button class="btn btn-info" style="margin-top: 16px;">
-                Retry
-            </button>
+        <div class="error-container">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h2>Error Loading Content</h2>
+            <p>There was an error loading content. Please try again.</p>
+            <button class="btn btn-info">Retry</button>
         </div>
     </div>
 
     <!-- Empty My List Template (Hidden by default) -->
     <div class="empty-list-template" style="display: none;">
-        <div class="empty-state" style="text-align: center; padding: 60px 20px; color: var(--netflix-light-gray);">
-            <i class="fas fa-bookmark" style="font-size: 48px; color: var(--netflix-red); margin-bottom: 20px;"></i>
-            <h2 style="margin-bottom: 16px; color: var(--netflix-white);">Your List is Empty</h2>
+        <div class="empty-state">
+            <i class="fas fa-bookmark"></i>
+            <h2>Your List is Empty</h2>
             <p>Add movies and TV shows to your list to watch them later.</p>
         </div>
     </div>
+
+    <script src="carousel.js"></script>
 </body>
 </html>

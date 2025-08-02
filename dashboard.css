@@ -1,4 +1,4 @@
-/* Netflix Dashboard - Frontend Only CSS */
+/* Netflix Dashboard - Enhanced CSS with Auto-Scrolling Carousel */
 :root {
     --netflix-red: #e50914;
     --netflix-dark-red: #b20710;
@@ -152,7 +152,6 @@ body {
     color: var(--netflix-white);
 }
 
-/* Always red icon for active, but no red on hover */
 .nav-item .nav-icon {
     color: var(--netflix-light-gray);
     font-size: 18px;
@@ -164,13 +163,11 @@ body {
     justify-content: center;
 }
 
-/* Icon is red ONLY for active */
 .nav-item.active .nav-icon {
     color: var(--netflix-red);
     transform: scale(1.15);
 }
 
-/* On hover, icon stays its normal color (no red) */
 .nav-item:hover .nav-icon {
     color: var(--netflix-light-gray);
     transform: scale(1.15);
@@ -331,7 +328,6 @@ body {
     width: fit-content;
 }
 
-/* Reduced title size */
 .hero-title {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 800;
@@ -456,7 +452,10 @@ body {
     transform: translateY(-2px);
 }
 
-/* Content Sections */
+/* ==================== */
+/* Enhanced Carousel Styles */
+/* ==================== */
+
 .content-sections {
     padding: 40px 60px 60px;
     position: relative;
@@ -466,6 +465,7 @@ body {
 
 .content-row {
     margin-bottom: 40px;
+    position: relative;
 }
 
 .section-title {
@@ -484,55 +484,40 @@ body {
     font-size: 1.1rem;
 }
 
+/* Carousel Container */
 .content-carousel {
     display: flex;
+    gap: 8px;
     overflow-x: auto;
-    gap: 12px;
-    padding-bottom: 12px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--netflix-red) transparent;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    position: relative;
 }
 
 .content-carousel::-webkit-scrollbar {
-    height: 4px;
-}
-
-.content-carousel::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 2px;
-}
-
-.content-carousel::-webkit-scrollbar-thumb {
-    background: var(--netflix-red);
-    border-radius: 2px;
-}
-
-.content-carousel::-webkit-scrollbar-thumb:hover {
-    background: var(--netflix-dark-red);
+    display: none; /* Chrome/Safari */
 }
 
 /* Content Item */
 .content-item {
-    min-width: 160px;
-    height: 240px;
+    flex: 0 0 auto;
+    width: 220px;
+    height: 320px;
     border-radius: var(--border-radius);
     overflow: hidden;
-    cursor: pointer;
-    transition: all var(--transition-speed) ease;
     position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, z-index 0.3s ease;
     background: var(--netflix-dark-gray);
-}
-
-.content-item:hover {
-    transform: scale(1.05);
-    z-index: 10;
 }
 
 .content-poster {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .content-overlay {
@@ -540,10 +525,15 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-    padding: 20px 12px 12px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+    padding: 20px 10px 10px;
     opacity: 0;
-    transition: opacity var(--transition-speed) ease;
+    transition: opacity 0.3s ease;
+}
+
+.content-item:hover {
+    transform: scale(1.1);
+    z-index: 2;
 }
 
 .content-item:hover .content-overlay {
@@ -551,24 +541,54 @@ body {
 }
 
 .content-overlay h3 {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
-    font-family: "Poppins", sans-serif;
-    color: var(--netflix-white);
-    text-align: center;
     margin-bottom: 4px;
+    color: white;
+    text-align: center;
 }
 
 .content-rating {
-    font-size: 10px;
+    font-size: 12px;
     color: var(--netflix-light-gray);
     text-align: center;
 }
 
-/* Loading Animation */
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+/* Navigation Arrows */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 100px;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    z-index: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: var(--border-radius);
+}
+
+.carousel-nav.prev {
+    left: 0;
+}
+
+.carousel-nav.next {
+    right: 0;
+}
+
+.content-row:hover .carousel-nav {
+    opacity: 1;
+}
+
+.carousel-nav:hover {
+    background: rgba(0,0,0,0.8);
 }
 
 /* Responsive Design */
@@ -605,8 +625,12 @@ body {
     }
 
     .content-item {
-        min-width: 140px;
-        height: 210px;
+        width: 160px;
+        height: 240px;
+    }
+
+    .carousel-nav {
+        display: none;
     }
 }
 
@@ -620,7 +644,247 @@ body {
     }
 
     .content-item {
-        min-width: 120px;
-        height: 180px;
+        width: 140px;
+        height: 210px;
     }
+}
+
+/* Loading Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Netflix Dashboard - Optimized Carousel CSS */
+:root {
+    --netflix-red: #e50914;
+    --netflix-dark-red: #b20710;
+    --netflix-black: #000000;
+    --netflix-dark-gray: #141414;
+    --netflix-medium-gray: #2f2f2f;
+    --netflix-light-gray: #b3b3b3;
+    --netflix-white: #ffffff;
+    --sidebar-width: 60px;
+    --sidebar-expanded-width: 240px;
+    --transition-speed: 0.3s;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================== */
+/* Enhanced Carousel Styles with Visibility Fixes */
+/* ==================== */
+
+.content-sections {
+    padding: 40px 60px 60px;
+    position: relative;
+    z-index: 10;
+    background: var(--netflix-black);
+    margin-top: -50px; /* Pull content up to overlap hero */
+}
+
+.content-row {
+    margin-bottom: 40px;
+    position: relative;
+    padding: 0 4%; /* Added padding for better spacing */
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px; /* Increased spacing */
+    color: var(--netflix-white);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 10px; /* Better alignment */
+}
+
+/* Carousel Container - Fixed Structure */
+.content-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.content-carousel {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 10px; /* Increased padding */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    position: relative;
+    will-change: transform; /* Performance optimization */
+}
+
+/* Force carousel to be visible */
+.content-carousel {
+    min-height: 340px; /* Ensure space even if images load slowly */
+    background: rgba(20, 20, 20, 0.3); /* Slight background for visibility */
+}
+
+.content-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Content Item - Enhanced Visibility */
+.content-item {
+    flex: 0 0 auto;
+    width: 220px;
+    height: 320px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background: linear-gradient(135deg, #2a2a2a, #1a1a1a); /* Fallback gradient */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform-origin: center center;
+}
+
+/* Image Loading States */
+.content-poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    background: #222; /* Fallback color */
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Make sure placeholder is visible */
+.content-poster[src*="placeholder"] {
+    background: linear-gradient(45deg, #333, #444);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 14px;
+    opacity: 1;
+}
+
+/* Enhanced Hover Effects */
+.content-item:hover {
+    transform: scale(1.05) translateY(-5px);
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.content-item:hover .content-poster {
+    transform: scale(1.03);
+}
+
+/* Overlay - More Visible */
+.content-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+    padding: 30px 15px 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-item:hover .content-overlay {
+    opacity: 1;
+}
+
+.content-overlay h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: white;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.content-rating {
+    font-size: 14px;
+    color: #f5c518;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Navigation Arrows - More Visible */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 120px;
+    background: rgba(0,0,0,0.7);
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    z-index: 2;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.carousel-nav:hover {
+    background: rgba(20,20,20,0.9);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.content-row:hover .carousel-nav {
+    opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .content-sections {
+        padding: 30px 30px 50px;
+        margin-top: -30px;
+    }
+    
+    .content-item {
+        width: 180px;
+        height: 270px;
+    }
+    
+    .content-overlay h3 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-sections {
+        padding: 20px 15px 40px;
+    }
+    
+    .content-item {
+        width: 150px;
+        height: 225px;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* Performance Optimizations */
+.content-carousel {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.content-item {
+    will-change: transform;
 }
