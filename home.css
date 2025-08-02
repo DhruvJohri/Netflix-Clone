@@ -1,0 +1,130 @@
+ body {
+      margin: 0;
+      background-color: #0f0f0f;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+    }
+
+    .logo {
+  text-align: center;
+  padding: 5px 0;
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+}
+
+.left {
+  width: 15%;
+  height: 100vh;
+  background-color: #111;
+  color: white;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.left ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.left ul li {
+  margin-bottom: 20px;
+}
+
+.left ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.left ul li a:hover {
+  background-color: #333;
+}
+
+.right {
+  margin-left: 15%;
+  padding: 20px;
+  background-color: #050505;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+    .main-content {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .search-bar {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #222;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      margin-bottom: 30px;
+    }
+
+    .trending-section {
+      font-family:  sans-serif;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+    
+
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      width: 160px;
+      height: 240px;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+
+  .recommended-section{
+     
+    margin-top: 20px;
+     font-family:  sans-serif;
+      font-size: 22px;
+      margin-bottom: 20px;
+}
+
+.new-releases-section{
+  margin-top: 20px;
+     font-family:  sans-serif;
+      font-size: 22px;
+      margin-bottom: 20px;
+}
+
+ 

@@ -129,3 +129,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 800);
     }, 2000);
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const currentUser = localStorage.getItem("netflixCurrentUser");
+
+    const homeLink = document.querySelector('a[href="home.html"]');
+    if (!currentUser && homeLink) {
+      homeLink.addEventListener("click", function (e) {
+        e.preventDefault(); 
+        alert("Please sign in to access Home.");
+        window.location.href = "index.html"; 
+      });
+    }
+  });
