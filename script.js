@@ -108,6 +108,39 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 console.log("🍿 Welcome to Netflix Clone! Made with ❤️ ")
+// Navigation filtering logic
+document.querySelectorAll('.nav-item').forEach(item => {
+  item.addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent default jump
+    const category = this.dataset.category;
+
+    const allItems = document.querySelectorAll('.content-item');
+
+    if (category === "home") {
+      allItems.forEach(item => item.style.display = "");
+    } else if (category === "tv") {
+      allItems.forEach(item => {
+        item.style.display = item.dataset.contentType === "tv" ? "" : "none";
+      });
+    } else if (category === "movies") {
+      allItems.forEach(item => {
+        item.style.display = item.dataset.contentType === "movie" ? "" : "none";
+      });
+    } else if (category === "mylist") {
+      // Placeholder: just show alert for now
+      alert("🚧 My List feature is not implemented yet.");
+    } else if (category === "search") {
+      alert("🔍 Search functionality coming soon!");
+    }
+  });
+});
+document.querySelectorAll('.nav-item').forEach(item => {
+  item.addEventListener('click', function () {
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
 
 
 // Loading Animation
