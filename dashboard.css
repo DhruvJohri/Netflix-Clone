@@ -52,7 +52,7 @@ body {
     width: var(--sidebar-expanded-width);
 }
 
-/* Netflix Logo - Original N with expandable text */
+/* Netflix Logo */
 .netflix-logo-container {
     margin-bottom: 40px;
     padding: 0 20px;
@@ -113,7 +113,6 @@ body {
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-    font-family: "Poppins", sans-serif;
     transition: all var(--transition-speed) ease;
     position: relative;
     padding: 12px 16px;
@@ -138,7 +137,6 @@ body {
     transition: all var(--transition-speed) ease;
     white-space: nowrap;
     font-weight: 500;
-    font-family: "Poppins", sans-serif;
 }
 
 .side-nav:hover .nav-label {
@@ -152,27 +150,12 @@ body {
     color: var(--netflix-white);
 }
 
-/* Always red icon for active, but no red on hover */
-.nav-item .nav-icon {
-    color: var(--netflix-light-gray);
-    font-size: 18px;
-    min-width: 18px;
-    text-align: center;
-    transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Icon is red ONLY for active */
 .nav-item.active .nav-icon {
     color: var(--netflix-red);
     transform: scale(1.15);
 }
 
-/* On hover, icon stays its normal color (no red) */
 .nav-item:hover .nav-icon {
-    color: var(--netflix-light-gray);
     transform: scale(1.15);
 }
 
@@ -215,32 +198,8 @@ body {
     background: rgba(255, 255, 255, 0.1);
 }
 
-.add-icon {
-    font-size: 18px;
-    color: var(--netflix-light-gray);
-    transition: all var(--transition-speed) ease;
-    min-width: 18px;
-}
-
-.add-label {
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: all var(--transition-speed) ease;
-    white-space: nowrap;
-    font-weight: 500;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    color: var(--netflix-light-gray);
-}
-
-.side-nav:hover .add-label {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.add-container:hover .add-icon,
-.add-container:hover .add-label {
-    color: var(--netflix-white);
+#logout-btn {
+    margin-top: 8px;
 }
 
 /* Main Content */
@@ -284,14 +243,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-        90deg,
-        var(--netflix-black) 0%,
-        rgba(0, 0, 0, 0.8) 30%,
-        rgba(0, 0, 0, 0.4) 60%,
-        transparent 100%
-    ),
-    linear-gradient(0deg, var(--netflix-black) 0%, transparent 50%);
+    background: linear-gradient(90deg, var(--netflix-black) 0%, rgba(0, 0, 0, 0.8) 30%, transparent 100%),
+                linear-gradient(0deg, var(--netflix-black) 0%, transparent 50%);
     z-index: 2;
 }
 
@@ -304,164 +257,74 @@ body {
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-badge {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--netflix-red);
-    color: var(--netflix-white);
-    padding: 6px 12px;
-    border-radius: 16px;
-    font-size: 11px;
-    font-weight: 700;
-    font-family: "Poppins", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 16px;
-    width: fit-content;
+    display: flex; align-items: center; gap: 8px;
+    background: var(--netflix-red); color: var(--netflix-white);
+    padding: 6px 12px; border-radius: 16px; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; width: fit-content;
 }
 
-/* Reduced title size */
 .hero-title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    font-family: "Poppins", sans-serif;
-    margin-bottom: 12px;
-    line-height: 1.1;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-    color: var(--netflix-white);
-    letter-spacing: -1px;
+    font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
+    margin-bottom: 12px; line-height: 1.1;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); letter-spacing: -1px;
 }
 
 .hero-meta {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
+    display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;
 }
 
-.hero-year,
-.hero-rating,
-.hero-seasons {
-    color: var(--netflix-light-gray);
-    font-size: 13px;
-    font-weight: 500;
-    font-family: "Poppins", sans-serif;
-}
-
-.hero-rating {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 3px 6px;
-    border-radius: 3px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    font-size: 11px;
-}
-
-.hero-genres {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-}
-
-.genre-tag {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--netflix-white);
-    padding: 3px 8px;
-    border-radius: 10px;
-    font-size: 11px;
-    font-weight: 500;
-    font-family: "Poppins", sans-serif;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+.hero-year, .hero-rating, .hero-seasons {
+    color: var(--netflix-light-gray); font-size: 13px; font-weight: 500;
 }
 
 .hero-description {
-    font-size: clamp(0.9rem, 1.2vw, 1rem);
-    line-height: 1.4;
-    margin-bottom: 24px;
-    color: #e5e5e5;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-    max-width: 480px;
+    font-size: clamp(0.9rem, 1.2vw, 1rem); line-height: 1.4;
+    margin-bottom: 24px; color: #e5e5e5;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); max-width: 480px;
 }
 
 .hero-actions {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+    display: flex; gap: 12px; flex-wrap: wrap;
 }
 
-/* Professional Buttons */
 .btn {
-    padding: 12px 24px;
-    border: none;
-    border-radius: var(--border-radius);
-    font-size: 14px;
-    font-weight: 600;
-    font-family: "Poppins", sans-serif;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all var(--transition-speed) ease;
-    text-decoration: none;
-    min-width: 120px;
-    justify-content: center;
+    padding: 12px 24px; border: none; border-radius: var(--border-radius);
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    display: flex; align-items: center; gap: 8px;
+    transition: all var(--transition-speed) ease; justify-content: center;
 }
 
 .btn-play {
-    background: var(--netflix-white);
-    color: var(--netflix-black);
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    background: var(--netflix-white); color: var(--netflix-black);
 }
 
 .btn-play:hover {
-    background: rgba(255, 255, 255, 0.9);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.9); transform: translateY(-2px);
 }
 
-.btn-info {
-    background: rgba(109, 109, 110, 0.7);
-    color: var(--netflix-white);
+.btn-info, .btn-add {
+    background: rgba(109, 109, 110, 0.7); color: var(--netflix-white);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.btn-info:hover {
-    background: rgba(109, 109, 110, 0.9);
-    border-color: rgba(255, 255, 255, 0.6);
-    transform: translateY(-2px);
+.btn-info:hover, .btn-add:hover {
+    background: rgba(109, 109, 110, 0.9); transform: translateY(-2px);
 }
 
-.btn-add {
-    background: transparent;
-    color: var(--netflix-white);
-    border: 2px solid rgba(255, 255, 255, 0.7);
-}
-
-.btn-add:hover {
-    background: var(--netflix-white);
-    color: var(--netflix-black);
-    transform: translateY(-2px);
+/* Style for when item is added to "My List" */
+.btn-add.added {
+    background: var(--netflix-red);
+    border-color: var(--netflix-dark-red);
 }
 
 /* Content Sections */
 .content-sections {
-    padding: 40px 60px 60px;
-    position: relative;
-    z-index: 10;
-    background: var(--netflix-black);
+    padding: 40px 60px 60px; position: relative; z-index: 10;
 }
 
 .content-row {
@@ -469,158 +332,101 @@ body {
 }
 
 .section-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    font-family: "Poppins", sans-serif;
-    margin-bottom: 16px;
-    color: var(--netflix-white);
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    font-size: 1.3rem; font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
 }
 
 .section-icon {
-    color: var(--netflix-red);
-    font-size: 1.1rem;
+    color: var(--netflix-red); font-size: 1.1rem;
+}
+
+/* Carousel Container */
+.carousel-container {
+    position: relative;
 }
 
 .content-carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 12px;
-    padding-bottom: 12px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--netflix-red) transparent;
+    display: flex; overflow-x: auto; gap: 12px; padding: 0 5px;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
 }
+.content-carousel::-webkit-scrollbar { display: none; } /* Chrome, Safari */
 
-.content-carousel::-webkit-scrollbar {
-    height: 4px;
+.carousel-nav {
+    position: absolute; top: 0; bottom: 0; width: 50px;
+    background: rgba(0,0,0,0.5); border: none; color: white;
+    font-size: 2.5rem; z-index: 20; cursor: pointer;
+    opacity: 0; transition: opacity 0.3s;
+    display: flex; align-items: center; justify-content: center;
 }
+.carousel-container:hover .carousel-nav { opacity: 1; }
+.carousel-nav:disabled { opacity: 0.2; cursor: default; }
+.carousel-nav.prev { left: 0; border-radius: var(--border-radius) 0 0 var(--border-radius); }
+.carousel-nav.next { right: 0; border-radius: 0 var(--border-radius) var(--border-radius) 0; }
 
-.content-carousel::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 2px;
-}
-
-.content-carousel::-webkit-scrollbar-thumb {
-    background: var(--netflix-red);
-    border-radius: 2px;
-}
-
-.content-carousel::-webkit-scrollbar-thumb:hover {
-    background: var(--netflix-dark-red);
-}
-
-/* Content Item */
 .content-item {
-    min-width: 160px;
-    height: 240px;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    cursor: pointer;
-    transition: all var(--transition-speed) ease;
-    position: relative;
-    background: var(--netflix-dark-gray);
+    min-width: 180px; height: 270px; border-radius: var(--border-radius);
+    overflow: hidden; cursor: pointer; transition: all var(--transition-speed) ease;
+    position: relative; background: var(--netflix-dark-gray);
 }
 
 .content-item:hover {
-    transform: scale(1.05);
-    z-index: 10;
+    transform: scale(1.05); z-index: 10;
 }
 
 .content-poster {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.3s ease;
+    width: 100%; height: 100%; object-fit: cover;
 }
 
-.content-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-    padding: 20px 12px 12px;
-    opacity: 0;
-    transition: opacity var(--transition-speed) ease;
+
+
+
+#search-view {
+    padding: 40px 60px;
+    margin-left: var(--sidebar-width);
+    transition: margin-left var(--transition-speed) ease;
 }
 
-.content-item:hover .content-overlay {
-    opacity: 1;
+.search-bar {
+    display: flex;
+    max-width: 600px;
+    margin-bottom: 40px;
+    border: 1px solid var(--netflix-medium-gray);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: var(--netflix-dark-gray);
 }
 
-.content-overlay h3 {
-    font-size: 12px;
-    font-weight: 600;
-    font-family: "Poppins", sans-serif;
+#search-input {
+    flex-grow: 1;
+    padding: 14px 20px;
+    font-size: 1rem;
+    background: transparent;
     color: var(--netflix-white);
-    text-align: center;
-    margin-bottom: 4px;
+    border: none;
+    outline: none;
 }
 
-.content-rating {
-    font-size: 10px;
+#search-button {
+    padding: 0 20px;
+    font-size: 1.2rem;
+    background: transparent;
     color: var(--netflix-light-gray);
-    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
 }
 
-/* Loading Animation */
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+#search-button:hover {
+    color: var(--netflix-red);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    :root {
-        --sidebar-width: 50px;
-        --sidebar-expanded-width: 200px;
-    }
-
-    .netflix-logo-icon {
-        font-size: 24px;
-    }
-
-    .netflix-logo-text {
-        font-size: 20px;
-    }
-
-    .nav-icon, .add-icon {
-        font-size: 16px;
-    }
-
-    .hero-content {
-        padding: 0 30px;
-    }
-
-    .content-sections {
-        padding: 30px 30px 50px;
-    }
-
-    .btn {
-        padding: 10px 20px;
-        font-size: 13px;
-        min-width: 100px;
-    }
-
-    .content-item {
-        min-width: 140px;
-        height: 210px;
-    }
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
 }
 
-@media (max-width: 480px) {
-    .hero-content {
-        padding: 0 20px;
-    }
-
-    .content-sections {
-        padding: 20px 20px 40px;
-    }
-
-    .content-item {
-        min-width: 120px;
-        height: 180px;
-    }
+.results-grid .content-item {
+    min-width: auto; 
 }
