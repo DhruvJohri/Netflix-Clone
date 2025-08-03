@@ -6,6 +6,20 @@
   box-sizing: border-box;
   transition: all 0.3s ease; /* Smooth transitions f */
 }
+.content-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+}
+.content-card {
+  background-color: #222;
+  padding: 1rem;
+  border-radius: 8px;
+  color: white;
+  width: 200px;
+  text-align: center;
+}
 
 body {
   background-color: #000;
