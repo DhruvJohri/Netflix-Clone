@@ -108,39 +108,27 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 console.log("🍿 Welcome to Netflix Clone! Made with ❤️ ")
-// Navigation filtering logic
 document.querySelectorAll('.nav-item').forEach(item => {
   item.addEventListener('click', function (e) {
-    e.preventDefault(); // Prevent default jump
+    e.preventDefault();
     const category = this.dataset.category;
+    const items = document.querySelectorAll('.content-item');
 
-    const allItems = document.querySelectorAll('.content-item');
+    items.forEach(content => {
+      if (category === 'home') {
+        content.style.display = '';
+      } else if (content.dataset.contentType === category) {
+        content.style.display = '';
+      } else {
+        content.style.display = 'none';
+      }
+    });
 
-    if (category === "home") {
-      allItems.forEach(item => item.style.display = "");
-    } else if (category === "tv") {
-      allItems.forEach(item => {
-        item.style.display = item.dataset.contentType === "tv" ? "" : "none";
-      });
-    } else if (category === "movies") {
-      allItems.forEach(item => {
-        item.style.display = item.dataset.contentType === "movie" ? "" : "none";
-      });
-    } else if (category === "mylist") {
-      // Placeholder: just show alert for now
-      alert("🚧 My List feature is not implemented yet.");
-    } else if (category === "search") {
-      alert("🔍 Search functionality coming soon!");
+    if (category === 'mylist') {
+      alert("📋 My List is currently empty.");
     }
   });
 });
-document.querySelectorAll('.nav-item').forEach(item => {
-  item.addEventListener('click', function () {
-    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
-    this.classList.add('active');
-  });
-});
-
 
 
 // Loading Animation
