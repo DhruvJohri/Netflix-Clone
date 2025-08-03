@@ -108,28 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 console.log("🍿 Welcome to Netflix Clone! Made with ❤️ ")
-document.querySelectorAll('.nav-item').forEach(item => {
-  item.addEventListener('click', function (e) {
-    e.preventDefault();
-    const category = this.dataset.category;
-    const items = document.querySelectorAll('.content-item');
-
-    items.forEach(content => {
-      if (category === 'home') {
-        content.style.display = '';
-      } else if (content.dataset.contentType === category) {
-        content.style.display = '';
-      } else {
-        content.style.display = 'none';
-      }
-    });
-
-    if (category === 'mylist') {
-      alert("📋 My List is currently empty.");
-    }
-  });
-});
-
 
 // Loading Animation
 document.addEventListener('DOMContentLoaded', function() {
