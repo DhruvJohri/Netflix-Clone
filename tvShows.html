@@ -8,14 +8,242 @@
 <body>
     <h1>TV Shows</h1>
     <p>Here you can find a list of popular TV shows.</p>
-    <ul>
-        <li>Breaking Bad</li>
-        <li>Stranger Things</li>
-        <li>The Crown</li>
-        <li>Game of Thrones</li>
-        <li>The Mandalorian</li>
-    </ul>
+    <!-- Content Sections -->
+        <div class="content-sections" id="content-sections">
+            <!-- Trending Now Section -->
+            <div class="content-row">
+                <h2 class="section-title">
+                    <i class="fas fa-fire section-icon"></i>
+                    Trending Now
+                </h2>
+                <div class="content-carousel">
+                    <!-- Sample content items - Backend will populate these -->
+                    <div class="content-item" data-content-id="1" data-content-type="movie">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Movie Title" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Movie Title</h3>
+                            <div class="content-rating">★ 8.5</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="2" data-content-type="tv">
+                        <img src="/placeholder.svg?height=240&width=160" alt="TV Show Title" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>TV Show Title</h3>
+                            <div class="content-rating">★ 9.2</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="3" data-content-type="movie">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Another Movie" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Another Movie</h3>
+                            <div class="content-rating">★ 7.8</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="4" data-content-type="tv">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Comedy Series" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Comedy Series</h3>
+                            <div class="content-rating">★ 8.9</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="5" data-content-type="movie">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Sci-Fi Movie" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Sci-Fi Movie</h3>
+                            <div class="content-rating">★ 8.1</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="6" data-content-type="tv">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Mystery Series" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Mystery Series</h3>
+                            <div class="content-rating">★ 9.0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Popular Movies Section -->
+            <div class="content-row">
+                <h2 class="section-title">
+                    <i class="fas fa-film section-icon"></i>
+                    Popular Movies
+                </h2>
+                <div class="content-carousel">
+                    <div class="content-item" data-content-id="7" data-content-type="movie">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 1" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Popular Movie 1</h3>
+                            <div class="content-rating">★ 8.7</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="8" data-content-type="movie">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 2" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Popular Movie 2</h3>
+                            <div class="content-rating">★ 9.1</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="9" data-content-type="movie">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 3" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Popular Movie 3</h3>
+                            <div class="content-rating">★ 8.3</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="10" data-content-type="movie">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 4" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Popular Movie 4</h3>
+                            <div class="content-rating">★ 7.9</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="11" data-content-type="movie">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 5" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Popular Movie 5</h3>
+                            <div class="content-rating">★ 8.5</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="12" data-content-type="movie">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Popular Movie 6" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Popular Movie 6</h3>
+                            <div class="content-rating">★ 8.8</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popular TV Shows Section -->
+            <div class="content-row">
+                <h2 class="section-title">
+                    <i class="fas fa-tv section-icon"></i>
+                    Popular TV Shows
+                </h2>
+                <div class="content-carousel">
+                    <div class="content-item" data-content-id="13" data-content-type="tv">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 1" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Popular TV Show 1</h3>
+                            <div class="content-rating">★ 9.3</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="14" data-content-type="tv">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 2" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Popular TV Show 2</h3>
+                            <div class="content-rating">★ 8.9</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="15" data-content-type="tv">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 3" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Popular TV Show 3</h3>
+                            <div class="content-rating">★ 8.6</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="16" data-content-type="tv">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 4" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Popular TV Show 4</h3>
+                            <div class="content-rating">★ 9.0</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="17" data-content-type="tv">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 5" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Popular TV Show 5</h3>
+                            <div class="content-rating">★ 8.7</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="18" data-content-type="tv">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Popular TV Show 6" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Popular TV Show 6</h3>
+                            <div class="content-rating">★ 9.2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Netflix Originals Section -->
+            <div class="content-row">
+                <h2 class="section-title">
+                    <i class="fas fa-crown section-icon"></i>
+                    Netflix Originals
+                </h2>
+                <div class="content-carousel">
+                    <div class="content-item" data-content-id="19" data-content-type="tv">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 1" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Netflix Original 1</h3>
+                            <div class="content-rating">★ 9.1</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="20" data-content-type="movie">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 2" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Netflix Original 2</h3>
+                            <div class="content-rating">★ 8.8</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="21" data-content-type="tv">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 3" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Netflix Original 3</h3>
+                            <div class="content-rating">★ 8.4</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="22" data-content-type="movie">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 4" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Netflix Original 4</h3>
+                            <div class="content-rating">★ 9.0</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="23" data-content-type="tv">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 5" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Netflix Original 5</h3>
+                            <div class="content-rating">★ 8.9</div>
+                        </div>
+                    </div>
+                    <div class="content-item" data-content-id="24" data-content-type="movie">
+                        <img src="/placeholder.svg?height=240&width=160" alt="Netflix Original 6" class="content-poster">
+                        <div class="content-overlay">
+                            <h3>Netflix Original 6</h3>
+                            <div class="content-rating">★ 8.6</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Search Interface Template (Hidden by default) -->
+    <div class="search-template" style="display: none;">
+        <div class="search-container" style="padding: 40px 0;">
+            <div class="search-input-container" style="display: flex; gap: 12px; margin-bottom: 40px; max-width: 600px;">
+                <input type="text" id="search-input" placeholder="Search for movies, TV shows..." 
+                       style="flex: 1; padding: 12px 16px; border: 1px solid var(--netflix-medium-gray); border-radius: var(--border-radius); background: var(--netflix-dark-gray); color: var(--netflix-white); font-family: 'Poppins', sans-serif;">
+                <button id="search-btn" class="btn btn-info" style="min-width: auto; padding: 12px 20px;">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div id="search-results">
+                <!-- Search results will be populated here by backend -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading State Template (Hidden by default) -->
+    <div class="loading-template" style="display: none;">
+        <div class="loading-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px; gap: 16px; color: var(--netflix-light-gray);">
+            <div class="loading-spinner" style="width: 40px; height: 40px; border: 3px solid rgba(229, 9, 20, 0.3); border-top: 3px solid var(--netflix-red); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+            <p>Loading content...</p>
+        </div>
+    </div>
     <footer>
         <p>&copy; 2023 Netflix Clone. All rights reserved.</p>
     </footer>
