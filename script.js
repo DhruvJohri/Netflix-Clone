@@ -1,114 +1,132 @@
-const faqs = document.querySelectorAll(".faqbox")
+const faqs = document.querySelectorAll(".faqbox");
 faqs.forEach((faq) => {
   faq.addEventListener("click", () => {
-    faq.classList.toggle("open")
-  })
-})
+    faq.classList.toggle("open");
+  });
+});
 
-const backToTopBtn = document.getElementById("backToTopBtn")
-const circularProgress = document.querySelector(".circular-progress .circle-progress")
-const circumference = 2 * Math.PI * 15.9155 // Circumference of the circle (radius 15.9155)
+// Mood Filter Functionality
+  const moodBubbles = document.querySelectorAll('.mood-bubble');
+  const allCards = document.querySelectorAll('.card');
+  
+  moodBubbles.forEach(bubble => {
+    bubble.addEventListener('click', function() {
+      // Remove active class from all bubbles
+      moodBubbles.forEach(b => b.classList.remove('active'));
+      
+      // Add active class to clicked bubble with animation
+      this.classList.add('active');
+      this.style.animation = 'pulse 0.5s ease';
+      
+      // Remove animation after it completes
+      setTimeout(() => {
+        this.style.animation = '';
+      }, 500);
+      
+      // Filter cards
+      const selectedMood = this.getAttribute('data-mood');
+      filterCardsByMood(selectedMood);
+    });
+  });
+
+
+
+const backToTopBtn = document.getElementById("backToTopBtn");
+const circularProgress = document.querySelector(".circular-progress .circle-progress");
+const circumference = 2 * Math.PI * 15.9155; // Circumference of the circle (radius 15.9155)
 
 // Set initial dasharray for the circle progress
-circularProgress.style.strokeDasharray = `${circumference} ${circumference}`
-circularProgress.style.strokeDashoffset = circumference // Start fully hidden
+circularProgress.style.strokeDasharray = `${circumference} ${circumference}`;
+circularProgress.style.strokeDashoffset = circumference; // Start fully hidden
 
 window.addEventListener("scroll", () => {
   // Calculate scroll percentage for the circular progress
-  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-  const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
-  const clientHeight = document.documentElement.clientHeight || document.body.clientHeight
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+  const clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
 
-  const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100
+  const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
 
   // Update the circular progress
-  const offset = circumference - (scrollPercentage / 100) * circumference
-  circularProgress.style.strokeDashoffset = offset
+  const offset = circumference - (scrollPercentage / 100) * circumference;
+  circularProgress.style.strokeDashoffset = offset;
 
   // Show/hide back to top button
   if (scrollTop > 300) {
-    backToTopBtn.style.display = "flex"
+    backToTopBtn.style.display = "flex";
   } else {
-    backToTopBtn.style.display = "none"
+    backToTopBtn.style.display = "none";
   }
 
-  const navbar = document.getElementById("navbar")
+  const navbar = document.getElementById("navbar");
   if (window.scrollY > 50) {
-    navbar.classList.add("scrolled")
+    navbar.classList.add("scrolled");
   } else {
-    navbar.classList.remove("scrolled")
+    navbar.classList.remove("scrolled");
   }
-})
+});
 
 function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" })
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+// ✅ Updated handleFormSubmit: navigates to home.html
 function handleFormSubmit() {
-  const emailInputs = document.querySelectorAll('input[type="email"]')
-  let email = ""
-
-  emailInputs.forEach((input) => {
-    if (input.value) email = input.value
-  })
+  const emailInput = document.querySelector('input[type="email"]');
+  const email = emailInput.value.trim();
 
   if (!email) {
-    alert("Hey there! 👋 Please enter your email address to get started!")
-    return
+    alert("Please enter your email to continue.");
+    return;
   }
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  if (!emailRegex.test(email)) {
-    alert("Oops! 😅 Please enter a valid email address (like: you@example.com)")
-    return
-  }
+  // Save user in localStorage for home.html
+  localStorage.setItem("netflixCurrentUser", email);
 
-  alert(`Awesome! 🎉 Welcome aboard! We'll send updates to ${email}`)
-
-  emailInputs.forEach((input) => (input.value = ""))
+  // ✅ Redirect to home.html
+  window.location.href = "home.html";
 }
 
 const observerOptions = {
   threshold: 0.1,
   rootMargin: "0px 0px -100px 0px",
-}
+};
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add("animated")
+      entry.target.classList.add("animated");
     }
-  })
-}, observerOptions)
+  });
+}, observerOptions);
 
 document.querySelectorAll(".animate-on-scroll").forEach((el) => {
-  observer.observe(el)
-})
+  observer.observe(el);
+});
 
 document.addEventListener("DOMContentLoaded", () => {
-  const emailInputs = document.querySelectorAll('input[type="email"]')
+  const emailInputs = document.querySelectorAll('input[type="email"]');
 
   emailInputs.forEach((input) => {
     input.addEventListener("blur", function () {
-      const email = this.value
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      const email = this.value;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
       if (email && !emailRegex.test(email)) {
-        this.classList.add("error")
+        this.classList.add("error");
         setTimeout(() => {
-          this.classList.remove("error")
-        }, 3000)
+          this.classList.remove("error");
+        }, 3000);
       }
-    })
+    });
 
     input.addEventListener("input", function () {
-      this.classList.remove("error")
-    })
-  })
-})
+      this.classList.remove("error");
+    });
+  });
+});
 
-console.log("🍿 Welcome to Netflix Clone! Made with ❤️ ")
-
+console.log("🍿 Welcome to Netflix Clone! Made with ❤️ ");
 
 // Loading Animation
 document.addEventListener('DOMContentLoaded', function() {
@@ -130,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 2000);
 });
 
-
+// Restrict home.html access if not signed in
 document.addEventListener("DOMContentLoaded", function () {
     const currentUser = localStorage.getItem("netflixCurrentUser");
 
@@ -142,4 +160,4 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "index.html"; 
       });
     }
-  });
+});

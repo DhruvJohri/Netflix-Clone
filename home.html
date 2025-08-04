@@ -3,72 +3,350 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="home.css" />
-  <title>Netflix Clone</title>
-  
+  <title>FlixVerse - Streaming Redefined</title>
 </head>
 <body>
  
-<div class="left">
+<!-- Sidebar Navigation -->
+<nav class="left">
   <div class="logo">
-    <img  src="assets/images/netflix-logo.png"alt="Netflix Logo">
+    <img src="assets/images/netflix-logo.png" alt="FlixVerse Logo">
+    <span class="brand-name">FlixVerse</span>
+  </div>
+  <div class="user-profile">
+    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User Profile">
+    <span>Welcome, User</span>
   </div>
   <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="#">Search</a></li>
-    <li><a href="#">Trending</a></li>
-    <li><a href="#">New Releases</a></li>
-    <li><a href="#">Popular</a></li>
-    <li><a href="#">Top Rated</a></li>
-    <li><a href="#">Genres</a></li>
-    <li><a href="#">My List</a></li>
-    <li><a href="#">Watch Again</a></li>
-    <li><a href="#">Settings</a></li>
-    <li><a href="#">Log Out</a></li>
+    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="#"><i class="fas fa-search"></i> Search</a></li>
+    <li><a href="#"><i class="fas fa-fire"></i> Trending</a></li>
+    <li><a href="#"><i class="fas fa-film"></i> New Releases</a></li>
+    <li><a href="#"><i class="fas fa-star"></i> Popular</a></li>
+    <li><a href="#"><i class="fas fa-trophy"></i> Top Rated</a></li>
+    <li><a href="#"><i class="fas fa-tags"></i> Genres</a></li>
+    <li><a href="#"><i class="fas fa-bookmark"></i> My List</a></li>
+    <li><a href="#"><i class="fas fa-history"></i> Watch Again</a></li>
+    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+    <li><a href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
   </ul>
-</div>
+</nav>
 
-  <div class="right">
-    <input class="search-bar" type="text" placeholder="Search Movies Here"/>
-
-    <div class="trending-section">Trendings</div>
-    <div class="cards-container">
-      <div class="card"><img src="assets/images/movie-card-1.webp" alt="Movie 1"/></div>
-      <div class="card"><img src="assets/images/movie-card-2.webp" alt="Movie 2"/></div>
-      <div class="card"><img src="assets/images/movie-card-3.webp" alt="Movie 3"/></div>
-      <div class="card"><img src="assets/images/movie-card-4.webp" alt="Movie 4"/></div>
-      <div class="card"><img src="assets/images/movie-card-5.webp" alt="Movie 5"/></div>
-      <div class="card"><img src="assets/images/movie-card-6.webp" alt="Movie 6"/></div>
-      <div class="card"><img src="assets/images/movie-card-7.webp" alt="Movie 7"/></div>
-   
+<!-- Main Content -->
+<main class="right">
+  <div class="search-container">
+    <div class="search-bar">
+      <input type="text" placeholder="Search movies, shows..."/>
+      <button><i class="fas fa-search"></i></button>
     </div>
-
-    <div class="recommended-section">Recommended for you</div>
-    <div class="cards-container">
-      <div class="card"><img src="assets/images/movie-card-8.webp" alt="Movie 1"/></div>
-      <div class="card"><img src="assets/images/movie-card-9.jpg" alt="Movie 2"/></div>
-      <div class="card"><img src="assets/images/movie-card-10.webp" alt="Movie 3"/></div>
-      <div class="card"><img src="assets/images/movie-card-11.webp" alt="Movie 4"/></div>
-      <div class="card"><img src="assets/images/movie-card-12.webp" alt="Movie 5"/></div>
-      <div class="card"><img src="assets/images/movie-card-13.webp" alt="Movie 6"/></div>
-      <div class="card"><img src="assets/images/movie-card-14.webp" alt="Movie 7"/></div>
-   
+    
+<!-- Enhanced Mood Filter Section -->
+    <div class="mood-filter-section">
+      <div class="mood-bubbles">
+        <div class="mood-bubble" data-mood="all">
+          <div class="mood-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <span>All</span>
+        </div>
+        <div class="mood-bubble" data-mood="chill">
+          <div class="mood-icon">
+            <i class="fas fa-couch"></i>
+          </div>
+          <span>Chill</span>
+        </div>
+        <div class="mood-bubble" data-mood="fun">
+          <div class="mood-icon">
+            <i class="fas fa-laugh-beam"></i>
+          </div>
+          <span>Fun</span>
+        </div>
+        <div class="mood-bubble" data-mood="romantic">
+          <div class="mood-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <span>Romantic</span>
+        </div>
+        <div class="mood-bubble" data-mood="thriller">
+          <div class="mood-icon">
+            <i class="fas fa-mask"></i>
+          </div>
+          <span>Thriller</span>
+        </div>
+      </div>
     </div>
-
-    <div class="new-releases-section">New-Releases</div>
-    <div class="cards-container">
-      <div class="card"><img src="assets/images/movie-card-15.webp" alt="Movie 1"/></div>
-      <div class="card"><img src="assets/images/movie-card-16.webp" alt="Movie 2"/></div>
-      <div class="card"><img src="assets/images/movie-card-17.jpg" alt="Movie 3"/></div>
-      <div class="card"><img src="assets/images/movie-card-17.webp" alt="Movie 4"/></div>
-      <div class="card"><img src="assets/images/movie-card-1.webp" alt="Movie 5"/></div>
-      <div class="card"><img src="assets/images/movie-card-19.jpg" alt="Movie 6"/></div>
-      <div class="card"><img src="assets/images/movie-card-19.webp" alt="Movie 7"/></div>
-   
-    </div>
-
-   
   </div>
-    <script src="home.js"></script>
+
+  <!-- Hero Banner -->
+  <div class="hero-banner">
+    <div class="hero-content">
+      <h1>Stranger Things</h1>
+      <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments...</p>
+      <div class="hero-buttons">
+        <button class="play-btn"><i class="fas fa-play"></i> Play</button>
+        <button class="info-btn"><i class="fas fa-info-circle"></i> More Info</button>
+      </div>
+    </div>
+  </div>
+
+<!-- Enhanced Trending Now Section -->
+  <section class="content-section">
+    <h2 class="section-title">
+      <span>Trending Now</span>
+      <div class="scroll-buttons">
+      </div>
+    </h2>
+    
+    <div class="cards-container trending-container">
+      <div class="card" data-mood="fun,chill">
+        <img src="assets/images/movie-card-1.webp" alt="Movie 1"/>
+        <div class="card-overlay">
+          <h3>Comedy Special</h3>
+          <div class="card-info">
+            <span class="rating">⭐ 8.2</span>
+            <span class="year">2023</span>
+          </div>
+          <div class="card-buttons">
+            <button><i class="fas fa-play"></i></button>
+            <button><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+        <div class="card-badge hot">HOT</div>
+      </div>
+      
+      <div class="card" data-mood="thriller">
+        <img src="assets/images/movie-card-2.webp" alt="Movie 2"/>
+        <div class="card-overlay">
+          <h3>Dark Mystery</h3>
+          <div class="card-info">
+            <span class="rating">⭐ 7.9</span>
+            <span class="year">2023</span>
+          </div>
+          <div class="card-buttons">
+            <button><i class="fas fa-play"></i></button>
+            <button><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+        <div class="card-badge new">NEW</div>
+      </div>
+      
+      <div class="card" data-mood="romantic">
+        <img src="assets/images/movie-card-3.webp" alt="Movie 3"/>
+        <div class="card-overlay">
+          <h3>Love Story</h3>
+          <div class="card-info">
+            <span class="rating">⭐ 8.5</span>
+            <span class="year">2023</span>
+          </div>
+          <div class="card-buttons">
+            <button><i class="fas fa-play"></i></button>
+            <button><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" data-mood="fun">
+        <img src="assets/images/movie-card-4.webp" alt="Movie 4"/>
+        <div class="card-overlay">
+          <h3>Action Comedy</h3>
+          <div class="card-info">
+            <span class="rating">⭐ 7.7</span>
+            <span class="year">2023</span>
+          </div>
+          <div class="card-buttons">
+            <button><i class="fas fa-play"></i></button>
+            <button><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+        <div class="card-badge popular">POPULAR</div>
+      </div>
+      
+      <div class="card" data-mood="chill">
+        <img src="assets/images/movie-card-5.webp" alt="Movie 5"/>
+        <div class="card-overlay">
+          <h3>Documentary</h3>
+          <div class="card-info">
+            <span class="rating">⭐ 9.1</span>
+            <span class="year">2023</span>
+          </div>
+          <div class="card-buttons">
+            <button><i class="fas fa-play"></i></button>
+            <button><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" data-mood="fun,chill">
+        <img src="assets/images/movie-card-6.webp" alt="Movie 6"/>
+        <div class="card-overlay">
+          <h3>Animated Adventure</h3>
+          <div class="card-info">
+            <span class="rating">⭐ 8.0</span>
+            <span class="year">2023</span>
+          </div>
+          <div class="card-buttons">
+            <button><i class="fas fa-play"></i></button>
+            <button><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" data-mood="thriller">
+        <img src="assets/images/movie-card-7.webp" alt="Movie 7"/>
+        <div class="card-overlay">
+          <h3>Horror Night</h3>
+          <div class="card-info">
+            <span class="rating">⭐ 6.8</span>
+            <span class="year">2023</span>
+          </div>
+          <div class="card-buttons">
+            <button><i class="fas fa-play"></i></button>
+            <button><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+        <div class="card-badge new">NEW</div>
+      </div>
+      
+      <div class="card" data-mood="fun">
+        <img src="assets/images/movie-card-8.webp" alt="Movie 8"/>
+        <div class="card-overlay">
+          <h3>Stand-up Special</h3>
+          <div class="card-info">
+            <span class="rating">⭐ 8.4</span>
+            <span class="year">2023</span>
+          </div>
+          <div class="card-buttons">
+            <button><i class="fas fa-play"></i></button>
+            <button><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommended Section -->
+  <section class="content-section">
+    <h2 class="section-title"><span>Recommended For You</span></h2>
+    <div class="cards-container">
+      <div class="card" data-mood="romantic">
+        <img src="assets/images/movie-card-9.jpg" alt="Movie 9"/>
+        <div class="card-overlay">
+          <h3>Romantic Drama</h3>
+          <div class="card-info">
+            <span class="rating">⭐ 8.7</span>
+            <span class="year">2023</span>
+          </div>
+          <div class="card-buttons">
+            <button><i class="fas fa-play"></i></button>
+            <button><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+        <div class="card-badge popular">POPULAR</div>
+      </div>
+      
+      <div class="card" data-mood="thriller">
+        <img src="assets/images/movie-card-10.webp" alt="Movie 10"/>
+        <div class="card-overlay">
+          <h3>Psychological Thriller</h3>
+          <div class="card-info">
+            <span class="rating">⭐ 8.9</span>
+            <span class="year">2023</span>
+          </div>
+          <div class="card-buttons">
+            <button><i class="fas fa-play"></i></button>
+            <button><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" data-mood="fun,chill">
+        <img src="assets/images/movie-card-11.webp" alt="Movie 11"/>
+        <div class="card-overlay">
+          <h3>Family Comedy</h3>
+          <div class="card-info">
+            <span class="rating">⭐ 7.5</span>
+            <span class="year">2023</span>
+          </div>
+          <div class="card-buttons">
+            <button><i class="fas fa-play"></i></button>
+            <button><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" data-mood="romantic">
+        <img src="assets/images/movie-card-12.webp" alt="Movie 12"/>
+        <div class="card-overlay">
+          <h3>Romantic Comedy</h3>
+          <div class="card-info">
+            <span class="rating">⭐ 7.8</span>
+            <span class="year">2023</span>
+          </div>
+          <div class="card-buttons">
+            <button><i class="fas fa-play"></i></button>
+            <button><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+        <div class="card-badge hot">HOT</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Releases Section -->
+  <section class="content-section">
+    <h2 class="section-title"><span>New Releases</span></h2>
+    <div class="cards-container">
+      <div class="card" data-mood="thriller">
+        <img src="assets/images/movie-card-15.webp" alt="Movie 15"/>
+        <div class="card-overlay">
+          <h3>Action Thriller</h3>
+          <div class="card-info">
+            <span class="rating">⭐ 8.3</span>
+            <span class="year">2023</span>
+          </div>
+          <div class="card-buttons">
+            <button><i class="fas fa-play"></i></button>
+            <button><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" data-mood="chill">
+        <img src="assets/images/movie-card-16.webp" alt="Movie 16"/>
+        <div class="card-overlay">
+          <h3>Nature Documentary</h3>
+          <div class="card-info">
+            <span class="rating">⭐ 9.2</span>
+            <span class="year">2023</span>
+          </div>
+          <div class="card-buttons">
+            <button><i class="fas fa-play"></i></button>
+            <button><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" data-mood="fun">
+        <img src="assets/images/movie-card-17.jpg" alt="Movie 17"/>
+        <div class="card-overlay">
+          <h3>Animated Comedy</h3>
+          <div class="card-info">
+            <span class="rating">⭐ 8.1</span>
+            <span class="year">2023</span>
+          </div>
+          <div class="card-buttons">
+            <button><i class="fas fa-play"></i></button>
+            <button><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+</main>
+
+<script src="home.js"></script>
 </body>
 </html>
