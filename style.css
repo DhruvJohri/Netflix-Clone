@@ -308,7 +308,7 @@ html {
   padding: 100px 50px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 50px;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
@@ -337,28 +337,47 @@ html {
   line-height: 1.4;
 }
 
+/* For 1st TV and vedio */
 .secImg {
   position: relative;
 }
 .secImg img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+  position:relative;
+    z-index: 10;
+    width:490px
 }
 .secImg:hover {
-  transform: scale(1.05) rotate(1deg);
+  transform: scale(1.05) rotate(0.05deg);
 }
 .secImg video {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70%;
-  height: auto;
-  z-index: 1;
-  border-radius: 4px;
+    max-width: 360px;
+    top: 75px;
+    left: 65px;
+}
+/*For 2nd TV and vedio */
+.imgno3{
+    position: relative;
+}
+.imgno3 img{
+    position: relative;
+    padding-top: 50px;
+    height:408px;
+    width: 544px;
+    z-index: 10;
+}
+.imgno3:hover {
+  transform: scale(1.05) rotate(0.05deg);
+}
+.imgno3 video{
+    position: absolute;
+    height: 280px;
+    width: 350px;
+    top:65px;
+    left: 100px;
 }
 
+/*Frequent ask question  */
 
 .faq {
   padding: 100px 50px;
