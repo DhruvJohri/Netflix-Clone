@@ -15,6 +15,31 @@ body {
   width: 100%;
   z-index: 10;
 }
+.row {
+  margin-left: 20px;
+  margin-top: 30px;
+}
+.row h2 {
+  margin-left: 10px;
+}
+.row__posters {
+  display: flex;
+  overflow-x: scroll;
+  padding: 10px;
+}
+
+.row__poster {
+  width: 180px;
+  object-fit: cover;
+  margin-right: 10px;
+  transition: transform 0.2s;
+  border-radius: 4px;
+}
+
+.row__poster:hover {
+  transform: scale(1.08);
+  cursor: pointer;
+}
 
 .navbar .logo {
   color: red;
