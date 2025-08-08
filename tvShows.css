@@ -48,13 +48,29 @@ body {
 }
 
 .banner {
-  height: 40vh;
+  height: 50vh;
   background-image: url('https://image.tmdb.org/t/p/original/6UH52Fmau8RPsMAbQbjwN3wJSCj.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: flex-end;
   padding: 40px;
+  position: relative;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(20,20,20,1), rgba(20,20,20,0));
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
 }
 
 .banner h1 {
@@ -88,4 +104,3 @@ body {
 .row-poster:hover {
   transform: scale(1.1);
 }
-
