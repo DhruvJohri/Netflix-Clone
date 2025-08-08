@@ -110,25 +110,48 @@ document.addEventListener("DOMContentLoaded", () => {
 console.log("🍿 Welcome to Netflix Clone! Made with ❤️ ")
 
 
-// Loading Animation
+// Loading Animation with Netflix Intro
 document.addEventListener('DOMContentLoaded', function() {
     const loadingScreen = document.getElementById('loadingScreen');
     const body = document.body;
-    
-    // Prevent scrolling during loading
-    body.style.overflow = 'hidden';
-    
-    // Simulate loading time (2.5 seconds)
-    setTimeout(() => {
-        loadingScreen.classList.add('fade-out');
-        body.style.overflow = 'auto'; // Re-enable scrolling
-        
-        // Remove loading screen from DOM after fade out
+
+    if (loadingScreen) {
+        // Prevent scrolling during loading
+        body.style.overflow = 'hidden';
+
+        // Listen for message from iframe when animation completes
+        window.addEventListener('message', function(event) {
+            if (event.data === 'netflix-animation-complete') {
+                // Fade out loading screen
+                loadingScreen.classList.add('fade-out');
+                body.style.overflow = 'auto';
+
+                // Remove loading screen after fade
+                setTimeout(() => {
+                    if (loadingScreen && loadingScreen.parentNode) {
+                        loadingScreen.remove();
+                    }
+                }, 800);
+            }
+        });
+
+        // Fallback timeout in case message doesn't come through
         setTimeout(() => {
-            loadingScreen.remove();
-        }, 800);
-    }, 2000);
+            if (loadingScreen && loadingScreen.parentNode) {
+                loadingScreen.classList.add('fade-out');
+                body.style.overflow = 'auto';
+                setTimeout(() => {
+                    if (loadingScreen && loadingScreen.parentNode) {
+                        loadingScreen.remove();
+                    }
+                }, 800);
+            }
+        }, 5500); // 5.5 seconds fallback
+    }
 });
+
+
+
 
 
 document.addEventListener("DOMContentLoaded", function () {

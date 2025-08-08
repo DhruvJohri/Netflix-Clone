@@ -1,4 +1,5 @@
-@import url('./animations/loading-animation.css');
+/* @import url('./animations/loading-animation.css'); */
+
 /* Global Reset & Base Styles */
 * {
   margin: 0;
@@ -698,6 +699,35 @@ footer::before {
   transform: translateY(-5px) scale(1.1) rotate(5deg);
   box-shadow: 0 10px 25px rgba(229, 9, 20, 0.3);
 }
+
+/* Loading Screen Styles */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+.loading-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-screen iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #000;
+}
+
 
 /* Mobile Responsiveness - Adapting to all screens! */
 @media (max-width: 768px) {
