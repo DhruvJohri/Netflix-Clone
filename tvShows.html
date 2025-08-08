@@ -1,46 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Netflix - TV Shows</title>
-  <link rel="stylesheet" href="tvshows.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TV Shows - Netflix Clone</title>
+  <link rel="stylesheet" href="tvshows.css" />
 </head>
 <body>
+  <!-- Navbar -->
   <header class="navbar">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" class="logo" alt="Netflix Logo">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="tvshows.html" class="active">TV Shows</a></li>
-      <li><a href="#">Movies</a></li>
-      <li><a href="#">New & Popular</a></li>
-      <li><a href="#">My List</a></li>
-    </ul>
+    <div class="logo">NETFLIX</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">TV Shows</a>
+      <a href="#">Movies</a>
+      <a href="#">New & Popular</a>
+      <a href="#">My List</a>
+    </nav>
   </header>
 
-  <div class="banner">
-    <div class="banner-content">
-      <h1>Popular TV Shows</h1>
+  <!-- Hero Section with Video -->
+  <section class="hero">
+    <video autoplay muted loop class="hero-video">
+      <source src="video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+      <img src="sakamoto-logo.png" alt="Sakamoto Days" class="show-logo" />
+      <div class="buttons">
+        <button class="btn play">Play</button>
+        <button class="btn info">More Info</button>
+      </div>
     </div>
-  </div>
-
-  <div class="show-row">
-    <h2>Trending Now</h2>
-    <div class="row-posters">
-      <img class="row-poster" src="https://image.tmdb.org/t/p/w500/6UH52Fmau8RPsMAbQbjwN3wJSCj.jpg" alt="TV Show 1">
-      <img class="row-poster" src="https://image.tmdb.org/t/p/w500/2F4cS8RMhU56dSv8cYUGgMLmY9c.jpg" alt="TV Show 2">
-      <img class="row-poster" src="https://image.tmdb.org/t/p/w500/pO4ihzZXh1bo0uB7rWgf66MI4Ft.jpg" alt="TV Show 3">
-      <img class="row-poster" src="https://image.tmdb.org/t/p/w500/fZrJ3AbkPX8yEfABiYoKxEMieYk.jpg" alt="TV Show 4">
-    </div>
-  </div>
-
-  <div class="show-row">
-    <h2>Top Rated</h2>
-    <div class="row-posters">
-      <img class="row-poster" src="https://image.tmdb.org/t/p/w500/yDWJYRAwMNKbIYT8ZB33qy84uzO.jpg" alt="TV Show 5">
-      <img class="row-poster" src="https://image.tmdb.org/t/p/w500/oGzjKk3J1YMTCiQKpSq8bczlwlT.jpg" alt="TV Show 6">
-      <img class="row-poster" src="https://image.tmdb.org/t/p/w500/2r7Yq44MmJdcjH0QeIPdYTwIz4l.jpg" alt="TV Show 7">
-      <img class="row-poster" src="https://image.tmdb.org/t/p/w500/whB2PBdR3GoQ38nxDkXLirGwiN4.jpg" alt="TV Show 8">
-    </div>
-  </div>
+  </section>
 </body>
 </html>
