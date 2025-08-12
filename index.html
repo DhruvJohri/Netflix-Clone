@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    
+
+
+
+
     <!-- Loading Screen -->
     <div id="loadingScreen" class="loading-screen">
         <iframe id="netflixIframe" src="animations/netflix.html" frameborder="0"></iframe>
@@ -33,17 +38,16 @@
           />
         </div>
         <ul class="nav-links">
-           <li style="--i: 1"><a href="home.html">Home</a></li>
-          <li style="--i: 2"><a href="#">TV Shows</a></li>
-          <li style="--i: 3"><a href="movies.html">Movies</a></li>
-          <li style="--i: 4"><a href="#">New & Popular</a></li>
-          <li style="--i: 5"><a href="#">My List</a></li>
-        </ul>
-        <div class="nav-buttons">
-        <button id="lang-toggle" data-lang="en" style="background: none; border: 1px solid white; color: white; padding: 6px 12px; border-radius: 5px; cursor: pointer;">
-  <i class="fas fa-globe"></i> English
+  <li style="--i: 1"><a href="home.html" data-i18n="nav_home">Home</a></li>
+  <li style="--i: 2"><a href="#" data-i18n="nav_tvshows">TV Shows</a></li>
+  <li style="--i: 3"><a href="movies.html" data-i18n="nav_movies">Movies</a></li>
+  <li style="--i: 4"><a href="#" data-i18n="nav_newpopular">New & Popular</a></li>
+  <li style="--i: 5"><a href="#" data-i18n="nav_mylist">My List</a></li>
+</ul>
 
-              </button>
+        <div class="nav-buttons">
+        <button id="lang-toggle" data-lang="en..." style="background: none; border: 1px solid white; color: white; padding: 6px 12px; border-radius: 5px; cursor: pointer;">
+  <i class="fas fa-globe"></i> English
           <a href="signin.html" class="btn btn-red-sm">Sign In</a>
         </div>
       </nav>
@@ -51,9 +55,9 @@
       <div class="box"></div>
 
       <div class="hero">
-        <span>Unlimited movies, TV shows and more</span>
-        <span>Starts at ₹149. Cancel at any time.</span>
-        <span
+       <span data-i18n="hero_title">Unlimited movies, TV shows and more</span>
+<span data-i18n="hero_subtitle">Starts at ₹149. Cancel at any time.</span>
+        <span data-i18n="Ready"
           >Ready to watch? Enter your email to create or restart your
           membership.</span
         >
@@ -68,6 +72,7 @@
           <button
             type="button"
             class="btn btn-red"
+            data-i18n="getStarted"
             onclick="handleFormSubmit()"
           >
             Get Started &gt;
@@ -80,8 +85,8 @@
 
     <section class="first animate-on-scroll">
       <div>
-        <span>Enjoy on your TV</span>
-        <span
+        <span data-i18n="enjoyTV">Enjoy on your TV</span>
+        <span data-i18n="tvDescription"
           >Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray
           players and more.</span
         >
@@ -110,23 +115,28 @@
         />
       </div>
       <div>
-        <span>Download your shows to watch offline</span>
-        <span
-          >Save your favourites easily and always have something to watch.</span
-        >
-      </div>
+  <span data-i18n="download_title">
+    Download your shows to watch offline
+  </span>
+  <span data-i18n="download_desc">
+    Save your favourites easily and always have something to watch.
+  </span>
+</div>
+
     </section>
 
     <div class="separation"></div>
 
     <section class="first third animate-on-scroll">
       <div>
-        <span>Watch everywhere</span>
-        <span
-          >Stream unlimited movies and TV shows on your phone, tablet, laptop,
-          and TV.</span
-        >
-      </div>
+  <span data-i18n="watch_everywhere_title">
+    Watch everywhere
+  </span>
+  <span data-i18n="watch_everywhere_desc">
+    Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.
+  </span>
+</div>
+
       <div class="imgno3">
         <img
           src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png"
@@ -151,12 +161,14 @@
         />
       </div>
       <div>
-        <span>Create profiles for kids</span>
-        <span
-          >Send children on adventures with their favourite characters in a
-          space made just for them—free with your membership.</span
-        >
-      </div>
+  <span data-i18n="kids_profiles_title">
+    Create profiles for kids
+  </span>
+  <span data-i18n="kids_profiles_desc">
+    Send children on adventures with their favourite characters in a space made just for them—free with your membership.
+  </span>
+</div>
+
     </section>
 
     <div class="separation"></div>
