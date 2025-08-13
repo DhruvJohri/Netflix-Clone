@@ -1,64 +1,96 @@
+/* Base Styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #111;
   color: white;
+  line-height: 1.5;
 }
 
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
   background-color: #000;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
+/* Logo */
 .logo {
   font-size: 2rem;
   font-weight: bold;
   color: red;
   text-decoration: none;
+  transition: transform 0.3s ease;
+}
+.logo:hover {
+  transform: scale(1.05);
 }
 
+/* Navigation */
 nav a {
   margin-left: 20px;
   color: white;
   text-decoration: none;
+  position: relative;
+  font-size: 1rem;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: red;
 }
 
 nav a.active {
   border-bottom: 2px solid red;
 }
 
+/* Main Content */
 main {
   padding: 40px;
 }
 
+/* Movies Grid */
 .movies-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 20px;
 }
 
+/* Movie Card */
 .movie-card {
   background-color: #222;
   border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
-
 .movie-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
 }
 
+/* Movie Poster */
 .movie-card img {
   width: 100%;
   height: 260px;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.movie-card:hover img {
+  transform: scale(1.05);
 }
 
+/* Movie Title */
 .movie-card p {
   padding: 10px;
   font-weight: bold;
   text-align: center;
+  font-size: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
 }
