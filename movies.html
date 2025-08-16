@@ -82,6 +82,40 @@
       text-align: center;
       font-weight: bold;
     }
+    .hero-video {
+      width: 100%;
+      height: auto;
+      max-height: 100vh;
+      object-fit: cover;
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 20%;
+      left: 5%;
+      z-index: 2;
+      color: black;
+      margin-top: 500px;
+    }
+    .btn {
+      padding: 10px 20px;
+      background-color: red;
+      color: black;
+      border: none;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    #videoInfo {
+      display: none;
+      margin-top: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      border-radius: 5px;
+      max-width: 300px;
+    }
   </style>
 </head>
 <body>
@@ -96,6 +130,26 @@
       <a href="new.html">New & Popular</a>
     </nav>
   </header>
+  <!-- Hero Section with Video -->
+  <section class="hero">
+    <video id="bgVideo" autoplay muted loop class="hero-video">
+      <source src="video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-content">
+      <div class="buttons">
+        <button id="playBtn" class="btn">Pause</button>
+        <button id="infoBtn" class="btn">More Info</button>
+      </div>
+      <div id="videoInfo">
+        <h3>The Great Adventure</h3>
+        <p>
+          A thrilling journey across continents filled with mystery, excitement, and breathtaking moments.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <!-- Main Content -->
   <section class="main-content">
@@ -110,7 +164,7 @@
         <div class="movie-title">Oppenheimer</div>
       </div>
       <div class="movie">
-        <img src="https://image.tmdb.org/t/p/w500/2X5jDfu7xFgNsyFY9kTU2rqlqOQ.jpg" alt="Movie 3">
+        <img src="https://fr.web.img6.acsta.net/pictures/18/11/13/11/42/1696141.jpg" alt="Movie 3">
         <div class="movie-title">Spider-Man: No Way Home</div>
       </div>
       <div class="movie">
@@ -118,11 +172,38 @@
         <div class="movie-title">Inception</div>
       </div>
       <div class="movie">
-        <img src="https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg" alt="Movie 5">
+        <img src="https://www.themoviedb.org/t/p/original/eP5NL7ZlGoW9tE9qnCdHpOLH1Ke.jpg" alt="Movie 5">
         <div class="movie-title">The Dark Knight</div>
       </div>
     </div>
   </section>
+  <script>
+    const video = document.getElementById("bgVideo");
+    const playBtn = document.getElementById("playBtn");
+    const infoBtn = document.getElementById("infoBtn");
+    const infoBox = document.getElementById("videoInfo");
+
+    let isPlaying = true;
+
+    playBtn.addEventListener("click", () => {
+      if (isPlaying) {
+        video.pause();
+        playBtn.textContent = "Play";
+      } else {
+        video.play();
+        playBtn.textContent = "Pause";
+      }
+      isPlaying = !isPlaying;
+    });
+
+    infoBtn.addEventListener("click", () => {
+      if (infoBox.style.display === "none") {
+        infoBox.style.display = "block";
+      } else {
+        infoBox.style.display = "none";
+      }
+    });
+  </script>
 
 </body>
 </html>
