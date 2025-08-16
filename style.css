@@ -7,7 +7,6 @@
   box-sizing: border-box;
   transition: all 0.3s ease; /* Smooth transitions f */
 }
-
 body {
   background-color: #000;
   color: #fff;
@@ -229,6 +228,7 @@ html {
   max-width: 800px;
   background: linear-gradient(135deg, #fff 0%, #e5e5e5 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Poppins", sans-serif;
 }
@@ -329,6 +329,7 @@ html {
   line-height: 1.1;
   background: linear-gradient(135deg, #fff 0%, #e5e5e5 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .first span:last-child {
@@ -392,7 +393,8 @@ html {
   margin-bottom: 60px;
   animation: fadeInUp 1s ease;
   background: linear-gradient(135deg, #fff 0%, #e5e5e5 100%);
-  -webkit-background-clip: text;
+ -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Poppins", sans-serif;
 }

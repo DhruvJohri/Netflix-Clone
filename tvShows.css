@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  background-color: black;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+.row {
+  margin-left: 20px;
+  margin-top: 30px;
+}
+.row h2 {
+  margin-left: 10px;
+}
+.row__posters {
+  display: flex;
+  overflow-x: scroll;
+  padding: 10px;
+}
+
+.row__poster {
+  width: 180px;
+  object-fit: cover;
+  margin-right: 10px;
+  transition: transform 0.2s;
+  border-radius: 4px;
+}
+
+.row__poster:hover {
+  transform: scale(1.08);
+  cursor: pointer;
+}
+
+.navbar .logo {
+  color: red;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+ 
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 20%;
+  left: 50px;
+  color: white;
+}
+
+.show-logo {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.buttons .btn {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.buttons .btn.info {
+  background-color: rgba(109, 109, 110, 0.7);
+  color: white;
+}

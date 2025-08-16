@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TV Shows - Netflix Clone</title>
+  <link rel="stylesheet" href="tvshows.css" />
+  <style>
+    .hero {
+      position: relative;
+      
+    }
+
+    .hero-video {
+      width: 100%;
+      height: auto;
+      max-height: 100vh;
+      object-fit: cover;
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 20%;
+      left: 5%;
+      z-index: 2;
+      color: black;
+      margin-top: 500px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: red;
+      color: black;
+      border: none;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    #videoInfo {
+      display: none;
+      margin-top: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      border-radius: 5px;
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">NETFLIX</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="tvshows.html">TV Shows</a>
+      <a href="movies.html">Movies</a>
+      <a href="new.html">New & Popular</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section with Video -->
+  <section class="hero">
+    <video id="bgVideo" autoplay muted loop class="hero-video">
+      <source src="video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-content">
+      <div class="buttons">
+        <button id="playBtn" class="btn">Pause</button>
+        <button id="infoBtn" class="btn">More Info</button>
+      </div>
+      <div id="videoInfo">
+        <h3>The Great Adventure</h3>
+        <p>
+          A thrilling journey across continents filled with mystery, excitement, and breathtaking moments.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="row">
+    <h2>My List</h2>
+    <div class="row__posters">
+      <img src="https://es.web.img3.acsta.net/pictures/19/08/29/09/30/2548353.jpg" alt="The Blacklist" class="row__poster" />
+      <img src="https://tse1.mm.bing.net/th/id/OIP.OJboLSx502X2PcuvMcuVpgAAAA?w=140&h=207&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Mandala Murders" class="row__poster" />
+      <img src="https://m.media-amazon.com/images/M/MV5BMTQ4NDE4NTY5MV5BMl5BanBnXkFtZTcwODQyMTkxNA@@._V1_.jpg" alt="Lincoln Lawyer" class="row__poster" />
+      <img src="https://m.media-amazon.com/images/M/MV5BNWQ3MDQ2MGQtOGM0MC00MzlkLWE0ODQtYzE4Zjc3Mjc1ZWI5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Dept Q" class="row__poster" />
+      <img src="https://blackbirdnews.com/wp-content/uploads/2025/03/The-diplomat-movie-review.jpg" alt="The Diplomat" class="row__poster" />
+      <img src="https://images.justwatch.com/poster/330765725/s718/mercy-for-none.jpg" alt="Mercy For None" class="row__poster" />
+    </div>
+  </section>
+  <section class="row">
+    <h2>Continue Watching </h2>
+    <div class="row__posters">
+      <img src="https://m.media-amazon.com/images/M/MV5BNWQ3MDQ2MGQtOGM0MC00MzlkLWE0ODQtYzE4Zjc3Mjc1ZWI5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Dept Q" class="row__poster" />
+      <img src="https://es.web.img3.acsta.net/pictures/19/08/29/09/30/2548353.jpg" alt="The Blacklist" class="row__poster" />
+    </div>
+  </section>
+  <section class="row">
+    <h2>Your Next Watch</h2>
+    <div class="row__posters">
+      <img src="https://www.justwatch.com/images/poster/321795942/s718/black-doves.jpg" alt="Black Doves" class="row__poster" />
+      <img src="https://m.media-amazon.com/images/M/MV5BM2ZmMjEyZmYtOGM4YS00YTNhLWE3ZDMtNzQxM2RhNjBlODIyXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg" alt="Wednesday" class="row__poster" />
+      <img src="https://tse3.mm.bing.net/th/id/OIP.-azOv6oL59M4lzGOeT7dUwHaJ4?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Beyond the Bar" class="row__poster" />
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/09f46d170101427.6458a09d6263f.jpg" alt="Rana Naidu" class="row__poster" />
+      <img src="https://br.web.img3.acsta.net/pictures/21/08/05/10/07/5681271.jpg" alt="Lucifer" class="row__poster" />
+      <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p25933529_b_v13_aa.jpg" alt="Criminal Code" class="row__poster" />
+    </div>
+  </section>
+
+  <script>
+    const video = document.getElementById("bgVideo");
+    const playBtn = document.getElementById("playBtn");
+    const infoBtn = document.getElementById("infoBtn");
+    const infoBox = document.getElementById("videoInfo");
+
+    let isPlaying = true;
+
+    playBtn.addEventListener("click", () => {
+      if (isPlaying) {
+        video.pause();
+        playBtn.textContent = "Play";
+      } else {
+        video.play();
+        playBtn.textContent = "Pause";
+      }
+      isPlaying = !isPlaying;
+    });
+
+    infoBtn.addEventListener("click", () => {
+      if (infoBox.style.display === "none") {
+        infoBox.style.display = "block";
+      } else {
+        infoBox.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>

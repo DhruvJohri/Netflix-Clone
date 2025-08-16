@@ -110,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
 console.log("🍿 Welcome to Netflix Clone! Made with ❤️ ")
 
 
-// Loading Animation with Netflix Intro
 document.addEventListener('DOMContentLoaded', function() {
     const loadingScreen = document.getElementById('loadingScreen');
     const body = document.body;

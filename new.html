@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix - News & Popular</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: black;
+      padding: 15px 40px;
+    }
+
+    .navbar h2 {
+      color: red;
+      margin: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    /* Section titles */
+    .section {
+      margin: 30px 20px;
+    }
+
+    .section h2 {
+      margin-bottom: 10px;
+    }
+
+    /* Movie Row (scrollable like Netflix) */
+    .movie-row {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 10px 0;
+    }
+
+    .movie-row::-webkit-scrollbar {
+      display: none; /* Hide scrollbar */
+    }
+
+    .movie {
+      flex: 0 0 auto;
+      width: 200px;
+      transition: transform 0.3s;
+      border-radius: 8px;
+    }
+
+    .movie:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    .movie img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h2>NETFLIX</h2>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="tvshows.html">TV Shows</a>
+      <a href="movies.html">Movies</a>
+      <a href="news.html">New & Popular</a>
+    </div>
+  </div>
+
+  <!-- Top 10 Movies -->
+  <div class="section">
+    <h2>Top 10 Movies</h2>
+    <div class="movie-row">
+      <div class="movie"><img src="https://image.tmdb.org/t/p/w500/8YFL5QQVPy3AgrEQxNYVSgiPEbe.jpg" alt="Extraction 2"></div>
+      <div class="movie"><img src="https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg" alt="Avengers"></div>
+      <div class="movie"><img src="https://image.tmdb.org/t/p/w500/9PFonBhy4cQy7Jz20NpMygczOkv.jpg" alt="Avatar 2"></div>
+      <div class="movie"><img src="https://image.tmdb.org/t/p/w500/5YZbUmjbMa3ClvSW1Wj3D6XGolb.jpg" alt="Guardians of the Galaxy Vol. 3"></div>
+      <div class="movie"><img src="https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg" alt="Black Panther Wakanda Forever"></div>
+        <div class="movie"><img src="https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg" alt="Oppenheimer"></div>
+        <div class="movie"><img src="https://m.media-amazon.com/images/S/pv-target-images/e9a43e647b2ca70e75a3c0af046c4dfdcd712380889779cbdc2c57d94ab63902.jpg" alt="The Dark Knight"></div>
+   
+
+    </div>
+  </div>
+
+  <!-- New on Netflix -->
+  <div class="section">
+    <h2>New on Netflix</h2>
+    <div class="movie-row">
+      <div class="movie"><img src="https://image.tmdb.org/t/p/w500/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg" alt="The Gray Man"></div>
+      <div class="movie"><img src="https://tse3.mm.bing.net/th/id/OIP.gr2yTM13UOgxNyjCcYOOhgHaLH?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Spider-Man No Way Home"></div>
+      <div class="movie"><img src="https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg" alt="Money Heist"></div>
+      <div class="movie"><<img src="https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg" alt="Stranger Things 4"></div>
+    </div>
+  </div>
+
+  <!-- Trending Now -->
+  <div class="section">
+    <h2>Trending Now</h2>
+    <div class="movie-row">
+      <div class="movie"><img src="trend1.jpg" alt="Trend 1"></div>
+      <div class="movie"><img src="trend2.jpg" alt="Trend 2"></div>
+      <div class="movie"><img src="trend3.jpg" alt="Trend 3"></div>
+      <div class="movie"><img src="trend4.jpg" alt="Trend 4"></div>
+    </div>
+  </div>
+
+</body>
+</html>
