@@ -109,6 +109,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 console.log("🍿 Welcome to Netflix Clone! Made with ❤️ ")
 
+// Navigation routing system
+function navigateToPage(page) {
+  const validPages = ['index.html', 'home.html', 'tvshows.html', 'movies.html', 'signin.html', 'register.html'];
+  
+  if (validPages.includes(page)) {
+    window.location.href = page;
+  } else {
+    console.warn(`Invalid page: ${page}`);
+  }
+}
+
+// Add navigation event listeners
+document.addEventListener('DOMContentLoaded', function() {
+  // Add click handlers for navigation links
+  const navLinks = document.querySelectorAll('a[href]');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href !== '#' && !href.startsWith('http') && !href.startsWith('mailto:')) {
+        // Handle internal navigation
+        if (href.includes('tvshows.html')) {
+          e.preventDefault();
+          navigateToPage('tvshows.html');
+        }
+      }
+    });
+  });
+});
+
 
 // Loading Animation with Netflix Intro
 document.addEventListener('DOMContentLoaded', function() {

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Clone - Search</title>
+  <link rel="stylesheet" href="search.css">
+  <link rel="stylesheet" href="components/breadcrumb.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="search-page">
+  <header>
+    <a href="index.html" class="logo">NETFLIX</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="tvshows.html">TV Shows</a>
+      <a href="home.html">My List</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <div id="breadcrumb-container" data-breadcrumb></div>
+    </nav>
+    
+    <div class="search-container">
+      <div class="search-header">
+        <h1><i class="fas fa-search"></i> Search</h1>
+        <p>Find your favorite movies and TV shows</p>
+      </div>
+
+      <div class="search-input-container">
+        <input type="text" id="searchInput" placeholder="Search for movies, TV shows, actors..." autocomplete="off">
+        <button id="searchBtn"><i class="fas fa-search"></i></button>
+      </div>
+
+      <div class="search-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="movies">Movies</button>
+        <button class="filter-btn" data-filter="tvshows">TV Shows</button>
+        <button class="filter-btn" data-filter="actors">Actors</button>
+      </div>
+
+      <div class="search-results" id="searchResults">
+        <!-- Search results will be displayed here -->
+        <div class="no-results">
+          <i class="fas fa-search"></i>
+          <p>Start typing to search for content</p>
+        </div>
+      </div>
+
+      <div class="popular-searches">
+        <h3>Popular Searches</h3>
+        <div class="popular-tags">
+          <span class="tag">Action</span>
+          <span class="tag">Comedy</span>
+          <span class="tag">Drama</span>
+          <span class="tag">Horror</span>
+          <span class="tag">Romance</span>
+          <span class="tag">Sci-Fi</span>
+          <span class="tag">Thriller</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="routes.js"></script>
+  <script src="components/breadcrumb.js"></script>
+  <script src="search.js"></script>
+</body>
+</html>

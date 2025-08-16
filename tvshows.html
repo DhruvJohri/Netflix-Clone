@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Clone - TV Shows</title>
+  <link rel="stylesheet" href="tvshows.css">
+  <link rel="stylesheet" href="components/breadcrumb.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="tvshows-page">
+  <header>
+    <a href="index.html" class="logo">NETFLIX</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="tvshows.html" class="active">TV Shows</a>
+      <a href="home.html">My List</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <div id="breadcrumb-container" data-breadcrumb></div>
+    </nav>
+    
+    <div class="hero-section">
+      <h1>TV Shows</h1>
+      <p>Discover the latest and greatest TV series</p>
+    </div>
+
+    <div class="categories-section">
+      <h2>Popular TV Shows</h2>
+      <div class="tvshows-grid" id="popularContainer">
+        <!-- Popular TV shows will be inserted here -->
+      </div>
+    </div>
+
+    <div class="categories-section">
+      <h2>Netflix Originals</h2>
+      <div class="tvshows-grid" id="originalsContainer">
+        <!-- Netflix originals will be inserted here -->
+      </div>
+    </div>
+
+    <div class="categories-section">
+      <h2>Trending Now</h2>
+      <div class="tvshows-grid" id="trendingContainer">
+        <!-- Trending shows will be inserted here -->
+      </div>
+    </div>
+
+    <div class="categories-section">
+      <h2>New Releases</h2>
+      <div class="tvshows-grid" id="newReleasesContainer">
+        <!-- New releases will be inserted here -->
+      </div>
+    </div>
+  </main>
+
+  <script src="routes.js"></script>
+  <script src="components/breadcrumb.js"></script>
+  <script src="tvshows.js"></script>
+</body>
+</html>

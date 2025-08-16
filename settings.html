@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Clone - Settings</title>
+  <link rel="stylesheet" href="settings.css">
+  <link rel="stylesheet" href="components/breadcrumb.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="settings-page">
+  <header>
+    <a href="index.html" class="logo">NETFLIX</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="tvshows.html">TV Shows</a>
+      <a href="home.html">My List</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <div id="breadcrumb-container" data-breadcrumb></div>
+    </nav>
+    
+    <div class="settings-container">
+      <div class="settings-header">
+        <h1><i class="fas fa-cog"></i> Settings</h1>
+        <p>Manage your account and preferences</p>
+      </div>
+
+      <div class="settings-grid">
+        <div class="settings-section">
+          <h2><i class="fas fa-user"></i> Profile Settings</h2>
+          <div class="setting-item">
+            <label>Display Name</label>
+            <input type="text" value="Netflix User" placeholder="Enter display name">
+          </div>
+          <div class="setting-item">
+            <label>Email</label>
+            <input type="email" value="user@example.com" placeholder="Enter email">
+          </div>
+          <div class="setting-item">
+            <label>Profile Picture</label>
+            <button class="upload-btn"><i class="fas fa-upload"></i> Upload Photo</button>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h2><i class="fas fa-video"></i> Playback Settings</h2>
+          <div class="setting-item">
+            <label>Autoplay</label>
+            <label class="toggle">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="setting-item">
+            <label>Video Quality</label>
+            <select>
+              <option>Auto</option>
+              <option>High</option>
+              <option>Medium</option>
+              <option>Low</option>
+            </select>
+          </div>
+          <div class="setting-item">
+            <label>Subtitle Language</label>
+            <select>
+              <option>English</option>
+              <option>Spanish</option>
+              <option>French</option>
+              <option>German</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h2><i class="fas fa-bell"></i> Notifications</h2>
+          <div class="setting-item">
+            <label>New Releases</label>
+            <label class="toggle">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="setting-item">
+            <label>Recommendations</label>
+            <label class="toggle">
+              <input type="checkbox">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="setting-item">
+            <label>Email Notifications</label>
+            <label class="toggle">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h2><i class="fas fa-shield-alt"></i> Privacy & Security</h2>
+          <div class="setting-item">
+            <label>Viewing History</label>
+            <button class="action-btn">Manage</button>
+          </div>
+          <div class="setting-item">
+            <label>Download History</label>
+            <button class="action-btn">Manage</button>
+          </div>
+          <div class="setting-item">
+            <label>Change Password</label>
+            <button class="action-btn">Update</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-actions">
+        <button class="save-btn"><i class="fas fa-save"></i> Save Changes</button>
+        <button class="reset-btn"><i class="fas fa-undo"></i> Reset to Default</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="routes.js"></script>
+  <script src="components/breadcrumb.js"></script>
+  <script src="settings.js"></script>
+</body>
+</html>

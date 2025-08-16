@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Clone - New Releases</title>
+  <link rel="stylesheet" href="new-releases.css">
+  <link rel="stylesheet" href="components/breadcrumb.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="new-releases-page">
+  <header>
+    <a href="index.html" class="logo">NETFLIX</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="tvshows.html">TV Shows</a>
+      <a href="home.html">My List</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <div id="breadcrumb-container" data-breadcrumb></div>
+    </nav>
+    
+    <div class="new-releases-container">
+      <div class="new-releases-header">
+        <h1><i class="fas fa-star"></i> New Releases</h1>
+        <p>Fresh content added this week</p>
+      </div>
+
+      <div class="release-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="movies">Movies</button>
+        <button class="filter-btn" data-filter="tvshows">TV Shows</button>
+        <button class="filter-btn" data-filter="this-week">This Week</button>
+        <button class="filter-btn" data-filter="this-month">This Month</button>
+      </div>
+
+      <div class="new-releases-section">
+        <h2>🆕 Just Added</h2>
+        <div class="new-releases-grid" id="justAddedContainer">
+          <!-- Just added content will be displayed here -->
+        </div>
+      </div>
+
+      <div class="new-releases-section">
+        <h2>📅 Coming This Week</h2>
+        <div class="new-releases-grid" id="comingThisWeekContainer">
+          <!-- Coming this week content will be displayed here -->
+        </div>
+      </div>
+
+      <div class="new-releases-section">
+        <h2>🎬 New Movies</h2>
+        <div class="new-releases-grid" id="newMoviesContainer">
+          <!-- New movies will be displayed here -->
+        </div>
+      </div>
+
+      <div class="new-releases-section">
+        <h2>📺 New TV Shows</h2>
+        <div class="new-releases-grid" id="newTVShowsContainer">
+          <!-- New TV shows will be displayed here -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="routes.js"></script>
+  <script src="components/breadcrumb.js"></script>
+  <script src="new-releases.js"></script>
+</body>
+</html>

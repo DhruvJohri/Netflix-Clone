@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Clone - Trending</title>
+  <link rel="stylesheet" href="trending.css">
+  <link rel="stylesheet" href="components/breadcrumb.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="trending-page">
+  <header>
+    <a href="index.html" class="logo">NETFLIX</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="tvshows.html">TV Shows</a>
+      <a href="home.html">My List</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <div id="breadcrumb-container" data-breadcrumb></div>
+    </nav>
+    
+    <div class="trending-container">
+      <div class="trending-header">
+        <h1><i class="fas fa-fire"></i> Trending Now</h1>
+        <p>What's hot and popular this week</p>
+      </div>
+
+      <div class="trending-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="movies">Movies</button>
+        <button class="filter-btn" data-filter="tvshows">TV Shows</button>
+        <button class="filter-btn" data-filter="global">Global</button>
+        <button class="filter-btn" data-filter="india">India</button>
+      </div>
+
+      <div class="trending-section">
+        <h2>🔥 Top 10 Trending</h2>
+        <div class="top-10-grid" id="top10Container">
+          <!-- Top 10 trending items will be displayed here -->
+        </div>
+      </div>
+
+      <div class="trending-section">
+        <h2>📈 Most Popular This Week</h2>
+        <div class="trending-grid" id="popularContainer">
+          <!-- Popular items will be displayed here -->
+        </div>
+      </div>
+
+      <div class="trending-section">
+        <h2>🌍 Trending Globally</h2>
+        <div class="trending-grid" id="globalContainer">
+          <!-- Global trending items will be displayed here -->
+        </div>
+      </div>
+
+      <div class="trending-section">
+        <h2>🇮🇳 Trending in India</h2>
+        <div class="trending-grid" id="indiaContainer">
+          <!-- India trending items will be displayed here -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="routes.js"></script>
+  <script src="components/breadcrumb.js"></script>
+  <script src="trending.js"></script>
+</body>
+</html>
