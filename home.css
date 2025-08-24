@@ -1,65 +1,68 @@
- body {
+    body {
       margin: 0;
       background-color: #0f0f0f;
       font-family: Arial, sans-serif;
       color: white;
       display: flex;
+      flex-direction: column;
     }
 
     .logo {
-  text-align: center;
-  padding: 5px 0;
-}
+      text-align: center;
+      padding: 5px 0;
+    }
 
-.logo img {
-  width: 80px;
-  height: auto;
-}
+    .logo img {
+      width: 80px;
+      height: auto;
+    }
 
-.left {
-  width: 15%;
-  height: 100vh;
-  background-color: #111;
-  color: white;
-  padding: 20px 10px;
-  box-sizing: border-box;
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow-y: auto;
-}
+    .left {
+      width: 15%;
+      height: 100vh;
+      background-color: #111;
+      color: white;
+      padding: 20px 10px;
+      box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow-y: auto;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
 
-.left ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+    .left ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-.left ul li {
-  margin-bottom: 20px;
-}
+    .left ul li {
+      margin-bottom: 20px;
+    }
 
-.left ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 18px;
-  display: block;
-  padding: 10px 15px;
-  border-radius: 6px;
-  transition: background-color 0.3s;
-}
+    .left ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      display: block;
+      padding: 10px 15px;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
 
-.left ul li a:hover {
-  background-color: #333;
-}
+    .left ul li a:hover {
+      background-color: #333;
+    }
 
-.right {
-  margin-left: 15%;
-  padding: 20px;
-  background-color: #050505;
-  min-height: 100vh;
-  box-sizing: border-box;
-}
+    .right {
+      margin-left: 15%;
+      padding: 20px;
+      background-color: #050505;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
 
     .main-content {
       flex: 1;
@@ -76,19 +79,26 @@
       color: white;
       border-radius: 4px;
       margin-bottom: 30px;
+      box-sizing: border-box;
+    }
+
+    .search-bar::placeholder {
+      color: #ccc;
     }
 
     .trending-section {
-      font-family:  sans-serif;
+      font-family: sans-serif;
       font-size: 22px;
       margin-bottom: 20px;
+      font-weight: bold;
     }
-    
 
     .cards-container {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
+      justify-content: flex-start;
+      margin-bottom: 40px;
     }
 
     .card {
@@ -98,6 +108,8 @@
       overflow: hidden;
       position: relative;
       transition: transform 0.3s ease;
+      flex-shrink: 0;
+      cursor: pointer;
     }
 
     .card:hover {
@@ -110,21 +122,181 @@
       object-fit: cover;
     }
 
-
-
-  .recommended-section{
-     
-    margin-top: 20px;
-     font-family:  sans-serif;
+    .recommended-section {
+      margin-top: 20px;
+      font-family: sans-serif;
       font-size: 22px;
       margin-bottom: 20px;
-}
+      font-weight: bold;
+    }
 
-.new-releases-section{
-  margin-top: 20px;
-     font-family:  sans-serif;
+    .new-releases-section {
+      margin-top: 20px;
+      font-family: sans-serif;
       font-size: 22px;
       margin-bottom: 20px;
-}
+      font-weight: bold;
+    }
 
- 
+    /* Mobile hamburger menu button */
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1001;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 12px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .menu-toggle:hover {
+      background-color: #555;
+    }
+
+    /* Overlay for mobile menu */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+    }
+
+    /* Mobile Responsive Styles */
+    @media screen and (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      
+      .menu-toggle {
+        display: block;
+      }
+      
+      .left {
+        width: 280px;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        padding: 20px 15px;
+      }
+      
+      .left.active {
+        transform: translateX(0);
+      }
+      
+      .right {
+        margin-left: 0;
+        padding: 70px 15px 20px 15px;
+        width: 100%;
+      }
+      
+      .search-bar {
+        font-size: 16px;
+        padding: 12px;
+        margin-bottom: 25px;
+      }
+      
+      .trending-section,
+      .recommended-section,
+      .new-releases-section {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      
+      .cards-container {
+        gap: 15px;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+      
+      .card {
+        width: calc(50% - 7.5px);
+        height: 200px;
+        min-width: 140px;
+      }
+      
+      .card:hover {
+        transform: scale(1.02);
+      }
+
+      .overlay.active {
+        display: block;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .right {
+        padding: 70px 10px 20px 10px;
+      }
+      
+      .trending-section,
+      .recommended-section,
+      .new-releases-section {
+        font-size: 18px;
+        margin-bottom: 12px;
+      }
+      
+      .cards-container {
+        gap: 12px;
+        margin-bottom: 25px;
+      }
+      
+      .card {
+        width: calc(50% - 6px);
+        height: 180px;
+        min-width: 120px;
+      }
+      
+      .search-bar {
+        padding: 10px;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+      
+      .logo img {
+        width: 60px;
+      }
+      
+      .left ul li a {
+        font-size: 16px;
+        padding: 12px 15px;
+      }
+
+      .left ul li {
+        margin-bottom: 15px;
+      }
+    }
+
+    @media screen and (max-width: 360px) {
+      .card {
+        width: calc(50% - 8px);
+        height: 160px;
+        min-width: 110px;
+      }
+      
+      .trending-section,
+      .recommended-section,
+      .new-releases-section {
+        font-size: 16px;
+      }
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Loading state for images */
+    .card img {
+      background-color: #222;
+      transition: opacity 0.3s ease;
+    }
