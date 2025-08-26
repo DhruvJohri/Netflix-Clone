@@ -1,9 +1,18 @@
 const faqs = document.querySelectorAll(".faqbox")
 faqs.forEach((faq) => {
   faq.addEventListener("click", () => {
-    faq.classList.toggle("open")
-  })
-})
+    faq.classList.toggle("open");
+    // find the button/icon inside this faqbox
+    const iconBtn = faq.querySelector(".faq-plus-icon");
+    if (iconBtn) {
+      const isOpen = faq.classList.contains("open");
+      // change visible symbol to minus when open; plus when closed
+      iconBtn.textContent = isOpen ? "−" : "+";
+      // update accessible state
+      iconBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    }
+  });
+});
 
 const toggle = document.getElementById("theme-toggle");
 const toggleBtn = document.getElementById("theme-toggle");
