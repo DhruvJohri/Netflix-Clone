@@ -691,6 +691,11 @@ html {
   margin-left: 10px;
   transition: transform 0.3s ease;
   color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0
 }
 .faqbox.open .icon {
   transform: rotate(45deg) scale(1.1);
