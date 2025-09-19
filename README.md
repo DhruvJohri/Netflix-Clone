@@ -98,7 +98,7 @@ Originally created by **[Dhruv Johri](https://github.com/dhruvjohri)** and now e
 ![Preview](./assets/images/netflix-preview.png)
 
 ### 📱 **Mobile Responsive** (Coming Soon)
-*Screenshots will be added as mobile responsiveness is enhanced*
+*Screenshots will be added as soon as mobile responsiveness is enhanced*
 
 </div>
 
