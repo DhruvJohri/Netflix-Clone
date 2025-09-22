@@ -20,7 +20,6 @@
 
   </head>
   <body>
-    Loading Screen
     <div id="loadingScreen" class="loading-screen">
         <iframe id="netflixIframe" src="animations/netflix.html" frameborder="0"></iframe>
     </div>
@@ -32,6 +31,10 @@
   <div class="logo">
     <img src="assets/images/netflix-logo.png" alt="Netflix Logo" class="netflix-logo-img" />
   </div>
+  <!-- Hamburger icon -->
+   <i class="fas fa-bars" id="menu-toggle"></i>
+
+   <div class="menu">
   <ul class="nav-links">
     <li style="--i: 1"><a href="home.html">Home</a></li>
     <li style="--i: 2"><a href="#">TV Shows</a></li>
@@ -47,6 +50,7 @@
       <i class="fas fa-globe"></i> English
     </button>
     <a href="signin.html" class="btn btn-red-sm">Sign In</a>
+  </div>
   </div>
 </nav>
 
@@ -337,6 +341,15 @@
       });
     }
   });
+
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.querySelector('.menu');
+
+menuToggle.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
+
+
 </script>
   </body>
 </html>
@@ -354,4 +367,83 @@
       max-width: 100px;
     }
   }
+  .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #141414;
+  color: white;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Hamburger */
+#menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+  margin-left: auto;
+}
+
+/* Menu container */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Responsive (mobile ≤ 500px) */
+@media screen and (max-width: 500px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #141414;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+}
+
+
+
+
 </style>
