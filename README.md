@@ -298,6 +298,7 @@ We're grateful to all our amazing contributors who have helped make this project
 <div align="center">
 
 [![Contributors](https://contrib.rocks/image?repo=dhruvjohri/netflix-clone)](https://github.com/dhruvjohri/netflix-clone/graphs/contributors)
+- Vinayak Mishra : "Added my name in contributors list"
 
 **💡 Want to see your avatar here? [Contribute now!](#-how-to-contribute)**
 
