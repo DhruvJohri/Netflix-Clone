@@ -74,24 +74,43 @@ const movies = [
   }
 ];
 
+
+// Ensure movies and container exist before rendering
 const container = document.getElementById('moviesContainer');
 
-movies.forEach(movie => {
-  const card = document.createElement('div');
-  card.className = 'movie-card';
+if (Array.isArray(movies) && container) {
+  const fragment = document.createDocumentFragment();
 
-  card.innerHTML = `
-    <img src="${movie.image}" alt="${movie.title}" />
-    <p>${movie.title}</p>
-  `;
+  movies.forEach(movie => {
+    const card = document.createElement('div');
+    card.className = 'movie-card';
 
-  container.appendChild(card);
-});
+    // Escape title to avoid HTML injection
+    const safeTitle = document.createTextNode(movie?.title || 'Untitled');
+    const img = document.createElement('img');
+    img.src = movie?.image || 'default-image.jpg';
+    img.alt = movie?.title || 'Movie Poster';
 
-// Redirect to login if user is not signed in
-const currentUser = JSON.parse(localStorage.getItem("netflixCurrentUser"));
+    const titleElem = document.createElement('p');
+    titleElem.appendChild(safeTitle);
 
-if (!currentUser || !currentUser.email) {
-  window.location.href = "login.html"; // or "signin.html", depending on your filename
+    card.appendChild(img);
+    card.appendChild(titleElem);
+    fragment.appendChild(card);
+  });
+
+  container.appendChild(fragment);
+} else {
+  console.error('Movies array or container element is missing.');
 }
 
+// Redirect to login if user is not signed in
+try {
+  const currentUser = JSON.parse(localStorage.getItem('netflixCurrentUser'));
+  if (!currentUser?.email) {
+    window.location.href = 'login.html'; // or 'signin.html'
+  }
+} catch (err) {
+  console.error('Error reading user data from localStorage:', err);
+  window.location.href = 'login.html';
+}
