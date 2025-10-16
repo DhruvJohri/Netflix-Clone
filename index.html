@@ -270,6 +270,38 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
+ <!-- CHAT BUTTON + POPUP -->
+<button id="chatBtn" class="back-to-top-progress chat-circle" aria-label="Open chat" title="Open chat">
+  <i class="fas fa-comments" aria-hidden="true"></i>
+  <svg viewBox="0 0 36 36" class="circular-progress" aria-hidden="true">
+    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+    <path class="circle-progress" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+  </svg>
+</button>
+
+<div id="chatPopup" class="chat-popup" role="dialog" aria-hidden="true" aria-label="Chat window">
+  <div class="chat-header">
+    <div class="header-left">
+      <img src="https://cdn-icons-png.flaticon.com/512/4712/4712104.png" alt="AI" class="chat-ai-pic" />
+      <div>
+        <div class="chat-title">AI Chatbot</div>
+        <div class="chat-sub">Movies • Ratings • Netflix plans</div>
+      </div>
+    </div>
+    <button id="chatClose" class="chat-close" aria-label="Close chat">&times;</button>
+  </div>
+
+  <div class="chat-body">
+    <div id="messages" class="messages"></div>
+
+    <div class="chat-input-row">
+      <input id="chatInput" type="text" placeholder="Ask about a movie, ask for recommendations, or 'Netflix plans'..." />
+      <button id="chatSend" aria-label="Send">Send</button>
+    </div>
+  </div>
+</div>
+
+
     <!-- Enhanced Footer -->
     <footer>
       <div class="footer-container">
@@ -362,6 +394,89 @@
       });
     }
   });
+
+const chatBtn = document.getElementById('chatBtn');
+const chatPopup = document.getElementById('chatPopup');
+const chatClose = document.getElementById('chatClose');
+const messagesEl = document.getElementById('messages');
+const input = document.getElementById('chatInput');
+const sendBtn = document.getElementById('chatSend');
+
+// Toggle chat popup
+chatBtn.onclick = () => {
+  chatPopup.classList.toggle('open');
+  if (chatPopup.classList.contains('open')) input.focus();
+};
+chatClose.onclick = () => chatPopup.classList.remove('open');
+
+// Add a message to chat
+function addMessage(text, who = 'bot') {
+  const el = document.createElement('div');
+  el.className = `msg ${who}`;
+  el.innerHTML = `<div class="bubble">${text}</div>`;
+  messagesEl.appendChild(el);
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+
+// Typing effect function
+async function typeBotReply(replyEl, text, speed = 20) {
+  replyEl.innerHTML = "";
+  for (let i = 0; i < text.length; i++) {
+    replyEl.innerHTML += text[i];
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+    await new Promise(r => setTimeout(r, speed));
+  }
+}
+
+// Optional: format reply for shorter & clean messages
+function formatBotReply(text) {
+  // You can shorten long replies or split by sentences
+  return text.replace(/\n/g, ' '); 
+}
+
+// Send user message and get bot reply
+async function sendMessage() {
+  const userText = input.value.trim();
+  if (!userText) return;
+
+  // Show user message
+  addMessage(userText, 'user');
+  input.value = '';
+
+  // Create bot bubble for typing effect
+  const typingEl = document.createElement('div');
+  typingEl.className = 'msg bot';
+  typingEl.innerHTML = `<div class="bubble"></div>`;
+  messagesEl.appendChild(typingEl);
+  const bubbleEl = typingEl.querySelector('.bubble');
+
+  try {
+    const res = await fetch('http://localhost:5000/api/message', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: userText }),
+    });
+
+    const data = await res.json();
+    const botReply = data.reply ? formatBotReply(data.reply) : "Sorry, I didn't understand that.";
+
+    // Type out the bot reply
+    await typeBotReply(bubbleEl, botReply, 20); // adjust speed here
+  } catch (err) {
+    bubbleEl.innerHTML = 'Sorry — something went wrong.';
+    console.error(err);
+  }
+}
+
+// Event listeners
+sendBtn.onclick = sendMessage;
+input.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') sendMessage();
+});
+
+// Initial bot greeting
+addMessage("Hii! I'm your AI assistant. Ask me about movies, ratings, or Netflix plans.");
+
 </script>
   </body>
 </html>
