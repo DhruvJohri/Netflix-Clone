@@ -1187,12 +1187,12 @@ footer::before {
   .nav-links {
     display: none;
   }
-  
+
   /* Show hamburger menu on mobile */
   .hamburger-menu {
     display: flex !important;
   }
-  
+
   /* Hide desktop nav buttons on mobile */
   .desktop-nav-buttons {
     display: none;
